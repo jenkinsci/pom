@@ -47,37 +47,12 @@
           <jdkName>JDK1.5</jdkName>
         </configuration>
       </plugin>
-      <plugin>
-        <artifactId>maven-antrun-plugin</artifactId>
-        <executions>
-          <!-- invoke retroweaver -->
-          <execution>
-            <phase>process-classes</phase>
-            <configuration>
-              <tasks>
-                <!-- 1.5 > 1.4 -->
-                <java classname="com.rc.retroweaver.Weaver">
-                  <arg value="-source"/>
-                  <arg path="target/classes"/>
-                  <classpath>
-                    <fileset dir="lib/retroweaver">
-                      <include name="*.jar"/>
-                    </fileset>
-                  </classpath>
-                </java>
-              </tasks>
-            </configuration>
-            <goals>
-              <goal>run</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
     </plugins>
   </build>
   
   <modules>
     <module>main</module>
+    <module>tools</module>
     <module>plugins</module>
   </modules>
 </project>
