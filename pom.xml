@@ -1,0 +1,83 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.jvnet.hudson</groupId>
+  <artifactId>hudson</artifactId>
+  <version>1.0</version>
+  <packaging>pom</packaging>
+  
+  <name>Hudson</name>
+  <url>https://hudson.dev.java.net/</url>
+  
+  <repositories>
+    <repository>
+      <id>java.net</id>
+      <url>https://maven-repository.dev.java.net/nonav/repository</url>
+      <layout>legacy</layout>
+    </repository>
+    <repository>
+      <id>hudson-libs</id>
+      <url>https://hudson.dev.java.net/source/browse/*checkout*/hudson/hudson/main/lib</url>
+      <layout>legacy</layout>
+    </repository>
+  </repositories>
+  
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  
+  
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-idea-plugin</artifactId>
+        <configuration>
+          <jdkName>JDK1.5</jdkName>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <!-- invoke retroweaver -->
+          <execution>
+            <phase>process-classes</phase>
+            <configuration>
+              <tasks>
+                <!-- 1.5 > 1.4 -->
+                <java classname="com.rc.retroweaver.Weaver">
+                  <arg value="-source"/>
+                  <arg path="target/classes"/>
+                  <classpath>
+                    <fileset dir="lib/retroweaver">
+                      <include name="*.jar"/>
+                    </fileset>
+                  </classpath>
+                </java>
+              </tasks>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  
+  <modules>
+    <module>main</module>
+    <module>plugins</module>
+  </modules>
+</project>
