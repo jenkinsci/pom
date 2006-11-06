@@ -14,6 +14,13 @@
     <url>https://hudson.dev.java.net/source/browse/hudson/hudson</url>
   </scm>
   
+  <pluginRepositories>
+    <pluginRepository>
+      <id>java.net2</id>
+      <url>https://maven2-repository.dev.java.net/nonav/repository</url>
+    </pluginRepository>
+  </pluginRepositories>
+  
   <repositories>
     <repository>
       <id>java.net</id>
