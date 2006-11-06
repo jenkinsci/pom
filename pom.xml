@@ -32,6 +32,11 @@
       <url>https://maven2-repository.dev.java.net/nonav/repository</url>
     </repository>
     <repository>
+      <id>central1</id>
+      <url>http://www.ibiblio.org/maven</url>
+      <layout>legacy</layout>
+    </repository>
+    <repository>
       <id>hudson-libs</id>
       <url>https://hudson.dev.java.net/source/browse/*checkout*/hudson/hudson/main/lib</url>
       <layout>legacy</layout>
