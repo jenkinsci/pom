@@ -8,6 +8,12 @@
   <name>Hudson</name>
   <url>https://hudson.dev.java.net/</url>
   
+  <scm>
+    <connection>scm:cvs:pserver:guest@cvs.dev.java.net:/cvs:hudson/hudson</connection>
+    <developerConnection>scm:cvs:pserver:${user.name}@cvs.dev.java.net:/cvs:hudson/hudson</developerConnection>
+    <url>https://hudson.dev.java.net/source/browse/hudson/hudson</url>
+  </scm>
+  
   <repositories>
     <repository>
       <id>java.net</id>
@@ -20,7 +26,15 @@
       <layout>legacy</layout>
     </repository>
   </repositories>
-  
+
+  <distributionManagement>
+    <repository>
+      <uniqueVersion>false</uniqueVersion>
+      <id>local-repository</id>
+      <url>file:${path-to-m2-repo.java.net}</url>
+    </repository>
+  </distributionManagement>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
