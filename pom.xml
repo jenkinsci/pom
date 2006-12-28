@@ -19,6 +19,14 @@
       <id>java.net2</id>
       <url>https://maven2-repository.dev.java.net/nonav/repository</url>
     </pluginRepository>
+    <pluginRepository>
+      <id>m2-snapshot</id>
+      <url>http://people.apache.org/maven-snapshot-repository/</url>
+    </pluginRepository>
+    <!--pluginRepository>
+      <id>codehaus-snapshot</id>
+      <url>http://snapshots.repository.codehaus.org/</url>
+    </pluginRepository-->
   </pluginRepositories>
   
   <repositories>
