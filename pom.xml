@@ -19,6 +19,10 @@
       <id>java.net2</id>
       <url>https://maven2-repository.dev.java.net/nonav/repository</url>
     </pluginRepository>
+    <pluginRepository>
+      <id>central</id>
+      <url>http://www.ibiblio.org/maven2</url>
+    </pluginRepository>
   </pluginRepositories>
   
   <repositories>
@@ -30,6 +34,10 @@
     <repository>
       <id>java.net2</id>
       <url>https://maven2-repository.dev.java.net/nonav/repository</url>
+    </repository>
+    <repository>
+      <id>central</id>
+      <url>http://www.ibiblio.org/maven2</url>
     </repository>
     <repository>
       <id>central1</id>
