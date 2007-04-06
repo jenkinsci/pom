@@ -79,7 +79,6 @@
         </configuration>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-idea-plugin</artifactId>
         <configuration>
           <jdkName>JDK1.5</jdkName>
