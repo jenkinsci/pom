@@ -17,7 +17,7 @@
   <pluginRepositories>
     <pluginRepository>
       <id>java.net2</id>
-      <url>https://maven2-repository.dev.java.net/nonav/repository</url>
+      <url>http://download.java.net/maven/2/</url>
     </pluginRepository>
     <pluginRepository>
       <id>central</id>
@@ -28,12 +28,12 @@
   <repositories>
     <repository>
       <id>java.net</id>
-      <url>https://maven-repository.dev.java.net/nonav/repository</url>
+      <url>http://download.java.net/maven/1/</url>
       <layout>legacy</layout>
     </repository>
     <repository>
       <id>java.net2</id>
-      <url>https://maven2-repository.dev.java.net/nonav/repository</url>
+      <url>http://download.java.net/maven/2/</url>
     </repository>
     <repository>
       <id>central</id>
