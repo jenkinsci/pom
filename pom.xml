@@ -4,48 +4,56 @@
   <artifactId>hudson</artifactId>
   <version>1.0</version>
   <packaging>pom</packaging>
-  
+
   <name>Hudson</name>
   <url>https://hudson.dev.java.net/</url>
-  
+
   <scm>
     <connection>scm:cvs:pserver:guest@cvs.dev.java.net:/cvs:hudson/hudson</connection>
     <developerConnection>scm:cvs:pserver:${user.name}@cvs.dev.java.net:/cvs:hudson/hudson</developerConnection>
     <url>https://hudson.dev.java.net/source/browse/hudson/hudson</url>
   </scm>
-  
+
   <pluginRepositories>
     <pluginRepository>
-      <id>java.net2</id>
-      <url>http://download.java.net/maven/2/</url>
+      <id>central</id>
+      <url>http://repo1.maven.org/maven2</url>
     </pluginRepository>
     <pluginRepository>
-      <id>central</id>
-      <url>http://www.ibiblio.org/maven2</url>
+      <id>java.net2</id>
+      <url>http://download.java.net/maven/2</url>
     </pluginRepository>
   </pluginRepositories>
-  
+
   <repositories>
     <repository>
-      <id>java.net</id>
-      <url>http://download.java.net/maven/1/</url>
-      <layout>legacy</layout>
+      <id>central</id>
+      <url>http://repo1.maven.org/maven2</url>
     </repository>
     <repository>
       <id>java.net2</id>
-      <url>http://download.java.net/maven/2/</url>
+      <url>http://download.java.net/maven/2</url>
     </repository>
     <repository>
-      <id>central</id>
-      <url>http://www.ibiblio.org/maven2</url>
+      <id>java.net</id>
+      <url>http://download.java.net/maven/1</url>
+      <layout>legacy</layout>
     </repository>
-    <repository>
+    <!--repository>
       <id>central1</id>
       <url>http://www.ibiblio.org/maven</url>
       <layout>legacy</layout>
-    </repository>
+    </repository-->
     <repository>
       <id>hudson-libs</id>
+      <!-- for a faster build on your machine, replace the url with
+      file:///full-path-to-here/main/lib
+      where full-path-to-here is the full path to the directory containing 
+      this pom.xml file.
+      
+      If you do this, please don't promote it back to CVS or we'll all
+      be broken!
+      -->
       <url>https://hudson.dev.java.net/source/browse/*checkout*/hudson/hudson/main/lib</url>
       <layout>legacy</layout>
     </repository>
@@ -67,8 +75,8 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  
-  
+
+
   <build>
     <plugins>
       <plugin>
