@@ -10,7 +10,7 @@
 
   <scm>
     <connection>scm:cvs:pserver:guest@cvs.dev.java.net:/cvs:hudson/hudson</connection>
-    <developerConnection>scm:cvs:pserver:${user.name}@cvs.dev.java.net:/cvs:hudson/hudson</developerConnection>
+    <developerConnection>scm:cvs:pserver:stephenconnolly:websun2006@cvs.dev.java.net:/cvs:hudson/hudson</developerConnection>
     <url>https://hudson.dev.java.net/source/browse/hudson/hudson</url>
   </scm>
 
@@ -68,10 +68,23 @@
       </plugin>
     </plugins>
   </build>
-  
+
   <modules>
     <module>main</module>
     <module>tools</module>
     <module>plugins</module>
   </modules>
+  
+  <profiles>
+    <profile>
+      <id>always-check-remote-repositories</id>
+      <properties>
+        <maven.repository.update.freqency>always</maven.repository.update.freqency>
+      </properties>
+    </profile>
+  </profiles>
+  <properties>
+    <!-- by default only check remote repositories once per week -->
+    <maven.repository.update.freqency>interval:10080</maven.repository.update.freqency>
+  </properties>
 </project>
