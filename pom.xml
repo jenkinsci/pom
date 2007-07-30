@@ -10,7 +10,7 @@
 
   <scm>
     <connection>scm:cvs:pserver:guest@cvs.dev.java.net:/cvs:hudson/hudson</connection>
-    <developerConnection>scm:cvs:pserver:stephenconnolly:websun2006@cvs.dev.java.net:/cvs:hudson/hudson</developerConnection>
+    <developerConnection>scm:cvs:pserver:${user.name}@cvs.dev.java.net:/cvs:hudson/hudson</developerConnection>
     <url>https://hudson.dev.java.net/source/browse/hudson/hudson</url>
   </scm>
 
