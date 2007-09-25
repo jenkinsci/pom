@@ -86,5 +86,8 @@
   <properties>
     <!-- by default only check remote repositories once per week -->
     <maven.repository.update.freqency>interval:10080</maven.repository.update.freqency>
+
+    <!-- the version of Maven that we embed in Hudson -->
+    <maven.version>2.0.4</maven.version>
   </properties>
 </project>
