@@ -36,8 +36,8 @@
   <distributionManagement>
     <repository>
       <uniqueVersion>false</uniqueVersion>
-      <id>local-repository</id>
-      <url>file:${path-to-m2-repo.java.net}</url>
+      <id>java.net-m2-repository</id>
+      <url>svn:https://svn.dev.java.net/svn/maven2-repository/trunk/www/repository/</url>
     </repository>
   </distributionManagement>
 
@@ -79,6 +79,13 @@
         </configuration>
       </plugin>
     </plugins>
+    <extensions>
+      <extension>
+        <groupId>org.jvnet.wagon-svn</groupId>
+        <artifactId>wagon-svn</artifactId>
+        <version>1.1</version>
+      </extension>
+    </extensions>
   </build>
 
   <modules>
