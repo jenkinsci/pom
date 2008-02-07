@@ -31,6 +31,10 @@
       <id>java.net2</id>
       <url>http://download.java.net/maven/2/</url>
     </pluginRepository>
+    <pluginRepository>
+      <id>java.net2-backup</id>
+      <url>http://maven.dyndns.org/2</url>
+    </pluginRepository>
   </pluginRepositories>
   
   <repositories>
