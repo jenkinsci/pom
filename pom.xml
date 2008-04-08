@@ -11,7 +11,7 @@
   <scm>
     <connection>scm:svn:https://svn.dev.java.net/svn/hudson/trunk/hudson/</connection>
     <developerConnection>scm:svn:https://svn.dev.java.net/svn/hudson/trunk/hudson/</developerConnection>
-    <url>https://hudson.dev.java.net/source/browse/hudson/hudson</url>
+    <url>https://hudson.dev.java.net/source/browse/hudson/trunk/hudson</url>
   </scm>
 
   <pluginRepositories>
