@@ -14,53 +14,31 @@
     <url>https://hudson.dev.java.net/source/browse/hudson/trunk/hudson</url>
   </scm>
 
-  <pluginRepositories>
-    <pluginRepository>
-      <id>central</id>
-      <url>http://repo1.maven.org/maven2</url>
-      <releases>
-        <enabled>true</enabled>
-        <!-- only look for jars here when they are not present locally -->
-        <updatePolicy>never</updatePolicy>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </pluginRepository>
-    <pluginRepository>
-      <id>java.net2</id>
-      <url>http://download.java.net/maven/2/</url>
-    </pluginRepository>
-    <pluginRepository>
-      <id>java.net2-backup</id>
-      <url>http://maven.dyndns.org/2</url>
-    </pluginRepository>
-  </pluginRepositories>
-  
   <repositories>
     <repository>
-      <id>java.net2</id>
-      <url>http://download.java.net/maven/2</url>
+      <id>m.g.o-public</id>
+      <url>http://maven.glassfish.org/content/groups/public/</url>
       <releases>
         <enabled>true</enabled>
-        <updatePolicy>never</updatePolicy>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>java.net2-backup</id>
-      <url>http://maven.dyndns.org/2</url>
-      <releases>
-        <enabled>true</enabled>
-        <updatePolicy>never</updatePolicy>
       </releases>
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
     </repository>
   </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>m.g.o-public</id>
+      <url>http://maven.glassfish.org/content/groups/public/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
 
   <distributionManagement>
     <repository>
