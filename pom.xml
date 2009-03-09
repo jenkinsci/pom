@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jvnet.hudson</groupId>
   <artifactId>hudson</artifactId>
-  <version>1.6</version>
+  <version>1.7</version>
   <packaging>pom</packaging>
 
   <name>Hudson</name>
@@ -45,7 +45,7 @@
       <uniqueVersion>false</uniqueVersion>
       <id>java.net-m2-repository</id>
       <!--url>svn:https://svn.dev.java.net/svn/maven2-repository/trunk/www/repository/</url-->
-      <url>java-net:/maven2-repository/trunk/www/repository/</url>
+      <url>java-net:/maven2-repository/trunk/repository/</url>
     </repository>
     <snapshotRepository>
       <!-- prevent accidental deployment of SNAPSHOTS to repository -->
