@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project>
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jvnet.hudson</groupId>
@@ -106,6 +107,7 @@
     <module>main</module>
     <module>tools</module>
     <module>plugins</module>
+    <module>pxeboot</module>
   </modules>
   
   <profiles>
