@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jvnet.hudson</groupId>
   <artifactId>hudson</artifactId>
@@ -8,9 +8,39 @@
 
   <name>Hudson</name>
   <url>https://hudson.dev.java.net/</url>
-  <ciManagement>http://issues.hudson-ci.org/secure/Dashboard.jspa</ciManagement>
-  <issueManagement>http://hudson.glassfish.org/job/hudson</issueManagement>
-
+  
+  <issueManagement>
+      <system>JIRA</system>
+      <url>http://issues.hudson-ci.org/secure/Dashboard.jspa</url>
+  </issueManagement>
+  <ciManagement>
+      <system>Hudson</system>
+      <url>http://hudson.glassfish.org/job/hudson</url>
+  </ciManagement>
+  <mailingLists>
+      <mailingList>
+          <name>Hudson developer discussion list</name>
+          <subscribe>dev-subscribe@hudson.dev.java.net</subscribe>
+          <unsubscribe>dev-unsubscribe@hudson.dev.java.net</unsubscribe>
+          <post>dev@hudson.dev.java.net</post>
+          <archive>http://www.nabble.com/Hudson-dev-f25543.html</archive>
+      </mailingList>
+      <mailingList>
+          <name>Hudson user discussion list</name>
+          <subscribe>users-subscribe@hudson.dev.java.net</subscribe>
+          <unsubscribe>users-unsubscribe@hudson.dev.java.net</unsubscribe>
+          <post>users@hudson.dev.java.net</post>
+          <archive>http://www.nabble.com/Hudson-users-f16872.html</archive>
+      </mailingList>
+      <mailingList>
+          <name>Hudson Japanese user discussion list</name>
+          <subscribe>ja-subscribe@hudson.dev.java.net</subscribe>
+          <unsubscribe>ja-unsubscribe@hudson.dev.java.net</unsubscribe>
+          <post>ja@hudson.dev.java.net</post>
+          <archive>http://www.nabble.com/Hudson-ja-f29991.html</archive>
+      </mailingList>
+  </mailingLists>
+ 
   <scm>
     <connection>scm:svn:https://guest@svn.dev.java.net/svn/hudson/trunk/hudson/</connection>
     <developerConnection>scm:svn:https://svn.dev.java.net/svn/hudson/trunk/hudson/</developerConnection>
