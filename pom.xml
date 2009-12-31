@@ -8,6 +8,8 @@
 
   <name>Hudson</name>
   <url>https://hudson.dev.java.net/</url>
+  <ciManagement>http://issues.hudson-ci.org/secure/Dashboard.jspa</ciManagement>
+  <issueManagement>http://hudson.glassfish.org/job/hudson</issueManagement>
 
   <scm>
     <connection>scm:svn:https://guest@svn.dev.java.net/svn/hudson/trunk/hudson/</connection>
