@@ -82,7 +82,7 @@
     </repository>
     <snapshotRepository>
       <!-- prevent accidental deployment of SNAPSHOTS to repository -->
-      <id>local</id>
+      <id>local-repo</id><!-- M3 says: "'distributionManagement.snapshotRepository.id' must not be 'local', this identifier is reserved." -->
       <url>file:.</url>
     </snapshotRepository>
   </distributionManagement>
