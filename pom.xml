@@ -8,6 +8,7 @@
 
   <name>Hudson</name>
   <url>https://hudson.dev.java.net/</url>
+  <inceptionYear>2004</inceptionYear>
   
   <issueManagement>
       <system>JIRA</system>
