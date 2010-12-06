@@ -7,7 +7,7 @@
   <packaging>pom</packaging>
 
   <name>Hudson</name>
-  <url>https://hudson.dev.java.net/</url>
+  <url>http://hudson-ci.org/</url>
   <inceptionYear>2004</inceptionYear>
   
   <issueManagement>
@@ -16,36 +16,36 @@
   </issueManagement>
   <ciManagement>
       <system>Hudson</system>
-      <url>http://hudson.glassfish.org/job/hudson</url>
+      <url>http://ci.hudson-labs.org/job/hudson_main_trunk</url>
   </ciManagement>
   <mailingLists>
       <mailingList>
           <name>Hudson developer discussion list</name>
-          <subscribe>dev-subscribe@hudson.dev.java.net</subscribe>
-          <unsubscribe>dev-unsubscribe@hudson.dev.java.net</unsubscribe>
-          <post>dev@hudson.dev.java.net</post>
-          <archive>http://www.nabble.com/Hudson-dev-f25543.html</archive>
+          <subscribe>hudson-dev+subscribe@googlegroups.com</subscribe>
+          <unsubscribe>hudson-dev+unsubscribe@googlegroups.com</unsubscribe>
+          <post>hudson-dev@googlegroups.com</post>
+          <archive>http://hudson.361315.n4.nabble.com/Hudson-dev-f387835.html</archive>
       </mailingList>
       <mailingList>
           <name>Hudson user discussion list</name>
-          <subscribe>users-subscribe@hudson.dev.java.net</subscribe>
-          <unsubscribe>users-unsubscribe@hudson.dev.java.net</unsubscribe>
-          <post>users@hudson.dev.java.net</post>
-          <archive>http://www.nabble.com/Hudson-users-f16872.html</archive>
+          <subscribe>hudson-users+subscribe@googlegroups.com</subscribe>
+          <unsubscribe>hudson-users+unsubscribe@googlegroups.com</unsubscribe>
+          <post>hudson-users@googlegroups.com</post>
+          <archive>http://hudson.361315.n4.nabble.com/Hudson-users-f361316.html</archive>
       </mailingList>
       <mailingList>
           <name>Hudson Japanese user discussion list</name>
-          <subscribe>ja-subscribe@hudson.dev.java.net</subscribe>
-          <unsubscribe>ja-unsubscribe@hudson.dev.java.net</unsubscribe>
-          <post>ja@hudson.dev.java.net</post>
-          <archive>http://www.nabble.com/Hudson-ja-f29991.html</archive>
+          <subscribe>hudson-ja+subscribe@googlegroups.com</subscribe>
+          <unsubscribe>hudson-ja+unsubscribe@googlegroups.com</unsubscribe>
+          <post>hudson-ja@googlegroups.com</post>
+          <archive>http://hudson.361315.n4.nabble.com/Hudson-ja-f361157.html</archive>
       </mailingList>
   </mailingLists>
  
   <scm>
-    <connection>scm:svn:https://guest@svn.dev.java.net/svn/hudson/trunk/hudson/</connection>
-    <developerConnection>scm:svn:https://svn.dev.java.net/svn/hudson/trunk/hudson/</developerConnection>
-    <url>https://hudson.dev.java.net/source/browse/hudson/trunk/hudson</url>
+    <connection>scm:svn:https://guest@svn.java.net/svn/hudson~svn/trunk/hudson/</connection>
+    <developerConnection>scm:svn:https://svn.java.net/svn/hudson~svn/trunk/hudson/</developerConnection>
+    <url>http://java.net/projects/hudson/sources/svn/show/trunk/hudson/</url>
   </scm>
 
   <repositories>
@@ -96,7 +96,6 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
 
   <build>
     <plugins>
