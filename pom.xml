@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jvnet.hudson</groupId>
   <artifactId>hudson</artifactId>
-  <version>1.7</version>
+  <version>1.8</version>
   <packaging>pom</packaging>
 
   <name>Hudson</name>
-  <url>http://hudson-ci.org/</url>
+  <url>http://hudson-labs.org/</url>
   <inceptionYear>2004</inceptionYear>
   
   <issueManagement>
@@ -79,7 +79,7 @@
       <uniqueVersion>false</uniqueVersion>
       <id>java.net-m2-repository</id>
       <!--url>svn:https://svn.dev.java.net/svn/maven2-repository/trunk/www/repository/</url-->
-      <url>java-net:/maven2-repository/trunk/repository/</url>
+      <url>http://maven.hudson-labs.org:8081/content/repositories/releases</url>
     </repository>
     <snapshotRepository>
       <!-- prevent accidental deployment of SNAPSHOTS to repository -->
@@ -131,13 +131,6 @@
         <version>2.7</version>
       </plugin>
     </plugins>
-    <extensions>
-      <extension>
-        <groupId>org.jvnet.wagon-svn</groupId>
-        <artifactId>wagon-svn</artifactId>
-        <version>1.8</version>
-      </extension>
-    </extensions>
   </build>
 
   <modules>
