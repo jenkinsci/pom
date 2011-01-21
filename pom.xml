@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jvnet.hudson</groupId>
   <artifactId>hudson</artifactId>
-  <version>1.9-SNAPSHOT</version>
+  <version>1.9</version>
   <packaging>pom</packaging>
 
   <name>Hudson</name>
@@ -43,7 +43,7 @@
   </mailingLists>
  
   <scm>
-    <connection       >scm:git:git://github.com/hudson/${github.repository}.git</connection>
+    <connection>scm:git:git://github.com/hudson/${github.repository}.git</connection>
     <developerConnection>scm:git:git@github.com:hudson/${github.repository}.git</developerConnection>
     <url>https://github.com/hudson/${github.repository}</url>
   </scm>
