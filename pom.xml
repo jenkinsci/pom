@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.jvnet.hudson</groupId>
-  <artifactId>hudson</artifactId>
+  <groupId>org.jenkins-ci</groupId>
+  <artifactId>jenkins</artifactId>
   <version>1.10-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <name>Hudson</name>
-  <url>http://hudson-labs.org/</url>
+  <name>Jenkins</name>
+  <url>http://jenkins-ci.org/</url>
   <inceptionYear>2004</inceptionYear>
   
   <issueManagement>
       <system>JIRA</system>
-      <url>http://issues.hudson-ci.org/secure/Dashboard.jspa</url>
+      <url>http://issues.jenkins-ci.org/secure/Dashboard.jspa</url>
   </issueManagement>
   <ciManagement>
-      <system>Hudson</system>
-      <url>http://ci.hudson-labs.org/job/hudson_main_trunk</url>
+      <system>Jenkins</system>
+      <url>http://ci.jenkins-ci.org/job/jenkins_main_trunk</url>
   </ciManagement>
   <mailingLists>
       <mailingList>
-          <name>Hudson developer discussion list</name>
-          <subscribe>hudson-dev+subscribe@googlegroups.com</subscribe>
-          <unsubscribe>hudson-dev+unsubscribe@googlegroups.com</unsubscribe>
-          <post>hudson-dev@googlegroups.com</post>
+          <name>Jenkins developer discussion list</name>
+          <subscribe>jenkins-dev+subscribe@googlegroups.com</subscribe>
+          <unsubscribe>jenkins-dev+unsubscribe@googlegroups.com</unsubscribe>
+          <post>jenkins-dev@googlegroups.com</post>
           <archive>http://hudson.361315.n4.nabble.com/Hudson-dev-f387835.html</archive>
       </mailingList>
       <mailingList>
           <name>Hudson user discussion list</name>
-          <subscribe>hudson-users+subscribe@googlegroups.com</subscribe>
-          <unsubscribe>hudson-users+unsubscribe@googlegroups.com</unsubscribe>
-          <post>hudson-users@googlegroups.com</post>
+          <subscribe>jenkins-users+subscribe@googlegroups.com</subscribe>
+          <unsubscribe>jenkins-users+unsubscribe@googlegroups.com</unsubscribe>
+          <post>jenkins-users@googlegroups.com</post>
           <archive>http://hudson.361315.n4.nabble.com/Hudson-users-f361316.html</archive>
       </mailingList>
       <mailingList>
           <name>Hudson Japanese user discussion list</name>
-          <subscribe>hudson-ja+subscribe@googlegroups.com</subscribe>
-          <unsubscribe>hudson-ja+unsubscribe@googlegroups.com</unsubscribe>
-          <post>hudson-ja@googlegroups.com</post>
+          <subscribe>jenkins-ja+subscribe@googlegroups.com</subscribe>
+          <unsubscribe>jenkins-ja+unsubscribe@googlegroups.com</unsubscribe>
+          <post>jenkins-ja@googlegroups.com</post>
           <archive>http://hudson.361315.n4.nabble.com/Hudson-ja-f361157.html</archive>
       </mailingList>
   </mailingLists>
  
   <scm>
-    <connection>scm:git:git://github.com/hudson/${github.repository}.git</connection>
-    <developerConnection>scm:git:git@github.com:hudson/${github.repository}.git</developerConnection>
-    <url>https://github.com/hudson/${github.repository}</url>
+    <connection>scm:git:git://github.com/hudson/pom.git</connection>
+    <developerConnection>scm:git:git@github.com:hudson/pom.git</developerConnection>
+    <url>https://github.com/hudson/pom</url>
   </scm>
 
   <repositories>
@@ -79,7 +79,7 @@
       <uniqueVersion>false</uniqueVersion>
       <id>java.net-m2-repository</id>
       <!--url>svn:https://svn.dev.java.net/svn/maven2-repository/trunk/www/repository/</url-->
-      <url>http://maven.hudson-labs.org:8081/content/repositories/releases</url>
+      <url>http://maven.jenkins-ci.org:8081/content/repositories/releases</url>
     </repository>
     <snapshotRepository>
       <!-- prevent accidental deployment of SNAPSHOTS to repository -->
