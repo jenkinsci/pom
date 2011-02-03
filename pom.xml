@@ -24,28 +24,37 @@
           <subscribe>jenkins-dev+subscribe@googlegroups.com</subscribe>
           <unsubscribe>jenkins-dev+unsubscribe@googlegroups.com</unsubscribe>
           <post>jenkins-dev@googlegroups.com</post>
-          <archive>http://hudson.361315.n4.nabble.com/Hudson-dev-f387835.html</archive>
+          <archive>http://jenkins.361315.n4.nabble.com/Jenkins-dev-f387835.html</archive>
+          <otherArchives>
+            <otherArchive>http://hudson.361315.n4.nabble.com/Hudson-dev-f387835.html</otherArchive>
+          </otherArchives>
       </mailingList>
       <mailingList>
-          <name>Hudson user discussion list</name>
+          <name>Jenkins user discussion list</name>
           <subscribe>jenkins-users+subscribe@googlegroups.com</subscribe>
           <unsubscribe>jenkins-users+unsubscribe@googlegroups.com</unsubscribe>
           <post>jenkins-users@googlegroups.com</post>
-          <archive>http://hudson.361315.n4.nabble.com/Hudson-users-f361316.html</archive>
+          <archive>http://jenkins.361315.n4.nabble.com/Jenkins-users-f361316.html</archive>
+          <otherArchives>
+            <otherArchive>http://hudson.361315.n4.nabble.com/Hudson-users-f361316.html</otherArchive>
+          </otherArchives>
       </mailingList>
       <mailingList>
-          <name>Hudson Japanese user discussion list</name>
+          <name>Jenkins Japanese user discussion list</name>
           <subscribe>jenkins-ja+subscribe@googlegroups.com</subscribe>
           <unsubscribe>jenkins-ja+unsubscribe@googlegroups.com</unsubscribe>
           <post>jenkins-ja@googlegroups.com</post>
-          <archive>http://hudson.361315.n4.nabble.com/Hudson-ja-f361157.html</archive>
+          <archive>http://jenkins.361315.n4.nabble.com/Hudson-ja-f361157.html</archive>
+          <otherArchives>
+            <otherArchive>http://hudson.361315.n4.nabble.com/Hudson-ja-f361157.html</otherArchive>
+          </otherArchives>
       </mailingList>
   </mailingLists>
  
   <scm>
-    <connection>scm:git:git://github.com/hudson/pom.git</connection>
-    <developerConnection>scm:git:git@github.com:hudson/pom.git</developerConnection>
-    <url>https://github.com/hudson/pom</url>
+    <connection>scm:git:git://github.com/jenkinsci/pom.git</connection>
+    <developerConnection>scm:git:git@github.com:jenkinsci/pom.git</developerConnection>
+    <url>https://github.com/jenkinsci/pom</url>
   </scm>
 
   <repositories>
