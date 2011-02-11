@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>org.jenkins-ci</groupId>
   <artifactId>jenkins</artifactId>
   <version>1.13-SNAPSHOT</version>
@@ -9,55 +11,57 @@
   <name>Jenkins</name>
   <url>http://jenkins-ci.org/</url>
   <inceptionYear>2004</inceptionYear>
-  
+
   <issueManagement>
-      <system>JIRA</system>
-      <url>http://issues.jenkins-ci.org/secure/Dashboard.jspa</url>
+    <system>JIRA</system>
+    <url>http://issues.jenkins-ci.org/secure/Dashboard.jspa</url>
   </issueManagement>
+
   <ciManagement>
-      <system>Jenkins</system>
-      <url>http://ci.jenkins-ci.org/job/jenkins_main_trunk</url>
+    <system>Jenkins</system>
+    <url>http://ci.jenkins-ci.org/job/jenkins_main_trunk</url>
   </ciManagement>
+
   <mailingLists>
-      <mailingList>
-          <name>Jenkins advisories list</name>
-          <subscribe>jenkinsci-advisories+subscribe@googlegroups.com</subscribe>
-          <unsubscribe>jenkinsci-advisories+unsubscribe@googlegroups.com</unsubscribe>
-      </mailingList>
-      <mailingList>
-          <name>Jenkins developer discussion list</name>
-          <subscribe>jenkinsci-dev+subscribe@googlegroups.com</subscribe>
-          <unsubscribe>jenkinsci-dev+unsubscribe@googlegroups.com</unsubscribe>
-          <post>jenkinsci-dev@googlegroups.com</post>
-          <archive>http://jenkins.361315.n4.nabble.com/Jenkins-dev-f387835.html</archive>
-          <otherArchives>
-            <otherArchive>http://hudson.361315.n4.nabble.com/Hudson-dev-f387835.html</otherArchive>
-          </otherArchives>
-      </mailingList>
-      <mailingList>
-          <name>Jenkins issues list</name>
-          <subscribe>jenkinsci-issues+subscribe@googlegroups.com</subscribe>
-          <unsubscribe>jenkinsci-issues+unsubscribe@googlegroups.com</unsubscribe>
-      </mailingList>
-      <mailingList>
-          <name>Jenkins user discussion list</name>
-          <subscribe>jenkinsci-users+subscribe@googlegroups.com</subscribe>
-          <unsubscribe>jenkinsci-users+unsubscribe@googlegroups.com</unsubscribe>
-          <post>jenkinsci-users@googlegroups.com</post>
-          <archive>http://jenkins.361315.n4.nabble.com/Jenkins-users-f361316.html</archive>
-          <otherArchives>
-            <otherArchive>http://hudson.361315.n4.nabble.com/Hudson-users-f361316.html</otherArchive>
-          </otherArchives>
-      </mailingList>
-      <mailingList>
-          <name>Hudson Japanese user discussion list</name>
-          <subscribe>hudson-ja+subscribe@googlegroups.com</subscribe>
-          <unsubscribe>hudson-ja+unsubscribe@googlegroups.com</unsubscribe>
-          <post>hudson-ja@googlegroups.com</post>
-          <archive>http://hudson.361315.n4.nabble.com/Hudson-ja-f361157.html</archive>
-      </mailingList>
+    <mailingList>
+      <name>Jenkins advisories list</name>
+      <subscribe>jenkinsci-advisories+subscribe@googlegroups.com</subscribe>
+      <unsubscribe>jenkinsci-advisories+unsubscribe@googlegroups.com</unsubscribe>
+    </mailingList>
+    <mailingList>
+      <name>Jenkins developer discussion list</name>
+      <subscribe>jenkinsci-dev+subscribe@googlegroups.com</subscribe>
+      <unsubscribe>jenkinsci-dev+unsubscribe@googlegroups.com</unsubscribe>
+      <post>jenkinsci-dev@googlegroups.com</post>
+      <archive>http://jenkins.361315.n4.nabble.com/Jenkins-dev-f387835.html</archive>
+      <otherArchives>
+        <otherArchive>http://hudson.361315.n4.nabble.com/Hudson-dev-f387835.html</otherArchive>
+      </otherArchives>
+    </mailingList>
+    <mailingList>
+      <name>Jenkins issues list</name>
+      <subscribe>jenkinsci-issues+subscribe@googlegroups.com</subscribe>
+      <unsubscribe>jenkinsci-issues+unsubscribe@googlegroups.com</unsubscribe>
+    </mailingList>
+    <mailingList>
+      <name>Jenkins user discussion list</name>
+      <subscribe>jenkinsci-users+subscribe@googlegroups.com</subscribe>
+      <unsubscribe>jenkinsci-users+unsubscribe@googlegroups.com</unsubscribe>
+      <post>jenkinsci-users@googlegroups.com</post>
+      <archive>http://jenkins.361315.n4.nabble.com/Jenkins-users-f361316.html</archive>
+      <otherArchives>
+        <otherArchive>http://hudson.361315.n4.nabble.com/Hudson-users-f361316.html</otherArchive>
+      </otherArchives>
+    </mailingList>
+    <mailingList>
+      <name>Hudson Japanese user discussion list</name>
+      <subscribe>hudson-ja+subscribe@googlegroups.com</subscribe>
+      <unsubscribe>hudson-ja+unsubscribe@googlegroups.com</unsubscribe>
+      <post>hudson-ja@googlegroups.com</post>
+      <archive>http://hudson.361315.n4.nabble.com/Hudson-ja-f361157.html</archive>
+    </mailingList>
   </mailingLists>
- 
+
   <scm>
     <connection>scm:git:git://github.com/jenkinsci/pom.git</connection>
     <developerConnection>scm:git:git@github.com:jenkinsci/pom.git</developerConnection>
@@ -99,7 +103,8 @@
     </repository>
     <snapshotRepository>
       <!-- prevent accidental deployment of SNAPSHOTS to repository -->
-      <id>local-repo</id><!-- M3 says: "'distributionManagement.snapshotRepository.id' must not be 'local', this identifier is reserved." -->
+      <id>local-repo</id>
+      <!-- M3 says: "'distributionManagement.snapshotRepository.id' must not be 'local', this identifier is reserved." -->
       <url>file:.</url>
     </snapshotRepository>
   </distributionManagement>
@@ -359,7 +364,7 @@
     <plugins>
       <plugin>
         <artifactId>maven-enforcer-plugin</artifactId>
-	<version>${maven-enforcer-plugin.version}</version>
+        <version>${maven-enforcer-plugin.version}</version>
         <executions>
           <execution>
             <phase>validate</phase>
@@ -403,10 +408,8 @@
   <properties>
     <!-- by default only check remote repositories once per week -->
     <maven.repository.update.freqency>interval:10080</maven.repository.update.freqency>
-
     <!-- the version of Maven that we embed in Hudson -->
     <maven.version>2.0.4</maven.version>
-
     <!-- define all plugin versions as properties so individual hierarchies can easily override -->
     <animal-sniffer.version>1.2</animal-sniffer.version>
     <apt-maven-plugin.version>1.0-alpha-4</apt-maven-plugin.version>
