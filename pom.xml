@@ -19,7 +19,7 @@
 
   <ciManagement>
     <system>Jenkins</system>
-    <url>http://ci.jenkins-ci.org/job/jenkins_main_trunk</url>
+    <url>http://ci.jenkins-ci.org</url>
   </ciManagement>
 
   <mailingLists>
