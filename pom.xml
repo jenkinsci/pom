@@ -14,7 +14,7 @@
 
   <issueManagement>
     <system>JIRA</system>
-    <url>http://issues.jenkins-ci.org/secure/Dashboard.jspa</url>
+    <url>http://issues.jenkins-ci.org</url>
   </issueManagement>
 
   <ciManagement>
