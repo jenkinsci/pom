@@ -406,11 +406,13 @@
   </profiles>
 
   <properties>
-    <!-- by default only check remote repositories once per week -->
+    <!-- By default only check remote repositories once per week -->
     <maven.repository.update.freqency>interval:10080</maven.repository.update.freqency>
-    <!-- the version of Maven that we embed in Hudson -->
+
+    <!-- The version of Maven that we embed in Jenkins -->
     <maven.version>2.0.4</maven.version>
-    <!-- define all plugin versions as properties so individual hierarchies can easily override -->
+
+    <!-- Define all plugin versions as properties so individual hierarchies can easily override -->
     <animal-sniffer.version>1.2</animal-sniffer.version>
     <apt-maven-plugin.version>1.0-alpha-4</apt-maven-plugin.version>
     <axistools-maven-plugin.version>1.4</axistools-maven-plugin.version>
