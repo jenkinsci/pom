@@ -422,13 +422,13 @@
     <cobertura-maven-plugin.version>2.4</cobertura-maven-plugin.version>
     <exec-maven-plugin.version>1.2</exec-maven-plugin.version>
     <findbugs-maven-plugin.version>2.3.1</findbugs-maven-plugin.version>
-    <gmaven-plugin.version>1.0-rc-5</gmaven-plugin.version>
+    <gmaven-plugin.version>1.1</gmaven-plugin.version>
     <gwt-maven-plugin.version>2.1.0-1</gwt-maven-plugin.version>
     <javancss-maven-plugin.version>2.0</javancss-maven-plugin.version>
     <jdepend-maven-plugin.version>2.0-beta-2</jdepend-maven-plugin.version>
     <kohsuke-gmaven-plugin.version>1.0-rc-5-patch-2</kohsuke-gmaven-plugin.version>
     <lifecycle-mapping.version>0.12.0</lifecycle-mapping.version>
-    <maven-antrun-extended-plugin.version>1.39</maven-antrun-extended-plugin.version>
+    <maven-antrun-extended-plugin.version>1.41</maven-antrun-extended-plugin.version>
     <maven-antrun-plugin.version>1.3</maven-antrun-plugin.version>
     <maven-assembly-plugin.version>2.2</maven-assembly-plugin.version>
     <maven-changelog-plugin.version>2.2</maven-changelog-plugin.version>
@@ -440,7 +440,7 @@
     <maven-doap-plugin.version>1.1</maven-doap-plugin.version>
     <maven-eclipse-plugin.version>2.8</maven-eclipse-plugin.version>
     <maven-enforcer-plugin.version>1.0</maven-enforcer-plugin.version>
-    <maven-gpg-plugin.version>1.0-alpha-1</maven-gpg-plugin.version>
+    <maven-gpg-plugin.version>1.1</maven-gpg-plugin.version>
     <maven-help-plugin.version>2.1.1</maven-help-plugin.version>
     <maven-hpi-plugin.version>1.63</maven-hpi-plugin.version>
     <maven-idea-plugin.version>2.2</maven-idea-plugin.version>
@@ -449,7 +449,7 @@
     <maven-jar-plugin.version>2.3.1</maven-jar-plugin.version>
     <maven-jetty-plugin.version>6.1.26</maven-jetty-plugin.version>
     <maven-jxr-plugin.version>2.2</maven-jxr-plugin.version>
-    <maven-localizer-plugin.version>1.8</maven-localizer-plugin.version>
+    <maven-localizer-plugin.version>1.12</maven-localizer-plugin.version>
     <maven-pmd-plugin.version>2.5</maven-pmd-plugin.version>
     <maven-project-info-reports-plugin.version>2.3.1</maven-project-info-reports-plugin.version>
     <maven-reactor-plugin.version>1.0</maven-reactor-plugin.version>
