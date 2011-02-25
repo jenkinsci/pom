@@ -97,8 +97,7 @@
   <distributionManagement>
     <repository>
       <uniqueVersion>false</uniqueVersion>
-      <id>java.net-m2-repository</id>
-      <!--url>svn:https://svn.dev.java.net/svn/maven2-repository/trunk/www/repository/</url-->
+      <id>maven.jenkins-ci.org</id>
       <url>http://maven.jenkins-ci.org:8081/content/repositories/releases</url>
     </repository>
     <snapshotRepository>
