@@ -101,10 +101,8 @@
       <url>http://maven.jenkins-ci.org:8081/content/repositories/releases</url>
     </repository>
     <snapshotRepository>
-      <!-- prevent accidental deployment of SNAPSHOTS to repository -->
-      <id>local-repo</id>
-      <!-- M3 says: "'distributionManagement.snapshotRepository.id' must not be 'local', this identifier is reserved." -->
-      <url>file:.</url>
+      <id>maven.jenkins-ci.org</id>
+      <url>http://maven.jenkins-ci.org:8081/content/repositories/snapshots</url>
     </snapshotRepository>
   </distributionManagement>
 
