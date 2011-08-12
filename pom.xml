@@ -438,7 +438,7 @@
     <maven-checkstyle-plugin.version>2.6</maven-checkstyle-plugin.version>
     <maven-clean-plugin.version>2.4.1</maven-clean-plugin.version>
     <maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
-    <maven-dependency-plugin.version>2.1</maven-dependency-plugin.version>
+    <maven-dependency-plugin.version>2.3</maven-dependency-plugin.version>
     <maven-deploy-plugin.version>2.5</maven-deploy-plugin.version>
     <maven-doap-plugin.version>1.1</maven-doap-plugin.version>
     <maven-eclipse-plugin.version>2.8</maven-eclipse-plugin.version>
