@@ -431,7 +431,7 @@
     <jdepend-maven-plugin.version>2.0-beta-2</jdepend-maven-plugin.version>
     <kohsuke-gmaven-plugin.version>1.0-rc-5-patch-2</kohsuke-gmaven-plugin.version>
     <lifecycle-mapping.version>0.12.0</lifecycle-mapping.version>
-    <maven-antrun-extended-plugin.version>1.41</maven-antrun-extended-plugin.version>
+    <maven-antrun-extended-plugin.version>1.42</maven-antrun-extended-plugin.version>
     <maven-antrun-plugin.version>1.3</maven-antrun-plugin.version>
     <maven-assembly-plugin.version>2.2.1</maven-assembly-plugin.version>
     <maven-changelog-plugin.version>2.2</maven-changelog-plugin.version>
