@@ -458,7 +458,7 @@
     <maven-reactor-plugin.version>1.0</maven-reactor-plugin.version>
     <maven-release-plugin.version>2.2.1</maven-release-plugin.version>
     <maven-remote-resources-plugin.version>1.2.1</maven-remote-resources-plugin.version>
-    <maven-resources-plugin.version>2.4.3</maven-resources-plugin.version>
+    <maven-resources-plugin.version>2.5</maven-resources-plugin.version>
     <maven-site-plugin.version>2.1</maven-site-plugin.version>
     <maven-sorcerer-plugin.version>0.8</maven-sorcerer-plugin.version>
     <maven-source-plugin.version>2.1.2</maven-source-plugin.version>
