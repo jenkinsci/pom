@@ -419,7 +419,7 @@
     <animal-sniffer.version>1.2</animal-sniffer.version>
     <apt-maven-plugin.version>1.0-alpha-4</apt-maven-plugin.version>
     <axistools-maven-plugin.version>1.4</axistools-maven-plugin.version>
-    <buildnumber-maven-plugin.version>1.0-beta-4</buildnumber-maven-plugin.version>
+    <buildnumber-maven-plugin.version>1.0</buildnumber-maven-plugin.version>
     <build-helper-maven-plugin.version>1.7</build-helper-maven-plugin.version>
     <cargo-maven2-plugin.version>1.1.2</cargo-maven2-plugin.version>
     <cobertura-maven-plugin.version>2.5.1</cobertura-maven-plugin.version>
