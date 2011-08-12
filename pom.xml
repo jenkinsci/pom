@@ -452,7 +452,7 @@
     <maven-jar-plugin.version>2.3.1</maven-jar-plugin.version>
     <maven-jetty-plugin.version>6.1.26</maven-jetty-plugin.version>
     <maven-jxr-plugin.version>2.3</maven-jxr-plugin.version>
-    <maven-localizer-plugin.version>1.12</maven-localizer-plugin.version>
+    <maven-localizer-plugin.version>1.13</maven-localizer-plugin.version>
     <maven-pmd-plugin.version>2.5</maven-pmd-plugin.version>
     <maven-project-info-reports-plugin.version>2.4</maven-project-info-reports-plugin.version>
     <maven-reactor-plugin.version>1.0</maven-reactor-plugin.version>
