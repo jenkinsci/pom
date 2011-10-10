@@ -5,7 +5,7 @@
 
   <groupId>org.jenkins-ci</groupId>
   <artifactId>jenkins</artifactId>
-  <version>1.25-SNAPSHOT</version>
+  <version>1.25</version>
   <packaging>pom</packaging>
 
   <name>Jenkins</name>
@@ -433,7 +433,7 @@
                         </goals>
                     </pluginExecutionFilter>
                     <action>
-                        <execute/>
+                        <execute />
                     </action>
                 </pluginExecution>
                 <pluginExecution>
@@ -446,7 +446,7 @@
                         </goals>
                     </pluginExecutionFilter>
                     <action>
-                        <ignore></ignore>
+                        <ignore />
                     </action>
                 </pluginExecution>
                 <pluginExecution>
@@ -459,7 +459,7 @@
                         </goals>
                     </pluginExecutionFilter>
                     <action>
-                        <ignore></ignore>
+                        <ignore />
                     </action>
                 </pluginExecution>
                 <pluginExecution>
@@ -475,7 +475,7 @@
                         </goals>
                     </pluginExecutionFilter>
                     <action>
-                        <ignore/>
+                        <ignore />
                     </action>
                 </pluginExecution>
                 <pluginExecution>
@@ -488,7 +488,7 @@
                         </goals>
                     </pluginExecutionFilter>
                     <action>
-                        <ignore></ignore>
+                        <ignore />
                     </action>
                 </pluginExecution>
                 <pluginExecution>
@@ -501,7 +501,7 @@
                         </goals>
                     </pluginExecutionFilter>
                     <action>
-                        <execute/>
+                        <execute />
                     </action>
                 </pluginExecution>
                 <pluginExecution>
@@ -514,7 +514,7 @@
                         </goals>
                     </pluginExecutionFilter>
                     <action>
-                        <execute/>
+                        <execute />
                     </action>
                 </pluginExecution>
                 <pluginExecution>
@@ -527,7 +527,7 @@
                         </goals>
                     </pluginExecutionFilter>
                     <action>
-                        <execute/>
+                        <execute />
                     </action>
                 </pluginExecution>
               </pluginExecutions>
