@@ -551,7 +551,6 @@
     <plugins>
       <plugin>
         <artifactId>maven-enforcer-plugin</artifactId>
-        <version>${maven-enforcer-plugin.version}</version>
         <executions>
           <execution>
             <phase>validate</phase>
@@ -563,7 +562,6 @@
       </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>${maven-compiler-plugin.version}</version>
         <configuration>
           <source>1.5</source>
           <target>1.5</target>
@@ -571,14 +569,12 @@
       </plugin>
       <plugin>
         <artifactId>maven-idea-plugin</artifactId>
-        <version>${maven-idea-plugin.version}</version>
         <configuration>
           <jdkName>JDK1.5</jdkName>
         </configuration>
       </plugin>
       <plugin>
         <artifactId>maven-eclipse-plugin</artifactId>
-        <version>${maven-eclipse-plugin.version}</version>
       </plugin>
     </plugins>
   </build>
@@ -595,9 +591,6 @@
   <properties>
     <!-- By default only check remote repositories once per week -->
     <maven.repository.update.freqency>interval:10080</maven.repository.update.freqency>
-
-    <!-- The version of Maven that we embed in Jenkins -->
-    <maven.version>2.0.4</maven.version>
 
     <!-- Define all plugin versions as properties so individual hierarchies can easily override -->
     <animal-sniffer.version>1.2</animal-sniffer.version>
