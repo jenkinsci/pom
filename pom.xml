@@ -557,6 +557,25 @@
         <artifactId>maven-enforcer-plugin</artifactId>
         <executions>
           <execution>
+            <id>enforce-maven</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <requireMavenVersion>
+                  <version>(,2.1.0),(2.1.0,2.2.0),(2.2.0,)</version>
+                  <message>Maven 2.1.0 and 2.2.0 produce incorrect GPG signatures and checksums respectively.</message>
+                </requireMavenVersion>
+                <requireMavenVersion>
+                  <version>(,3.0),[3.0.4,)</version>
+                  <message>Maven 3.0 through 3.0.3 inclusive do not pass correct settings.xml to Maven Release Plugin.</message>
+                </requireMavenVersion>
+              </rules>
+            </configuration>
+          </execution>
+          <execution>
+            <id>display-info</id>
             <phase>validate</phase>
             <goals>
               <goal>display-info</goal>
@@ -637,7 +656,7 @@
     <maven-pmd-plugin.version>2.5</maven-pmd-plugin.version>
     <maven-project-info-reports-plugin.version>2.4</maven-project-info-reports-plugin.version>
     <maven-reactor-plugin.version>1.0</maven-reactor-plugin.version>
-    <maven-release-plugin.version>2.2.1</maven-release-plugin.version>
+    <maven-release-plugin.version>2.2.2</maven-release-plugin.version>
     <maven-remote-resources-plugin.version>1.2.1</maven-remote-resources-plugin.version>
     <maven-resources-plugin.version>2.5</maven-resources-plugin.version>
     <maven-site-plugin.version>3.0</maven-site-plugin.version>
