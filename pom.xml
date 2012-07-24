@@ -110,15 +110,6 @@
     </snapshotRepository>
   </distributionManagement>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-
   <build>
     <defaultGoal>install</defaultGoal>
     <pluginManagement>
