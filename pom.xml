@@ -259,6 +259,20 @@
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>build-helper-maven-plugin</artifactId>
           <version>${build-helper-maven-plugin.version}</version>
+          <executions>
+                <execution>
+                    <id>add-source</id>
+                    <phase>generate-sources</phase>
+                    <goals>
+                        <goal>add-source</goal>
+                    </goals>
+                    <configuration>
+                        <sources>
+                            <source>${project.build.directory}/generated-sources/localizer</source>
+                        </sources>
+                    </configuration>
+                </execution>
+          </executions>          
         </plugin>
         <plugin>
           <groupId>org.codehaus.cargo</groupId>
@@ -415,10 +429,6 @@
                     <artifactId>build-helper-maven-plugin</artifactId>
                     <versionRange>${build-helper-maven-plugin.version}</versionRange>
                     <goals>
-                      <goal>add-resource</goal>
-                      <goal>add-source</goal>
-                      <goal>add-test-source</goal>
-                      <goal>add-test-resource</goal>
                       <goal>regex-property</goal>
                       <goal>timestamp-property</goal>
                     </goals>
