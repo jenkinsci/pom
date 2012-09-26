@@ -345,11 +345,6 @@
           <version>${maven-hpi-plugin.version}</version>
         </plugin>
         <plugin>
-          <groupId>org.jvnet</groupId>
-          <artifactId>animal-sniffer</artifactId>
-          <version>${animal-sniffer.version}</version>
-        </plugin>
-        <plugin>
           <groupId>org.jvnet.localizer</groupId>
           <artifactId>maven-localizer-plugin</artifactId>
           <version>${maven-localizer-plugin.version}</version>
@@ -626,7 +621,6 @@
     <maven.repository.update.freqency>interval:10080</maven.repository.update.freqency>
 
     <!-- Define all plugin versions as properties so individual hierarchies can easily override -->
-    <animal-sniffer.version>1.2</animal-sniffer.version>
     <apt-maven-plugin.version>1.0-alpha-4</apt-maven-plugin.version>
     <axistools-maven-plugin.version>1.4</axistools-maven-plugin.version>
     <buildnumber-maven-plugin.version>1.0</buildnumber-maven-plugin.version>
