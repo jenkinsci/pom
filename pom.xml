@@ -582,14 +582,14 @@
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <source>1.5</source>
-          <target>1.5</target>
+          <source>1.6</source>
+          <target>1.6</target>
         </configuration>
       </plugin>
       <plugin>
         <artifactId>maven-idea-plugin</artifactId>
         <configuration>
-          <jdkName>JDK1.5</jdkName>
+          <jdkName>JDK1.6</jdkName>
         </configuration>
       </plugin>
       <plugin>
