@@ -13,7 +13,7 @@
   <inceptionYear>2004</inceptionYear>
 
   <prerequisites>
-    <maven>2.2.1</maven>
+    <maven>3.2.2</maven>
   </prerequisites>
 
   <issueManagement>
@@ -560,13 +560,12 @@
             </goals>
             <configuration>
               <rules>
+                <!-- Maven 2.1.0 and 2.2.0 produce incorrect GPG signatures and checksums respectively. -->
+                <!-- Maven 3.0 through 3.0.3 inclusive do not pass correct settings.xml to Maven Release Plugin. -->
+                <!-- Maven 3.2.2 min is required by org.codehaus.cargo:cargo-maven2-plugin:1.6.2 -->
                 <requireMavenVersion>
-                  <version>(,2.1.0),(2.1.0,2.2.0),(2.2.0,)</version>
-                  <message>Build with Maven 2.2.1 or Maven 3.0.4 (or later). Maven 2.1.0 and 2.2.0 produce incorrect GPG signatures and checksums respectively.</message>
-                </requireMavenVersion>
-                <requireMavenVersion>
-                  <version>(,3.0),[3.0.4,)</version>
-                  <message>Build with Maven 3.0.4 or later. Maven 3.0 through 3.0.3 inclusive do not pass correct settings.xml to Maven Release Plugin.</message>
+                  <version>[3.2.2,)</version>
+                  <message>Build with Maven 3.2.2 or later. Maven 3.3.9 recommended.</message>
                 </requireMavenVersion>
               </rules>
             </configuration>
