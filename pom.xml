@@ -620,6 +620,7 @@
                 <requireJavaVersion>
                   <version>[1.${java.level}.0,]</version>
                 </requireJavaVersion>
+                <requireUpperBoundDeps/>
                 <enforceBytecodeVersion>
                   <maxJdkVersion>1.${java.level}</maxJdkVersion>
                   <ignoredScopes>
