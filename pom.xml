@@ -142,6 +142,11 @@
         <version>1.0</version>
         <type>signature</type>
       </dependency>
+      <dependency>
+        <groupId>org.jenkins-ci</groupId>
+        <artifactId>test-annotations</artifactId>
+        <version>1.2</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
   <dependencies>
@@ -150,12 +155,6 @@
       <artifactId>animal-sniffer-annotations</artifactId>
       <scope>provided</scope>
       <optional>true</optional><!-- no need to have this at runtime -->
-    </dependency>
-    <dependency>
-      <groupId>org.jenkins-ci</groupId>
-      <artifactId>test-annotations</artifactId>
-      <version>${test-annotations.version}</version>
-      <scope>test</scope>
     </dependency>
   </dependencies>
 
@@ -611,8 +610,8 @@
             <configuration>
               <rules>
                 <requireMavenVersion>
-                  <version>[3.1.0,)</version>
-                  <message>3.1.0 required at least.</message>
+                  <version>[3.3.9,)</version>
+                  <message>3.3.9 is required at least.</message>
                 </requireMavenVersion>
                 <requirePluginVersions>
                   <banSnapshots>false</banSnapshots>
@@ -630,7 +629,7 @@
                     <!--  findbugs dep managed to provided and optional so is not shipped and missing annotations ok -->
                     <exclude>com.google.code.findbugs:annotations</exclude>
                   </excludes>
-                  <!-- To add exclusions in a Jenkins plugin, use:
+                  <!-- To add exclusions in a child POM, use:
                   <plugin>
                       <artifactId>maven-enforcer-plugin</artifactId>
                       <executions>
@@ -650,21 +649,6 @@
                   </plugin>
                   (or just override java.level) -->
                 </enforceBytecodeVersion>
-                
-                                  
-                <!--  TODO: Disabled. Ideally it should be enforced for ANY library bundled into the Jenkins core,
-                      But right now there no good way to determine whether it is bundled or not.
-                      It should be done via profles somehow
-                <bannedDependencies>
-                  <excludes>
-                    <exclude>org.sonatype.sisu:sisu-guice</exclude>
-                    <exclude>log4j:log4j:*:jar:compile</exclude>
-                    <exclude>log4j:log4j:*:jar:runtime</exclude>
-                    <exclude>commons-logging:commons-logging:*:jar:compile</exclude>
-                    <exclude>commons-logging:commons-logging:*:jar:runtime</exclude>
-                  </excludes>
-                </bannedDependencies>
-                -->
                 <requireReleaseDeps>
                   <message>No Snapshots Allowed For Release Versions</message>
                   <onlyWhenRelease>true</onlyWhenRelease>
@@ -677,7 +661,7 @@
           <dependency>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>extra-enforcer-rules</artifactId>
-            <version>1.0-beta-4</version>
+            <version>1.0-beta-6</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -797,6 +781,5 @@
     <versions-maven-plugin.version>1.3.1</versions-maven-plugin.version>
     <xml-maven-plugin.version>1.0</xml-maven-plugin.version>
     <maven-license-plugin.version>1.7</maven-license-plugin.version>
-    <test-annotations.version>1.2</test-annotations.version>
   </properties>
 </project>
