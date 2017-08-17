@@ -149,14 +149,6 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>org.codehaus.mojo</groupId>
-      <artifactId>animal-sniffer-annotations</artifactId>
-      <scope>provided</scope>
-      <optional>true</optional><!-- no need to have this at runtime -->
-    </dependency>
-  </dependencies>
 
   <build>
     <defaultGoal>install</defaultGoal>
