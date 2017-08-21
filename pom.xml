@@ -111,6 +111,45 @@
     </snapshotRepository>
   </distributionManagement>
 
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>animal-sniffer-annotations</artifactId>
+        <version>1.14</version>
+      </dependency>
+      <dependency>
+        <groupId>org.codehaus.mojo.signature</groupId>
+        <artifactId>java15</artifactId>
+        <version>1.0</version>
+        <type>signature</type>
+      </dependency>
+      <dependency>
+        <groupId>org.codehaus.mojo.signature</groupId>
+        <artifactId>java16</artifactId>
+        <version>1.1</version>
+        <type>signature</type>
+      </dependency>
+      <dependency>
+        <groupId>org.codehaus.mojo.signature</groupId>
+        <artifactId>java17</artifactId>
+        <version>1.0</version>
+        <type>signature</type>
+      </dependency>
+      <dependency>
+        <groupId>org.codehaus.mojo.signature</groupId>
+        <artifactId>java18</artifactId>
+        <version>1.0</version>
+        <type>signature</type>
+      </dependency>
+      <dependency>
+        <groupId>org.jenkins-ci</groupId>
+        <artifactId>test-annotations</artifactId>
+        <version>1.2</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
   <build>
     <defaultGoal>install</defaultGoal>
     <pluginManagement>
@@ -554,32 +593,91 @@
         <artifactId>maven-enforcer-plugin</artifactId>
         <executions>
           <execution>
-            <id>enforce-maven</id>
+            <id>display-info</id>
+            <phase>validate</phase>
             <goals>
+              <goal>display-info</goal>
               <goal>enforce</goal>
             </goals>
             <configuration>
               <rules>
                 <requireMavenVersion>
-                  <version>(,2.1.0),(2.1.0,2.2.0),(2.2.0,)</version>
-                  <message>Build with Maven 2.2.1 or Maven 3.0.4 (or later). Maven 2.1.0 and 2.2.0 produce incorrect GPG signatures and checksums respectively.</message>
+                  <version>[3.3.9,)</version>
+                  <message>3.3.9 is required at least.</message>
                 </requireMavenVersion>
-                <requireMavenVersion>
-                  <version>(,3.0),[3.0.4,)</version>
-                  <message>Build with Maven 3.0.4 or later. Maven 3.0 through 3.0.3 inclusive do not pass correct settings.xml to Maven Release Plugin.</message>
-                </requireMavenVersion>
+                <requirePluginVersions>
+                  <banSnapshots>false</banSnapshots>
+                </requirePluginVersions>
+                <requireJavaVersion>
+                  <version>[1.${java.level}.0,]</version>
+                </requireJavaVersion>
+                <requireUpperBoundDeps/>
+                <enforceBytecodeVersion>
+                  <maxJdkVersion>1.${java.level}</maxJdkVersion>
+                  <ignoredScopes>
+                    <ignoredScope>test</ignoredScope>
+                  </ignoredScopes>
+                  <excludes>
+                    <!--  findbugs dep managed to provided and optional so is not shipped and missing annotations ok -->
+                    <exclude>com.google.code.findbugs:annotations</exclude>
+                  </excludes>
+                  <!-- To add exclusions in a child POM, use:
+                  <plugin>
+                      <artifactId>maven-enforcer-plugin</artifactId>
+                      <executions>
+                          <execution>
+                              <id>display-info</id>
+                              <configuration>
+                                  <rules>
+                                      <enforceBytecodeVersion>
+                                          <excludes combine.children="append">
+                                              <exclude>…</exclude>
+                                          </excludes>
+                                      </enforceBytecodeVersion>
+                                  </rules>
+                              </configuration>
+                          </execution>
+                      </executions>
+                  </plugin>
+                  (or just override java.level) -->
+                </enforceBytecodeVersion>
+                <requireReleaseDeps>
+                  <message>No Snapshots Allowed For Release Versions</message>
+                  <onlyWhenRelease>true</onlyWhenRelease>
+                </requireReleaseDeps>
               </rules>
             </configuration>
           </execution>
+        </executions>
+        <dependencies>
+          <dependency>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>extra-enforcer-rules</artifactId>
+            <version>1.0-beta-6</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+      
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>animal-sniffer-maven-plugin</artifactId>
+        <version>1.15</version>
+        <executions>
           <execution>
-            <id>display-info</id>
-            <phase>validate</phase>
             <goals>
-              <goal>display-info</goal>
+              <goal>check</goal>
             </goals>
+            <id>check</id>
           </execution>
         </executions>
+        <configuration>
+          <signature>
+            <groupId>org.codehaus.mojo.signature</groupId>
+            <artifactId>java1${java.level}</artifactId>
+          </signature>
+        </configuration>
       </plugin>
+      
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
@@ -646,13 +744,13 @@
     <maven-deploy-plugin.version>2.6</maven-deploy-plugin.version>
     <maven-doap-plugin.version>1.1</maven-doap-plugin.version>
     <maven-eclipse-plugin.version>2.8</maven-eclipse-plugin.version>
-    <maven-enforcer-plugin.version>1.0.1</maven-enforcer-plugin.version>
+    <maven-enforcer-plugin.version>3.0.0-M1</maven-enforcer-plugin.version>
     <maven-gpg-plugin.version>1.3</maven-gpg-plugin.version>
     <maven-help-plugin.version>2.1.1</maven-help-plugin.version>
     <maven-hpi-plugin.version>1.115</maven-hpi-plugin.version>
     <maven-idea-plugin.version>2.2</maven-idea-plugin.version>
     <maven-install-plugin.version>2.3.1</maven-install-plugin.version>
-    <maven-javadoc-plugin.version>2.8</maven-javadoc-plugin.version>
+    <maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
     <maven-jar-plugin.version>2.3.1</maven-jar-plugin.version>
     <maven-jetty-plugin.version>6.1.26</maven-jetty-plugin.version>
     <maven-jxr-plugin.version>2.3</maven-jxr-plugin.version>
@@ -667,7 +765,7 @@
     <maven-sorcerer-plugin.version>0.8</maven-sorcerer-plugin.version>
     <maven-source-plugin.version>2.1.2</maven-source-plugin.version>
     <maven-stapler-plugin.version>1.17</maven-stapler-plugin.version>
-    <maven-surefire-plugin.version>2.9</maven-surefire-plugin.version>
+    <maven-surefire-plugin.version>2.20</maven-surefire-plugin.version>
     <maven-surefire-report-plugin.version>2.9</maven-surefire-report-plugin.version>
     <maven-war-plugin.version>2.1.1</maven-war-plugin.version>
     <openjpa-maven-plugin.version>1.2</openjpa-maven-plugin.version>
