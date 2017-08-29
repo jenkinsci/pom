@@ -116,7 +116,7 @@
       <dependency>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>animal-sniffer-annotations</artifactId>
-        <version>1.14</version>
+        <version>${animal-sniffer-plugin.version}</version>
       </dependency>
       <dependency>
         <groupId>org.codehaus.mojo.signature</groupId>
@@ -661,7 +661,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>animal-sniffer-maven-plugin</artifactId>
-        <version>1.15</version>
+        <version>${animal-sniffer-plugin.version}</version>
         <executions>
           <execution>
             <goals>
@@ -719,6 +719,7 @@
     <java.level.test>${java.level}</java.level.test>
 
     <!-- Define all plugin versions as properties so individual hierarchies can easily override -->
+    <animal-sniffer-plugin.version>1.16</animal-sniffer-plugin.version>
     <apt-maven-plugin.version>1.0-alpha-4</apt-maven-plugin.version>
     <axistools-maven-plugin.version>1.4</axistools-maven-plugin.version>
     <buildnumber-maven-plugin.version>1.0</buildnumber-maven-plugin.version>
