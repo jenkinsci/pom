@@ -1,6 +1,13 @@
 Changelog
 =====
 
+### 1.39
+
+Release date: Sep 06, 2017
+
+* Update to animal-sniffer 1.16
+* Update Maven plugins to latest to get upstream fixes to be able to build with JDK9
+
 ### 1.38
 
 Release date: Aug 21, 2017
