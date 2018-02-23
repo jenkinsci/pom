@@ -599,12 +599,11 @@
         <artifactId>findbugs-maven-plugin</artifactId>
         <configuration>
           <failOnError>${findbugs.failOnError}</failOnError>
-          <!--  Do not define excludeFilterFile here as it will force a plugin to provide a file -->
-          <!--  Instead we configure this in a profile -->
           <xmlOutput>true</xmlOutput>
           <findbugsXmlOutput>false</findbugsXmlOutput>
           <effort>${findbugs.effort}</effort>
           <threshold>${findbugs.threshold}</threshold>
+          <!-- Empty by default, child POMs are expected to override if needed -->
           <excludeFilterFile>${findbugs.excludeFilterFile}</excludeFilterFile>
         </configuration>
         <executions>
