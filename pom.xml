@@ -147,6 +147,11 @@
         <artifactId>test-annotations</artifactId>
         <version>1.2</version>
       </dependency>
+      <dependency>
+        <groupId>com.google.code.findbugs</groupId>
+        <artifactId>annotations</artifactId>
+        <version>3.0.1</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
@@ -590,6 +595,29 @@
 
     <plugins>
       <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+        <configuration>
+          <failOnError>${findbugs.failOnError}</failOnError>
+          <xmlOutput>true</xmlOutput>
+          <findbugsXmlOutput>false</findbugsXmlOutput>
+          <effort>${findbugs.effort}</effort>
+          <threshold>${findbugs.threshold}</threshold>
+          <!-- Empty by default, child POMs are expected to override if needed -->
+          <excludeFilterFile>${findbugs.excludeFilterFile}</excludeFilterFile>
+        </configuration>
+        <executions>
+          <execution>
+            <id>findbugs</id>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <phase>verify</phase>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
         <artifactId>maven-enforcer-plugin</artifactId>
         <executions>
           <execution>
@@ -718,6 +746,20 @@
     <!-- Use only if strictly necessary. It may cause problems in your IDE. -->
     <java.level.test>${java.level}</java.level.test>
 
+    <findbugs-maven-plugin.version>3.0.5</findbugs-maven-plugin.version>
+    <!-- Whether the build should fail if findbugs finds any error. -->
+    <!-- It is strongly encouraged to leave it as true. Use false with care only in transient situations. -->
+    <findbugs.failOnError>true</findbugs.failOnError>
+    <!-- Defines a FindBugs threshold. Use "Low" to discover low-priority bugs.
+         Hint: FindBugs considers some real NPE risks in Jenkins as low-priority issues, it is recommended to enable it in plugins.
+      -->
+    <findbugs.threshold>Medium</findbugs.threshold>
+    <!-- Defines a FindBugs effort. Use "Max" to maximize the scan depth -->
+    <findbugs.effort>default</findbugs.effort>
+    <!-- Defines an optional FindBugs excludes file.
+         Generally it is recommended to use @SuppressFBWarnings annotation unless you want to ignore an entire class of issues -->
+    <findbugs.excludeFilterFile></findbugs.excludeFilterFile>
+
     <!-- Define all plugin versions as properties so individual hierarchies can easily override -->
     <animal-sniffer-plugin.version>1.16</animal-sniffer-plugin.version>
     <apt-maven-plugin.version>1.0-alpha-5</apt-maven-plugin.version>
@@ -727,7 +769,6 @@
     <cargo-maven2-plugin.version>1.1.2</cargo-maven2-plugin.version>
     <cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
     <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
-    <findbugs-maven-plugin.version>3.0.5</findbugs-maven-plugin.version>
     <gmaven-plugin.version>1.5-jenkins-3</gmaven-plugin.version>
     <gwt-maven-plugin.version>2.3.0-1</gwt-maven-plugin.version>
     <javancss-maven-plugin.version>2.1</javancss-maven-plugin.version>
