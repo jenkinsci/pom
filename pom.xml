@@ -5,7 +5,7 @@
 
   <groupId>org.jenkins-ci</groupId>
   <artifactId>jenkins</artifactId>
-  <version>1.40-SNAPSHOT</version>
+  <version>1.40</version>
   <packaging>pom</packaging>
 
   <name>Jenkins</name>
@@ -70,7 +70,7 @@
     <connection>scm:git:git://github.com/jenkinsci/pom.git</connection>
     <developerConnection>scm:git:git@github.com:jenkinsci/pom.git</developerConnection>
     <url>https://github.com/jenkinsci/pom</url>
-    <tag>HEAD</tag>
+    <tag>jenkins-1.40</tag>
   </scm>
 
   <repositories>
@@ -758,7 +758,7 @@
     <findbugs.effort>default</findbugs.effort>
     <!-- Defines an optional FindBugs excludes file.
          Generally it is recommended to use @SuppressFBWarnings annotation unless you want to ignore an entire class of issues -->
-    <findbugs.excludeFilterFile></findbugs.excludeFilterFile>
+    <findbugs.excludeFilterFile />
 
     <!-- Define all plugin versions as properties so individual hierarchies can easily override -->
     <animal-sniffer-plugin.version>1.16</animal-sniffer-plugin.version>
