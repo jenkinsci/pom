@@ -1,6 +1,14 @@
 Changelog
 =====
 
+### 1.40
+
+Release date: Feb 28, 2018
+
+* [PR #18](https://github.com/jenkinsci/pom/pull/18) -
+Enable FindBugs by default for downstream components
+  * Previously components used to declare FindBugs on their own
+
 ### 1.39
 
 Release date: Sep 06, 2017
