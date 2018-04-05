@@ -1,6 +1,12 @@
 Changelog
 =====
 
+### 1.41
+
+Release date: Apr 05, 2018
+
+* Add `junit:junit` dependency to the dependency management section
+
 ### 1.40
 
 Release date: Feb 28, 2018
