@@ -872,6 +872,7 @@
     <findbugs.excludeFilterFile />
 
     <incrementals.url>https://repo.jenkins-ci.org/incrementals/</incrementals.url>
+    <scmTag>HEAD</scmTag>
     
     <!-- Define all plugin versions as properties so individual hierarchies can easily override -->
     <animal-sniffer-plugin.version>1.16</animal-sniffer-plugin.version>
