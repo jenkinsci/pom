@@ -829,15 +829,6 @@
                   <goal>jar</goal>
                 </goals>
               </execution>
-              <execution>
-                <id>attach-test-sources</id>
-                <goals>
-                  <goal>test-jar</goal>
-                </goals>
-                <configuration>
-                  <skipSource>${no-test-jar}</skipSource>
-                </configuration>
-              </execution>
             </executions>
           </plugin>
           <plugin>
