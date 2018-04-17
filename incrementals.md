@@ -126,6 +126,15 @@ rm version
 
 and commit and push the resulting `pom.xml` edits.
 
+## Usage in other POMs
+
+From repositories with POMs not inheriting from `org.jenkins-ci.plugins:plugin` you can follow similar steps to use Incrementals.
+If you inherit from `org.jenkins-ci:jenkins`, the same profiles are available;
+otherwise you will need to copy the definitions of the `consume-incrementals`, `might-produce-incrementals`, and `produce-incrementals` profiles from `org.jenkins-ci:jenkins`,
+as well as the `incrementals.url` and `scmTag` properties,
+into your parent POM or directly into your repository POM.
+Some adjustment of `maven-enforcer-plugin` configuration may also be necessary.
+
 ## Offline testing
 
 If you wish to test usage offline, run
