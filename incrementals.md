@@ -82,11 +82,12 @@ Finally, configure [git-changelist-maven-extension](https://github.com/jglick/gi
   <extension>
     <groupId>io.jenkins.tools</groupId>
     <artifactId>git-changelist-maven-extension</artifactId>
-    <version>1.0-alpha-1</version>
+    <version>1.0-alpha-2</version>
   </extension>
 </extensions>
 ```
 
+Commit and push your edits.
 Now if you are authorized to deploy to the Incrementals repository you could run:
 
 ```bash
