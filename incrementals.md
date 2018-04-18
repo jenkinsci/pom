@@ -82,7 +82,7 @@ Finally, configure [git-changelist-maven-extension](https://github.com/jglick/gi
   <extension>
     <groupId>io.jenkins.tools</groupId>
     <artifactId>git-changelist-maven-extension</artifactId>
-    <version>1.0-alpha-2</version>
+    <version>1.0-alpha-3</version>
   </extension>
 </extensions>
 ```
