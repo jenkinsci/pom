@@ -903,7 +903,7 @@
     <maven-enforcer-plugin.version>3.0.0-M1</maven-enforcer-plugin.version>
     <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
     <maven-help-plugin.version>2.2</maven-help-plugin.version>
-    <maven-hpi-plugin.version>2.3-20180417.221120-1</maven-hpi-plugin.version> <!-- TODO https://github.com/jenkinsci/maven-hpi-plugin/pull/79 -->
+    <maven-hpi-plugin.version>2.3</maven-hpi-plugin.version>
     <maven-idea-plugin.version>2.2</maven-idea-plugin.version>
     <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
     <maven-javadoc-plugin.version>3.0.0-M1</maven-javadoc-plugin.version>
