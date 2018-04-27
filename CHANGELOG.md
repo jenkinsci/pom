@@ -1,6 +1,12 @@
 Changelog
 =====
 
+### 1.43
+
+Release date: Apr 27, 2018
+
+* [PR #20](https://github.com/jenkinsci/pom/pull/20): support for JEP-305 “Incrementals”.
+
 ### 1.42
 
 Release date: Apr 27, 2018
