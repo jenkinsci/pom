@@ -1,6 +1,13 @@
 Changelog
 =====
 
+### 1.42
+
+Release date: Apr 27, 2018
+
+* [PR #21](https://github.com/jenkinsci/pom/pull/21): Update `maven-site-plugin` from version `3.6` to `3.7`.
+
+
 ### 1.41
 
 Release date: Apr 05, 2018
@@ -34,5 +41,3 @@ Release date: Aug 21, 2017
 ### Previous releases
 
 * See the commit history
-
-
