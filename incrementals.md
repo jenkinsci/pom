@@ -88,11 +88,9 @@ Finally, configure [git-changelist-maven-extension](https://github.com/jglick/gi
 ```
 
 Commit and push your edits.
-Now if you are authorized to deploy to the Incrementals repository you could run:
-
-```bash
-mvn -Dset.changelist clean deploy
-```
+If this becomes the head of a pull request built on ci.jenkins.io,
+and the build is stable,
+the artifact will be automatically deployed to the Incrementals repository.
 
 To produce equivalent artifacts in your local repository while working offline:
 
