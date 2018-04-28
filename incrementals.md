@@ -73,10 +73,10 @@ Now run
 mkdir -p .mvn
 echo -Pmight-produce-incrementals >> .mvn/maven.config
 echo .flattened-pom.xml >> .gitignore
-git add .mvn .gitignore
 ```
 
 Finally, configure [git-changelist-maven-extension](https://github.com/jglick/git-changelist-maven-extension) in `.mvn/extensions.xml`:
+<!-- TODO HOSTING-549 link to official home -->
 
 ```xml
 <extensions xmlns="http://maven.apache.org/EXTENSIONS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/EXTENSIONS/1.0.0 http://maven.apache.org/xsd/core-extensions-1.0.0.xsd">
@@ -88,7 +88,13 @@ Finally, configure [git-changelist-maven-extension](https://github.com/jglick/gi
 </extensions>
 ```
 
-Commit and push your edits.
+You may now
+
+```bash
+git add .mvn .gitignore pom.xml
+```
+
+and commit and push your edits.
 If this becomes the head of a pull request built on ci.jenkins.io,
 and the build is stable,
 the artifact will be automatically deployed to the Incrementals repository.
@@ -101,6 +107,12 @@ mvn -Dset.changelist -DskipTests clean install
 
 If you do not select the `-Dset.changelist` option, you will create a regular `*-SNAPSHOT` artifact.
 (And that is what you _must_ do if you have any local modifications or untracked files.)
+
+### Production _and_ consumption
+
+A single plugin may both consume Incrementals releases, and produce its own.
+Just make both kinds of edits.
+(`.mvn/maven.config` may have multiple lines.)
 
 ### Running Maven releases
 
