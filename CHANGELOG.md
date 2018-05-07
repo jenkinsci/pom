@@ -1,5 +1,11 @@
 Changelog
 =====
+### 1.44
+
+Release date: May 07, 2018
+
+* [PR #22](https://github.com/jenkinsci/pom/pull/22) Update versions-maven-plugin.version=2.5 so versions:set-property is available
+* Some precisions in the [docs for Incrementals](https://github.com/jenkinsci/pom/blob/master/incrementals.md)
 
 ### 1.43
 
