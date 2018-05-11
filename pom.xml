@@ -764,6 +764,8 @@
             <version>1.0.1</version>
             <configuration>
               <updatePomFile>true</updatePomFile>
+              <outputDirectory>${project.build.directory}</outputDirectory>
+              <flattenedPomFilename>${project.artifactId}-${project.version}.pom</flattenedPomFilename>
             </configuration>
             <executions>
               <execution>
@@ -775,13 +777,6 @@
                 <configuration>
                     <flattenMode>oss</flattenMode>
                 </configuration>
-              </execution>
-              <execution>
-                <id>flatten.clean</id>
-                <phase>clean</phase>
-                <goals>
-                  <goal>clean</goal>
-                </goals>
               </execution>
             </executions>
           </plugin>
@@ -826,7 +821,7 @@
               <execution>
                 <id>attach-sources</id>
                 <goals>
-                  <goal>jar</goal>
+                  <goal>jar-no-fork</goal>
                 </goals>
               </execution>
             </executions>
