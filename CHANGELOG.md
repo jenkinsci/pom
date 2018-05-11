@@ -1,5 +1,13 @@
 Changelog
 =====
+
+### 1.45
+
+Release date: May 11, 201*
+
+* The `incrementals` plugin is now preconfigured, so you can run `mvn incrementals:update` and more.
+* For Incrementals, `flatten-maven-plugin` now places the generated POM inside `target`.
+
 ### 1.44
 
 Release date: May 07, 2018
