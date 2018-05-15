@@ -1,6 +1,12 @@
 Changelog
 =====
 
+### 1.46
+
+Release date: May 15, 2018
+
+* Do not use the `source:jar` mojo during releases; use `source:jar-no-fork`.
+
 ### 1.45
 
 Release date: May 11, 2018
