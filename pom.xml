@@ -843,11 +843,22 @@
               </execution>
             </executions>
           </plugin>
+          <plugin>
+            <artifactId>maven-release-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>support-reincrementalify</id>
+                <configuration>
+                  <completionGoals>incrementals:reincrementalify</completionGoals>
+                </configuration>
+                <goals>
+                  <goal>prepare</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
         </plugins>
       </build>
-      <properties>
-        <completionGoals>incrementals:reincrementalify</completionGoals>
-      </properties>
     </profile>
     <profile>
       <id>produce-incrementals</id>
