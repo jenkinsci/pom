@@ -845,17 +845,9 @@
           </plugin>
           <plugin>
             <artifactId>maven-release-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>support-reincrementalify</id>
-                <configuration>
-                  <completionGoals>incrementals:reincrementalify</completionGoals>
-                </configuration>
-                <goals>
-                  <goal>prepare</goal>
-                </goals>
-              </execution>
-            </executions>
+            <configuration>
+              <completionGoals>incrementals:reincrementalify</completionGoals>
+            </configuration>
           </plugin>
         </plugins>
       </build>
