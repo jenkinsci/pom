@@ -759,7 +759,7 @@
             <plugin>
               <groupId>io.jenkins.tools.incrementals</groupId>
               <artifactId>incrementals-maven-plugin</artifactId>
-              <version>1.0-beta-4</version>
+              <version>${incrementals-maven-plugin.version}</version>
               <configuration>
                 <includes>
                   <include>org.jenkins-ci.*</include>
@@ -959,5 +959,6 @@
     <versions-maven-plugin.version>2.5</versions-maven-plugin.version>
     <xml-maven-plugin.version>1.0</xml-maven-plugin.version>
     <maven-license-plugin.version>1.7</maven-license-plugin.version>
+    <incrementals-maven-plugin.version>1.0-beta-5</incrementals-maven-plugin.version>
   </properties>
 </project>
