@@ -759,7 +759,7 @@
             <plugin>
               <groupId>io.jenkins.tools.incrementals</groupId>
               <artifactId>incrementals-maven-plugin</artifactId>
-              <version>1.0-beta-4</version>
+              <version>${incrementals-plugin.version}</version>
               <configuration>
                 <includes>
                   <include>org.jenkins-ci.*</include>
@@ -811,7 +811,7 @@
                       <message>3.5.4+ required to use Incrementals.</message>
                     </requireMavenVersion>
                     <rule implementation="io.jenkins.tools.incrementals.enforcer.RequireExtensionVersion">
-                      <version>[1.0-beta-4,)</version>
+                      <version>[${incrementals-enforce-minimum.version},)</version>
                     </rule>
                   </rules>
                 </configuration>
@@ -821,7 +821,7 @@
               <dependency>
                 <groupId>io.jenkins.tools.incrementals</groupId>
                 <artifactId>incrementals-enforcer-rules</artifactId>
-                <version>1.0-beta-4</version>
+                <version>${incrementals-plugin.version}</version>
               </dependency>
             </dependencies>
           </plugin>
@@ -959,5 +959,7 @@
     <versions-maven-plugin.version>2.5</versions-maven-plugin.version>
     <xml-maven-plugin.version>1.0</xml-maven-plugin.version>
     <maven-license-plugin.version>1.7</maven-license-plugin.version>
+    <incrementals-plugin.version>1.0-beta-5</incrementals-plugin.version>
+    <incrementals-enforce-minimum.version>1.0-beta-4</incrementals-enforce-minimum.version>
   </properties>
 </project>
