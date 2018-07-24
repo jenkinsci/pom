@@ -1,6 +1,15 @@
 Changelog
 =====
 
+### 1.47
+
+Release date: Jul 24, 2018
+
+* JENKINS-51658: automatically reincrementalify during Maven releases.
+* JENKINS-51869: require a newer `git-changelist-maven-extension` to effectively drop `--first-parent` from the rev count.
+* Support `mvn incrementals:incrementalify`.
+* Remove MNG-6405 workaround by assuming Maven 3.5.4+ for builds when using Incrementals.
+
 ### 1.46
 
 Release date: May 15, 2018
