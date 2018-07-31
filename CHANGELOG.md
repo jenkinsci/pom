@@ -1,6 +1,12 @@
 Changelog
 =====
 
+### 1.48
+
+Release date: Jul 31, 2018
+
+* Ensure the `incrementals` plugin prefix is available.
+
 ### 1.47
 
 Release date: Jul 24, 2018
