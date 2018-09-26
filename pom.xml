@@ -9,7 +9,7 @@
   <packaging>pom</packaging>
 
   <name>Jenkins</name>
-  <url>http://jenkins-ci.org/</url>
+  <url>https://jenkins.io/</url>
   <inceptionYear>2004</inceptionYear>
 
   <issueManagement>
@@ -19,7 +19,7 @@
 
   <ciManagement>
     <system>Jenkins</system>
-    <url>http://ci.jenkins-ci.org</url>
+    <url>https://ci.jenkins.io</url>
   </ciManagement>
 
   <mailingLists>
