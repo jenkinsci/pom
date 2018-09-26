@@ -898,7 +898,7 @@
     <scmTag>HEAD</scmTag>
     
     <!-- Define all plugin versions as properties so individual hierarchies can easily override -->
-    <animal-sniffer-plugin.version>1.16</animal-sniffer-plugin.version>
+    <animal-sniffer-plugin.version>1.17</animal-sniffer-plugin.version>
     <apt-maven-plugin.version>1.0-alpha-5</apt-maven-plugin.version>
     <axistools-maven-plugin.version>1.4</axistools-maven-plugin.version>
     <buildnumber-maven-plugin.version>1.4</buildnumber-maven-plugin.version>
@@ -918,7 +918,7 @@
     <maven-changelog-plugin.version>2.3</maven-changelog-plugin.version>
     <maven-checkstyle-plugin.version>2.17</maven-checkstyle-plugin.version>
     <maven-clean-plugin.version>3.0.0</maven-clean-plugin.version>
-    <maven-compiler-plugin.version>3.6.2</maven-compiler-plugin.version>
+    <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
     <maven-dependency-plugin.version>3.0.1</maven-dependency-plugin.version>
     <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
     <maven-doap-plugin.version>1.2</maven-doap-plugin.version>
@@ -929,7 +929,7 @@
     <maven-hpi-plugin.version>2.3</maven-hpi-plugin.version>
     <maven-idea-plugin.version>2.2</maven-idea-plugin.version>
     <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
-    <maven-javadoc-plugin.version>3.0.0-M1</maven-javadoc-plugin.version>
+    <maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>
     <maven-jar-plugin.version>3.0.2</maven-jar-plugin.version>
     <maven-jetty-plugin.version>6.1.26</maven-jetty-plugin.version>
     <maven-jxr-plugin.version>2.5</maven-jxr-plugin.version>
