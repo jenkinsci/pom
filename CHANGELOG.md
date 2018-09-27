@@ -1,6 +1,17 @@
 Changelog
 =====
 
+### 1.49
+
+Release date: Sep 27, 2018
+
+Updates Maven plugins towards JDK 11 support:
+
+* Maven Compiler 3.8.0: support of multi-release JARs
+* Animal Sniffer 1.17: Support of Java 10+ formats and multi-release JARs
+* Javadoc Plugin 3.0.1: Better support of Java 9+ constructs + stability fixes
+* Dependency Plugin 3.0.2: Java 9+ compatibility
+
 ### 1.48
 
 Release date: Jul 31, 2018
