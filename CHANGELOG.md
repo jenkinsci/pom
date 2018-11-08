@@ -1,6 +1,12 @@
 Changelog
 =====
 
+### 1.50
+
+Release date: 2018-11-08
+
+* Work around Surefire bug to enable tests to be run on some Java versions, such as the current updates for Debian/Ubuntu.
+
 ### 1.49
 
 Release date: Sep 27, 2018
