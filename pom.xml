@@ -263,10 +263,6 @@
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>${maven-surefire-plugin.version}</version>
-          <configuration>
-            <!-- SUREFIRE-1588 workaround; too late for systemProperties: -->
-            <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
-          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-surefire-report-plugin</artifactId>
