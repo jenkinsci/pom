@@ -936,7 +936,7 @@
     <maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>
     <maven-jar-plugin.version>3.1.0</maven-jar-plugin.version>
     <maven-jetty-plugin.version>6.1.26</maven-jetty-plugin.version>
-    <maven-jxr-plugin.version>2.5</maven-jxr-plugin.version>
+    <maven-jxr-plugin.version>3.0.0</maven-jxr-plugin.version>
     <maven-localizer-plugin.version>1.24</maven-localizer-plugin.version>
     <maven-pmd-plugin.version>3.8</maven-pmd-plugin.version>
     <maven-project-info-reports-plugin.version>2.9</maven-project-info-reports-plugin.version>
