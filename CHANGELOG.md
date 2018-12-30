@@ -1,6 +1,14 @@
 Changelog
 =====
 
+### 1.51
+
+Release date: 2018-12-30
+
+* [PR-36](https://github.com/jenkinsci/pom/pull/36): Update to extra-enforcer-rules with JDK 11 support
+* [PR-37](https://github.com/jenkinsci/pom/pull/37): Update various plugins
+* [PR-38](https://github.com/jenkinsci/pom/pull/38): Update to Maven JAR Plugin 3.1.1 to pick up the fix of [MJAR-241](https://issues.apache.org/jira/browse/MJAR-241)
+
 ### 1.50
 
 Release date: 2018-11-08
