@@ -144,9 +144,9 @@
         <version>1.2</version>
       </dependency>
       <dependency>
-        <groupId>com.google.code.findbugs</groupId>
-        <artifactId>annotations</artifactId>
-        <version>3.0.1</version>
+        <groupId>com.github.spotbugs</groupId>
+        <artifactId>spotbugs-annotations</artifactId>
+        <version>3.1.12</version>
       </dependency>
       <dependency>
         <groupId>junit</groupId>
@@ -334,9 +334,9 @@
           <version>${exec-maven-plugin.version}</version>
         </plugin>
         <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>findbugs-maven-plugin</artifactId>
-          <version>${findbugs-maven-plugin.version}</version>
+          <groupId>com.github.spotbugs</groupId>
+          <artifactId>spotbugs-maven-plugin</artifactId>
+          <version>${spotbugs-maven-plugin.version}</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -615,20 +615,20 @@
 
     <plugins>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>findbugs-maven-plugin</artifactId>
+        <groupId>com.github.spotbugs</groupId>
+        <artifactId>spotbugs-maven-plugin</artifactId>
         <configuration>
-          <failOnError>${findbugs.failOnError}</failOnError>
+          <failOnError>${spotbugs.failOnError}</failOnError>
           <xmlOutput>true</xmlOutput>
-          <findbugsXmlOutput>false</findbugsXmlOutput>
-          <effort>${findbugs.effort}</effort>
-          <threshold>${findbugs.threshold}</threshold>
+          <spotbugsXmlOutput>false</spotbugsXmlOutput>
+          <effort>${spotbugs.effort}</effort>
+          <threshold>${spotbugs.threshold}</threshold>
           <!-- Empty by default, child POMs are expected to override if needed -->
-          <excludeFilterFile>${findbugs.excludeFilterFile}</excludeFilterFile>
+          <excludeFilterFile>${spotbugs.excludeFilterFile}</excludeFilterFile>
         </configuration>
         <executions>
           <execution>
-            <id>findbugs</id>
+            <id>spotbugs</id>
             <goals>
               <goal>check</goal>
             </goals>
@@ -669,6 +669,7 @@
                   </ignoredScopes>
                   <excludes>
                     <!--  findbugs dep managed to provided and optional so is not shipped and missing annotations ok -->
+                    <exclude>com.github.spotbugs:spotbugs-annotations</exclude>
                     <exclude>com.google.code.findbugs:annotations</exclude>
                   </excludes>
                   <!-- To add exclusions in a child POM, use:
@@ -887,19 +888,24 @@
     <!-- Use only if strictly necessary. It may cause problems in your IDE. -->
     <java.level.test>${java.level}</java.level.test>
 
-    <findbugs-maven-plugin.version>3.0.5</findbugs-maven-plugin.version>
-    <!-- Whether the build should fail if findbugs finds any error. -->
-    <!-- It is strongly encouraged to leave it as true. Use false with care only in transient situations. -->
+    <spotbugs-maven-plugin.version>3.1.12</spotbugs-maven-plugin.version>
+    <!-- Deprecated FindBugs configuration -->
     <findbugs.failOnError>true</findbugs.failOnError>
-    <!-- Defines a FindBugs threshold. Use "Low" to discover low-priority bugs.
-         Hint: FindBugs considers some real NPE risks in Jenkins as low-priority issues, it is recommended to enable it in plugins.
-      -->
     <findbugs.threshold>Medium</findbugs.threshold>
-    <!-- Defines a FindBugs effort. Use "Max" to maximize the scan depth -->
     <findbugs.effort>default</findbugs.effort>
-    <!-- Defines an optional FindBugs excludes file.
-         Generally it is recommended to use @SuppressFBWarnings annotation unless you want to ignore an entire class of issues -->
     <findbugs.excludeFilterFile />
+    <!-- Whether the build should fail if SpotBugs finds any error. -->
+    <!-- It is strongly encouraged to leave it as true. Use false with care only in transient situations. -->
+    <spotbugs.failOnError>${findbugs.failOnError}</spotbugs.failOnError>
+    <!-- Defines a SpotBugs threshold. Use "Low" to discover low-priority bugs.
+         Hint: SpotBugs considers some real NPE risks in Jenkins as low-priority issues, it is recommended to enable it in plugins.
+      -->
+    <spotbugs.threshold>${findbugs.threshold}</spotbugs.threshold>
+    <!-- Defines a SpotBugs effort. Use "Max" to maximize the scan depth -->
+    <spotbugs.effort>${findbugs.effort}</spotbugs.effort>
+    <!-- Defines an optional SpotBugs excludes file.
+         Generally it is recommended to use @SuppressFBWarnings annotation unless you want to ignore an entire class of issues -->
+    <spotbugs.excludeFilterFile>${findbugs.excludeFilterFile}</spotbugs.excludeFilterFile>
 
     <incrementals.url>https://repo.jenkins-ci.org/incrementals/</incrementals.url>
     <scmTag>HEAD</scmTag>
