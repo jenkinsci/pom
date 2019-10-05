@@ -636,7 +636,52 @@
           </execution>
         </executions>
       </plugin>
-
+      <plugin>
+        <groupId>se.bjurr.violations</groupId>
+        <artifactId>violations-maven-plugin</artifactId>
+        <version>${violations.version}</version>
+        <executions>
+          <execution>
+            <phase>verify</phase>
+            <goals>
+              <goal>violations</goal>
+            </goals>
+            <configuration>
+              <minSeverity>INFO</minSeverity>
+              <detailLevel>VERBOSE</detailLevel>
+              <maxViolations>${violations.maxViolations}</maxViolations>
+              <printViolations>true</printViolations>
+              <diffPrintViolations>false</diffPrintViolations>
+              <violations>
+                <violation>
+                  <parser>FINDBUGS</parser>
+                  <reporter>Spotbugs</reporter>
+                  <folder>.</folder>
+                  <pattern>.*/spotbugsXml\.xml$</pattern>
+                </violation>
+                <violation>
+                  <parser>PMD</parser>
+                  <reporter>Pmd</reporter>
+                  <folder>.</folder>
+                  <pattern>.*/pmd\.xml$</pattern>
+                </violation>
+                <violation>
+                  <parser>CPD</parser>
+                  <reporter>CPD</reporter>
+                  <folder>.</folder>
+                  <pattern>.*/cpd\.xml$</pattern>
+                </violation>
+                <violation>
+                  <parser>CHECKSTYLE</parser>
+                  <reporter>Checkstyle</reporter>
+                  <folder>.</folder>
+                  <pattern>.*/checkstyle-result\.xml$</pattern>
+                </violation>
+              </violations>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <artifactId>maven-enforcer-plugin</artifactId>
         <executions>
@@ -906,6 +951,11 @@
     <!-- Defines an optional SpotBugs excludes file.
          Generally it is recommended to use @SuppressFBWarnings annotation unless you want to ignore an entire class of issues -->
     <spotbugs.excludeFilterFile>${findbugs.excludeFilterFile}</spotbugs.excludeFilterFile>
+
+    <!-- Maximum allowed number of violations found with static code analysis, or else fail the build. -->
+    <!-- You can set the spotbugs.failOnError to false and set violations.maxViolations to 0 to get a more verbose error in the build log. -->
+    <violations.maxViolations>999999</violations.maxViolations>
+    <violations.version>1.26</violations.version>
 
     <incrementals.url>https://repo.jenkins-ci.org/incrementals/</incrementals.url>
     <scmTag>HEAD</scmTag>
