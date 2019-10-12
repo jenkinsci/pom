@@ -955,7 +955,7 @@
     <!-- Maximum allowed number of violations found with static code analysis, or else fail the build. -->
     <!-- You can set the spotbugs.failOnError to false and set violations.maxViolations to 0 to get a more verbose error in the build log. -->
     <violations.maxViolations>999999</violations.maxViolations>
-    <violations.version>1.26</violations.version>
+    <violations.version>1.28</violations.version>
 
     <incrementals.url>https://repo.jenkins-ci.org/incrementals/</incrementals.url>
     <scmTag>HEAD</scmTag>
