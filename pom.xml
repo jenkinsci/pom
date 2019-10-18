@@ -8,8 +8,9 @@
   <version>1.53-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <name>Jenkins</name>
-  <url>https://jenkins.io/</url>
+  <name>Jenkins Parent POM</name>
+  <description>Standard Parent POM for non-plugin Jenkins components: core, libraries, etc.</description>
+  <url>https://github.com/jenkinsci/pom</url>
   <inceptionYear>2004</inceptionYear>
 
   <issueManagement>
