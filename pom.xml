@@ -912,7 +912,7 @@
     <scmTag>HEAD</scmTag>
     
     <!-- Define all plugin versions as properties so individual hierarchies can easily override -->
-    <animal-sniffer-plugin.version>1.17</animal-sniffer-plugin.version>
+    <animal-sniffer-plugin.version>1.18</animal-sniffer-plugin.version>
     <apt-maven-plugin.version>1.0-alpha-5</apt-maven-plugin.version>
     <axistools-maven-plugin.version>1.4</axistools-maven-plugin.version>
     <buildnumber-maven-plugin.version>1.4</buildnumber-maven-plugin.version>
