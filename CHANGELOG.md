@@ -1,6 +1,12 @@
 Changelog
 =====
 
+[![GitHub release](https://img.shields.io/github/release/jenkinsci/pom.svg?label=changelog)](https://github.com/jenkinsci/pom/releases/latest)
+
+### Newer releases
+
+See [GitHub Releases](https://github.com/jenkinsci/pom/releases)
+
 ### 1.51
 
 Release date: 2018-12-30
