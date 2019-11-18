@@ -956,7 +956,7 @@
     <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
     <maven-site-plugin.version>3.8.2</maven-site-plugin.version>
     <maven-sorcerer-plugin.version>0.8</maven-sorcerer-plugin.version>
-    <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
+    <maven-source-plugin.version>3.2.0</maven-source-plugin.version>
     <maven-stapler-plugin.version>1.17</maven-stapler-plugin.version>
     <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
     <maven-surefire-report-plugin.version>2.22.2</maven-surefire-report-plugin.version>
