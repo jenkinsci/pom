@@ -1,4 +1,4 @@
-# Jenkins Parent POM
+# Parent POM for Jenkins core and libraries
 
 [![GitHub release](https://img.shields.io/github/release/jenkinsci/pom.svg?label=changelog)](https://github.com/jenkinsci/pom/releases/latest)
 
