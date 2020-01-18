@@ -55,11 +55,11 @@
       </otherArchives>
     </mailingList>
     <mailingList>
-      <name>Hudson Japanese user discussion list</name>
-      <subscribe>hudson-ja+subscribe@googlegroups.com</subscribe>
-      <unsubscribe>hudson-ja+unsubscribe@googlegroups.com</unsubscribe>
-      <post>hudson-ja@googlegroups.com</post>
-      <archive>http://hudson.361315.n4.nabble.com/Hudson-ja-f361157.html</archive>
+      <name>Jenkins Japanese user discussion list</name>
+      <subscribe>jenkinsci-ja+subscribe@googlegroups.com</subscribe>
+      <unsubscribe>jenkinsci-ja+unsubscribe@googlegroups.com</unsubscribe>
+      <post>jenkinsci-ja@googlegroups.com</post>
+      <archive>http://jenkinsci.361315.n4.nabble.com/Jenkins-ja-f361157.html</archive>
     </mailingList>
   </mailingLists>
 
