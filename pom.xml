@@ -626,6 +626,13 @@
           <threshold>${spotbugs.threshold}</threshold>
           <!-- Empty by default, child POMs are expected to override if needed -->
           <excludeFilterFile>${spotbugs.excludeFilterFile}</excludeFilterFile>
+          <plugins>
+            <plugin>
+              <groupId>com.h3xstream.findsecbugs</groupId>
+              <artifactId>findsecbugs-plugin</artifactId>
+              <version>1.10.1</version>
+            </plugin>
+          </plugins>
         </configuration>
         <executions>
           <execution>
