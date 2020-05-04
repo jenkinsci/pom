@@ -147,7 +147,7 @@
       <dependency>
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-annotations</artifactId>
-        <version>${spotbus-annotations.version}</version>
+        <version>${spotbugs-annotations.version}</version>
       </dependency>
       <dependency>
         <groupId>junit</groupId>
@@ -897,7 +897,7 @@
     <java.level.test>${java.level}</java.level.test>
 
     <spotbugs-maven-plugin.version>4.0.0</spotbugs-maven-plugin.version>
-    <spotbus-annotations.version>4.0.1</spotbus-annotations.version>
+    <spotbugs-annotations.version>4.0.1</spotbugs-annotations.version>
     <!-- Deprecated FindBugs configuration -->
     <findbugs.failOnError>true</findbugs.failOnError>
     <findbugs.threshold>Medium</findbugs.threshold>
