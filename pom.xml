@@ -210,10 +210,6 @@
           <version>${maven-help-plugin.version}</version>
         </plugin>
         <plugin>
-          <artifactId>maven-idea-plugin</artifactId>
-          <version>${maven-idea-plugin.version}</version>
-        </plugin>
-        <plugin>
           <artifactId>maven-install-plugin</artifactId>
           <version>${maven-install-plugin.version}</version>
         </plugin>
@@ -743,12 +739,6 @@
         </configuration>
       </plugin>
       <plugin>
-        <artifactId>maven-idea-plugin</artifactId>
-        <configuration>
-          <jdkName>JDK1.${java.level}</jdkName>
-        </configuration>
-      </plugin>
-      <plugin>
         <artifactId>maven-eclipse-plugin</artifactId>
       </plugin>
     </plugins>
@@ -949,7 +939,6 @@
     <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
     <maven-help-plugin.version>3.2.0</maven-help-plugin.version>
     <maven-hpi-plugin.version>3.14</maven-hpi-plugin.version>
-    <maven-idea-plugin.version>2.2</maven-idea-plugin.version>
     <maven-install-plugin.version>3.0.0-M1</maven-install-plugin.version>
     <maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
     <maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
