@@ -334,7 +334,52 @@
           <groupId>com.github.spotbugs</groupId>
           <artifactId>spotbugs-maven-plugin</artifactId>
           <version>${spotbugs-maven-plugin.version}</version>
+          <configuration>
+            <failOnError>${spotbugs.failOnError}</failOnError>
+            <xmlOutput>true</xmlOutput>
+            <spotbugsXmlOutput>false</spotbugsXmlOutput>
+            <effort>${spotbugs.effort}</effort>
+            <threshold>${spotbugs.threshold}</threshold>
+            <!-- Empty by default, child POMs are expected to override if needed -->
+            <excludeFilterFile>${spotbugs.excludeFilterFile}</excludeFilterFile>
+            <plugins>
+              <plugin>
+                <groupId>com.h3xstream.findsecbugs</groupId>
+                <artifactId>findsecbugs-plugin</artifactId>
+                <version>1.10.1</version>
+              </plugin>
+            </plugins>
+          </configuration>
+          <executions>
+            <execution>
+              <id>spotbugs</id>
+              <goals>
+                <goal>check</goal>
+              </goals>
+              <phase>verify</phase>
+            </execution>
+          </executions>
         </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>animal-sniffer-maven-plugin</artifactId>
+          <version>${animal-sniffer-plugin.version}</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>check</goal>
+              </goals>
+              <id>check</id>
+            </execution>
+          </executions>
+          <configuration>
+            <signature>
+              <groupId>org.codehaus.mojo.signature</groupId>
+              <artifactId>java1${java.level}</artifactId>
+            </signature>
+          </configuration>
+        </plugin>
+
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>gwt-maven-plugin</artifactId>
@@ -612,36 +657,6 @@
 
     <plugins>
       <plugin>
-        <groupId>com.github.spotbugs</groupId>
-        <artifactId>spotbugs-maven-plugin</artifactId>
-        <configuration>
-          <failOnError>${spotbugs.failOnError}</failOnError>
-          <xmlOutput>true</xmlOutput>
-          <spotbugsXmlOutput>false</spotbugsXmlOutput>
-          <effort>${spotbugs.effort}</effort>
-          <threshold>${spotbugs.threshold}</threshold>
-          <!-- Empty by default, child POMs are expected to override if needed -->
-          <excludeFilterFile>${spotbugs.excludeFilterFile}</excludeFilterFile>
-          <plugins>
-            <plugin>
-              <groupId>com.h3xstream.findsecbugs</groupId>
-              <artifactId>findsecbugs-plugin</artifactId>
-              <version>1.10.1</version>
-            </plugin>
-          </plugins>
-        </configuration>
-        <executions>
-          <execution>
-            <id>spotbugs</id>
-            <goals>
-              <goal>check</goal>
-            </goals>
-            <phase>verify</phase>
-          </execution>
-        </executions>
-      </plugin>
-
-      <plugin>
         <artifactId>maven-enforcer-plugin</artifactId>
         <executions>
           <execution>
@@ -710,26 +725,6 @@
       </plugin>
 
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>animal-sniffer-maven-plugin</artifactId>
-        <version>${animal-sniffer-plugin.version}</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>check</goal>
-            </goals>
-            <id>check</id>
-          </execution>
-        </executions>
-        <configuration>
-          <signature>
-            <groupId>org.codehaus.mojo.signature</groupId>
-            <artifactId>java1${java.level}</artifactId>
-          </signature>
-        </configuration>
-      </plugin>
-
-      <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
           <source>1.${java.level}</source>
@@ -745,6 +740,22 @@
   </build>
 
   <profiles>
+    <profile>
+       <id>check-code</id>
+       	<activation><property><name>!check-code.skip</name></property></activation>
+        <build>
+          <plugins>
+            <plugin>
+              <groupId>com.github.spotbugs</groupId>
+              <artifactId>spotbugs-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+              <groupId>org.codehaus.mojo</groupId>
+              <artifactId>animal-sniffer-maven-plugin</artifactId>
+            </plugin>
+          </plugins>
+       </build>
+    </profile>
     <profile>
       <id>always-check-remote-repositories</id>
       <properties>
