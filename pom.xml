@@ -946,7 +946,7 @@
     <maven-jxr-plugin.version>3.0.0</maven-jxr-plugin.version>
     <maven-localizer-plugin.version>1.26</maven-localizer-plugin.version>
     <maven-pmd-plugin.version>3.13.0</maven-pmd-plugin.version>
-    <maven-project-info-reports-plugin.version>3.0.0</maven-project-info-reports-plugin.version>
+    <maven-project-info-reports-plugin.version>3.1.0</maven-project-info-reports-plugin.version>
     <maven-reactor-plugin.version>1.1</maven-reactor-plugin.version>
     <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
     <maven-remote-resources-plugin.version>1.7.0</maven-remote-resources-plugin.version>
