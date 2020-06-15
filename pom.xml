@@ -887,7 +887,7 @@
     <java.level.test>${java.level}</java.level.test>
 
     <spotbugs-maven-plugin.version>4.0.0</spotbugs-maven-plugin.version>
-    <spotbugs-annotations.version>4.0.3</spotbugs-annotations.version>
+    <spotbugs-annotations.version>4.0.4</spotbugs-annotations.version>
     <!-- Deprecated FindBugs configuration -->
     <findbugs.failOnError>true</findbugs.failOnError>
     <findbugs.threshold>Medium</findbugs.threshold>
