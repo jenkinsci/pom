@@ -880,8 +880,8 @@
     <!-- By default only check remote repositories once per week -->
     <maven.repository.update.freqency>interval:10080</maven.repository.update.freqency>
 
-    <!-- Starting from Jenkins 1.625.x Jenkins supports Java 7 only, hence we may want to bump the dependency in components -->
-    <java.level>6</java.level>
+    <!-- Starting from Jenkins 2.54 Jenkins supports Java 8 only -->
+    <java.level>8</java.level>
     <!-- Change this property if you need your tests to be compiled with a different Java level than the plugin. -->
     <!-- Use only if strictly necessary. It may cause problems in your IDE. -->
     <java.level.test>${java.level}</java.level.test>
