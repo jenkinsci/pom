@@ -222,6 +222,7 @@
           <version>${maven-javadoc-plugin.version}</version>
           <configuration>
             <source>${java.level}</source>
+            <locale>en_US</locale>
           </configuration>
         </plugin>
         <plugin>
