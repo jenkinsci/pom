@@ -388,8 +388,8 @@
         </plugin>
         <plugin>
           <groupId>org.jvnet.localizer</groupId>
-          <artifactId>maven-localizer-plugin</artifactId>
-          <version>${maven-localizer-plugin.version}</version>
+          <artifactId>localizer-maven-plugin</artifactId>
+          <version>${localizer-maven-plugin.version}</version>
         </plugin>
         <plugin>
           <groupId>org.jvnet.maven-antrun-extended-plugin</groupId>
@@ -558,8 +558,8 @@
                 <pluginExecution>
                     <pluginExecutionFilter>
                         <groupId>org.jvnet.localizer</groupId>
-                        <artifactId>maven-localizer-plugin</artifactId>
-                        <versionRange>[1.12,)</versionRange>
+                        <artifactId>localizer-maven-plugin</artifactId>
+                        <versionRange>[1.28,)</versionRange>
                         <goals>
                             <goal>generate</goal>
                         </goals>
@@ -963,7 +963,7 @@
     <maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
     <maven-jetty-plugin.version>6.1.26</maven-jetty-plugin.version>
     <maven-jxr-plugin.version>3.0.0</maven-jxr-plugin.version>
-    <maven-localizer-plugin.version>1.26</maven-localizer-plugin.version>
+    <localizer-maven-plugin.version>1.28</localizer-maven-plugin.version>
     <maven-pmd-plugin.version>3.14.0</maven-pmd-plugin.version>
     <maven-project-info-reports-plugin.version>3.1.1</maven-project-info-reports-plugin.version>
     <maven-reactor-plugin.version>1.1</maven-reactor-plugin.version>
