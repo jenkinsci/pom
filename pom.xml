@@ -947,7 +947,7 @@
     <axistools-maven-plugin.version>1.4</axistools-maven-plugin.version>
     <buildnumber-maven-plugin.version>1.4</buildnumber-maven-plugin.version>
     <build-helper-maven-plugin.version>3.2.0</build-helper-maven-plugin.version>
-    <cargo-maven2-plugin.version>1.8.2</cargo-maven2-plugin.version>
+    <cargo-maven2-plugin.version>1.8.3</cargo-maven2-plugin.version>
     <cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
     <exec-maven-plugin.version>3.0.0</exec-maven-plugin.version>
     <gmaven-plugin.version>1.5-jenkins-3</gmaven-plugin.version>
