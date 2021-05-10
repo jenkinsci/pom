@@ -968,7 +968,7 @@
     <maven-doap-plugin.version>1.2</maven-doap-plugin.version>
     <maven-eclipse-plugin.version>2.10</maven-eclipse-plugin.version>
     <maven-enforcer-plugin.version>3.0.0-M3</maven-enforcer-plugin.version>
-    <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
+    <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
     <maven-help-plugin.version>3.2.0</maven-help-plugin.version>
     <maven-hpi-plugin.version>3.17</maven-hpi-plugin.version>
     <maven-install-plugin.version>3.0.0-M1</maven-install-plugin.version>
