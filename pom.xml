@@ -938,6 +938,9 @@
          Generally it is recommended to use @SuppressFBWarnings annotation unless you want to ignore an entire class of issues -->
     <spotbugs.excludeFilterFile>${findbugs.excludeFilterFile}</spotbugs.excludeFilterFile>
 
+    <!-- Generate metadata for reflection on method parameters -->
+    <maven.compiler.parameters>true</maven.compiler.parameters>
+
     <incrementals.url>https://repo.jenkins-ci.org/incrementals/</incrementals.url>
     <scmTag>HEAD</scmTag>
     
