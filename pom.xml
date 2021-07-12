@@ -921,7 +921,7 @@
     <!-- Use only if strictly necessary. It may cause problems in your IDE. -->
     <java.level.test>${java.level}</java.level.test>
 
-    <spotbugs-maven-plugin.version>4.2.3</spotbugs-maven-plugin.version>
+    <spotbugs-maven-plugin.version>4.3.0</spotbugs-maven-plugin.version>
     <spotbugs-annotations.version>4.3.0</spotbugs-annotations.version>
     <!-- Deprecated FindBugs configuration -->
     <findbugs.failOnError>true</findbugs.failOnError>
