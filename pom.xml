@@ -923,23 +923,18 @@
 
     <spotbugs-maven-plugin.version>4.4.1</spotbugs-maven-plugin.version>
     <spotbugs-annotations.version>4.4.1</spotbugs-annotations.version>
-    <!-- Deprecated FindBugs configuration -->
-    <findbugs.failOnError>true</findbugs.failOnError>
-    <findbugs.threshold>Medium</findbugs.threshold>
-    <findbugs.effort>default</findbugs.effort>
-    <findbugs.excludeFilterFile />
     <!-- Whether the build should fail if SpotBugs finds any error. -->
     <!-- It is strongly encouraged to leave it as true. Use false with care only in transient situations. -->
-    <spotbugs.failOnError>${findbugs.failOnError}</spotbugs.failOnError>
+    <spotbugs.failOnError>true</spotbugs.failOnError>
     <!-- Defines a SpotBugs threshold. Use "Low" to discover low-priority bugs.
          Hint: SpotBugs considers some real NPE risks in Jenkins as low-priority issues, it is recommended to enable it in plugins.
       -->
-    <spotbugs.threshold>${findbugs.threshold}</spotbugs.threshold>
+    <spotbugs.threshold>Medium</spotbugs.threshold>
     <!-- Defines a SpotBugs effort. Use "Max" to maximize the scan depth -->
-    <spotbugs.effort>${findbugs.effort}</spotbugs.effort>
+    <spotbugs.effort>default</spotbugs.effort>
     <!-- Defines an optional SpotBugs excludes file.
          Generally it is recommended to use @SuppressFBWarnings annotation unless you want to ignore an entire class of issues -->
-    <spotbugs.excludeFilterFile>${findbugs.excludeFilterFile}</spotbugs.excludeFilterFile>
+    <spotbugs.excludeFilterFile />
 
     <!-- Generate metadata for reflection on method parameters -->
     <maven.compiler.parameters>true</maven.compiler.parameters>
