@@ -5,11 +5,12 @@
 
   <groupId>org.jenkins-ci</groupId>
   <artifactId>jenkins</artifactId>
-  <version>1.53-SNAPSHOT</version>
+  <version>1.68-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <name>Jenkins</name>
-  <url>https://jenkins.io/</url>
+  <name>Jenkins Parent POM</name>
+  <description>Standard Parent POM for non-plugin Jenkins components: core, libraries, etc.</description>
+  <url>https://github.com/jenkinsci/pom</url>
   <inceptionYear>2004</inceptionYear>
 
   <issueManagement>
@@ -54,11 +55,11 @@
       </otherArchives>
     </mailingList>
     <mailingList>
-      <name>Hudson Japanese user discussion list</name>
-      <subscribe>hudson-ja+subscribe@googlegroups.com</subscribe>
-      <unsubscribe>hudson-ja+unsubscribe@googlegroups.com</unsubscribe>
-      <post>hudson-ja@googlegroups.com</post>
-      <archive>http://hudson.361315.n4.nabble.com/Hudson-ja-f361157.html</archive>
+      <name>Jenkins Japanese user discussion list</name>
+      <subscribe>jenkinsci-ja+subscribe@googlegroups.com</subscribe>
+      <unsubscribe>jenkinsci-ja+unsubscribe@googlegroups.com</unsubscribe>
+      <post>jenkinsci-ja@googlegroups.com</post>
+      <archive>http://jenkinsci.361315.n4.nabble.com/Jenkins-ja-f361157.html</archive>
     </mailingList>
   </mailingLists>
 
@@ -141,17 +142,17 @@
       <dependency>
         <groupId>org.jenkins-ci</groupId>
         <artifactId>test-annotations</artifactId>
-        <version>1.2</version>
+        <version>1.3</version>
       </dependency>
       <dependency>
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-annotations</artifactId>
-        <version>3.1.12</version>
+        <version>${spotbugs-annotations.version}</version>
       </dependency>
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
-        <version>4.12</version>
+        <version>4.13.2</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -209,10 +210,6 @@
           <version>${maven-help-plugin.version}</version>
         </plugin>
         <plugin>
-          <artifactId>maven-idea-plugin</artifactId>
-          <version>${maven-idea-plugin.version}</version>
-        </plugin>
-        <plugin>
           <artifactId>maven-install-plugin</artifactId>
           <version>${maven-install-plugin.version}</version>
         </plugin>
@@ -225,6 +222,7 @@
           <version>${maven-javadoc-plugin.version}</version>
           <configuration>
             <source>${java.level}</source>
+            <locale>en_US</locale>
           </configuration>
         </plugin>
         <plugin>
@@ -246,6 +244,9 @@
         <plugin>
           <artifactId>maven-release-plugin</artifactId>
           <version>${maven-release-plugin.version}</version>
+          <configuration>
+            <releaseProfiles>!consume-incrementals</releaseProfiles>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-remote-resources-plugin</artifactId>
@@ -268,7 +269,7 @@
           <version>${maven-surefire-plugin.version}</version>
           <configuration>
             <!-- SUREFIRE-1588 workaround; too late for systemProperties: -->
-            <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+            <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true ${argLine}</argLine>
           </configuration>
         </plugin>
         <plugin>
@@ -395,8 +396,8 @@
         </plugin>
         <plugin>
           <groupId>org.jvnet.localizer</groupId>
-          <artifactId>maven-localizer-plugin</artifactId>
-          <version>${maven-localizer-plugin.version}</version>
+          <artifactId>localizer-maven-plugin</artifactId>
+          <version>${localizer-maven-plugin.version}</version>
         </plugin>
         <plugin>
           <groupId>org.jvnet.maven-antrun-extended-plugin</groupId>
@@ -582,8 +583,8 @@
                 <pluginExecution>
                     <pluginExecutionFilter>
                         <groupId>org.jvnet.localizer</groupId>
-                        <artifactId>maven-localizer-plugin</artifactId>
-                        <versionRange>[1.12,)</versionRange>
+                        <artifactId>localizer-maven-plugin</artifactId>
+                        <versionRange>[1.28,)</versionRange>
                         <goals>
                             <goal>generate</goal>
                         </goals>
@@ -647,6 +648,13 @@
           <threshold>${spotbugs.threshold}</threshold>
           <!-- Empty by default, child POMs are expected to override if needed -->
           <excludeFilterFile>${spotbugs.excludeFilterFile}</excludeFilterFile>
+          <plugins>
+            <plugin>
+              <groupId>com.h3xstream.findsecbugs</groupId>
+              <artifactId>findsecbugs-plugin</artifactId>
+              <version>1.11.0</version>
+            </plugin>
+          </plugins>
         </configuration>
         <executions>
           <execution>
@@ -722,7 +730,7 @@
           <dependency>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>extra-enforcer-rules</artifactId>
-            <version>1.1</version>
+            <version>1.3</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -754,12 +762,6 @@
           <target>1.${java.level}</target>
           <testSource>1.${java.level.test}</testSource>
           <testTarget>1.${java.level.test}</testTarget>
-        </configuration>
-      </plugin>
-      <plugin>
-        <artifactId>maven-idea-plugin</artifactId>
-        <configuration>
-          <jdkName>JDK1.${java.level}</jdkName>
         </configuration>
       </plugin>
       <plugin>
@@ -803,7 +805,7 @@
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>flatten-maven-plugin</artifactId>
-            <version>1.0.1</version>
+            <version>1.2.7</version>
             <configuration>
               <updatePomFile>true</updatePomFile>
               <outputDirectory>${project.build.directory}</outputDirectory>
@@ -898,19 +900,51 @@
         </plugins>
       </build>
     </profile>
+    <profile> <!-- JEP-229 -->
+      <id>block-MRP</id>
+      <activation>
+        <property>
+          <name>changelist.format</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-release-plugin</artifactId>
+            <configuration>
+              <preparationGoals>not-set-up-for-MRP</preparationGoals>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <!--  a profile that disables as much testing as possible testing whilst still producing the artifacts -->
+      <id>quick-build</id>
+      <properties>
+        <!-- we can not use maven.test.skip because we may be producing a test jar -->
+        <skipTests>true</skipTests>
+        <spotbugs.skip>true</spotbugs.skip>
+        <enforcer.skip>true</enforcer.skip>
+        <access-modifier-checker.skip>true</access-modifier-checker.skip>
+        <animal.sniffer.skip>true</animal.sniffer.skip>
+        <invoker.skip>true</invoker.skip>
+      </properties>
+    </profile>
   </profiles>
 
   <properties>
     <!-- By default only check remote repositories once per week -->
     <maven.repository.update.freqency>interval:10080</maven.repository.update.freqency>
 
-    <!-- Starting from Jenkins 1.625.x Jenkins supports Java 7 only, hence we may want to bump the dependency in components -->
-    <java.level>6</java.level>
+    <!-- Starting from Jenkins 2.54 Jenkins supports Java 8 and since 2.164 it also supports java 11 -->
+    <java.level>8</java.level>
     <!-- Change this property if you need your tests to be compiled with a different Java level than the plugin. -->
     <!-- Use only if strictly necessary. It may cause problems in your IDE. -->
     <java.level.test>${java.level}</java.level.test>
 
-    <spotbugs-maven-plugin.version>3.1.12</spotbugs-maven-plugin.version>
+    <spotbugs-maven-plugin.version>4.4.1</spotbugs-maven-plugin.version>
+    <spotbugs-annotations.version>4.4.1</spotbugs-annotations.version>
     <!-- Deprecated FindBugs configuration -->
     <findbugs.failOnError>true</findbugs.failOnError>
     <findbugs.threshold>Medium</findbugs.threshold>
@@ -929,18 +963,21 @@
          Generally it is recommended to use @SuppressFBWarnings annotation unless you want to ignore an entire class of issues -->
     <spotbugs.excludeFilterFile>${findbugs.excludeFilterFile}</spotbugs.excludeFilterFile>
 
+    <!-- Generate metadata for reflection on method parameters -->
+    <maven.compiler.parameters>true</maven.compiler.parameters>
+
     <incrementals.url>https://repo.jenkins-ci.org/incrementals/</incrementals.url>
     <scmTag>HEAD</scmTag>
     
     <!-- Define all plugin versions as properties so individual hierarchies can easily override -->
-    <animal-sniffer-plugin.version>1.17</animal-sniffer-plugin.version>
+    <animal-sniffer-plugin.version>1.20</animal-sniffer-plugin.version>
     <apt-maven-plugin.version>1.0-alpha-5</apt-maven-plugin.version>
     <axistools-maven-plugin.version>1.4</axistools-maven-plugin.version>
     <buildnumber-maven-plugin.version>1.4</buildnumber-maven-plugin.version>
-    <build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
-    <cargo-maven2-plugin.version>1.7.0</cargo-maven2-plugin.version>
+    <build-helper-maven-plugin.version>3.2.0</build-helper-maven-plugin.version>
+    <cargo-maven2-plugin.version>1.8.5</cargo-maven2-plugin.version>
     <cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
-    <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
+    <exec-maven-plugin.version>3.0.0</exec-maven-plugin.version>
     <gmaven-plugin.version>1.5-jenkins-3</gmaven-plugin.version>
     <gmavenplus-plugin.version>1.7.1</gmavenplus-plugin.version>
     <gwt-maven-plugin.version>2.8.2</gwt-maven-plugin.version>
@@ -950,45 +987,45 @@
     <lifecycle-mapping.version>1.0.0</lifecycle-mapping.version>
     <maven-antrun-extended-plugin.version>1.43</maven-antrun-extended-plugin.version>
     <maven-antrun-plugin.version>1.3</maven-antrun-plugin.version>
-    <maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
+    <maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
     <maven-changelog-plugin.version>2.3</maven-changelog-plugin.version>
-    <maven-checkstyle-plugin.version>3.0</maven-checkstyle-plugin.version>
+    <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
     <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
-    <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
-    <maven-dependency-plugin.version>3.1.1</maven-dependency-plugin.version>
+    <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+    <maven-dependency-plugin.version>3.2.0</maven-dependency-plugin.version>
     <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
     <maven-doap-plugin.version>1.2</maven-doap-plugin.version>
     <maven-eclipse-plugin.version>2.10</maven-eclipse-plugin.version>
-    <maven-enforcer-plugin.version>3.0.0-M2</maven-enforcer-plugin.version>
-    <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
-    <maven-help-plugin.version>3.1.0</maven-help-plugin.version>
-    <maven-hpi-plugin.version>2.7</maven-hpi-plugin.version>
-    <maven-idea-plugin.version>2.2</maven-idea-plugin.version>
+    <maven-enforcer-plugin.version>3.0.0-M3</maven-enforcer-plugin.version>
+    <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
+    <maven-help-plugin.version>3.2.0</maven-help-plugin.version>
+    <maven-hpi-plugin.version>3.19</maven-hpi-plugin.version>
     <maven-install-plugin.version>3.0.0-M1</maven-install-plugin.version>
-    <maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>
-    <maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
+    <maven-javadoc-plugin.version>3.3.1</maven-javadoc-plugin.version>
+    <maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
     <maven-jetty-plugin.version>6.1.26</maven-jetty-plugin.version>
-    <maven-jxr-plugin.version>3.0.0</maven-jxr-plugin.version>
-    <maven-localizer-plugin.version>1.24</maven-localizer-plugin.version>
-    <maven-pmd-plugin.version>3.11.0</maven-pmd-plugin.version>
-    <maven-project-info-reports-plugin.version>3.0.0</maven-project-info-reports-plugin.version>
+    <maven-jxr-plugin.version>3.1.1</maven-jxr-plugin.version>
+    <localizer-maven-plugin.version>1.31</localizer-maven-plugin.version>
+    <maven-pmd-plugin.version>3.15.0</maven-pmd-plugin.version>
+    <maven-project-info-reports-plugin.version>3.1.2</maven-project-info-reports-plugin.version>
     <maven-reactor-plugin.version>1.1</maven-reactor-plugin.version>
     <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
-    <maven-remote-resources-plugin.version>1.6.0</maven-remote-resources-plugin.version>
-    <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
-    <maven-site-plugin.version>3.7.1</maven-site-plugin.version>
+    <maven-remote-resources-plugin.version>1.7.0</maven-remote-resources-plugin.version>
+    <maven-resources-plugin.version>3.2.0</maven-resources-plugin.version>
+    <maven-site-plugin.version>3.9.1</maven-site-plugin.version>
     <maven-sorcerer-plugin.version>0.8</maven-sorcerer-plugin.version>
-    <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
+    <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
     <maven-stapler-plugin.version>1.17</maven-stapler-plugin.version>
-    <maven-surefire-plugin.version>2.20</maven-surefire-plugin.version>
-    <maven-surefire-report-plugin.version>2.20</maven-surefire-report-plugin.version>
-    <maven-war-plugin.version>3.2.2</maven-war-plugin.version>
+    <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+    <maven-surefire-report-plugin.version>2.22.2</maven-surefire-report-plugin.version>
+    <maven-war-plugin.version>3.3.2</maven-war-plugin.version>
     <openjpa-maven-plugin.version>1.2</openjpa-maven-plugin.version>
     <taglist-maven-plugin.version>2.4</taglist-maven-plugin.version>
-    <versions-maven-plugin.version>2.7</versions-maven-plugin.version>
+    <versions-maven-plugin.version>2.8.1</versions-maven-plugin.version>
     <xml-maven-plugin.version>1.0.2</xml-maven-plugin.version>
-    <maven-license-plugin.version>1.7</maven-license-plugin.version>
-    <incrementals-plugin.version>1.0-beta-5</incrementals-plugin.version>
+    <maven-license-plugin.version>1.10</maven-license-plugin.version>
+    <incrementals-plugin.version>1.2</incrementals-plugin.version>
     <incrementals-enforce-minimum.version>1.0-beta-4</incrementals-enforce-minimum.version>
+    <argLine />
   </properties>
 </project>
