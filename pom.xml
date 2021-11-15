@@ -921,8 +921,8 @@
     <!-- Use only if strictly necessary. It may cause problems in your IDE. -->
     <java.level.test>${java.level}</java.level.test>
 
-    <spotbugs-maven-plugin.version>4.4.1</spotbugs-maven-plugin.version>
-    <spotbugs-annotations.version>4.4.1</spotbugs-annotations.version>
+    <spotbugs-maven-plugin.version>4.4.2.2</spotbugs-maven-plugin.version>
+    <spotbugs-annotations.version>4.4.2</spotbugs-annotations.version>
     <!-- Whether the build should fail if SpotBugs finds any error. -->
     <!-- It is strongly encouraged to leave it as true. Use false with care only in transient situations. -->
     <spotbugs.failOnError>true</spotbugs.failOnError>
@@ -971,7 +971,7 @@
     <maven-enforcer-plugin.version>3.0.0-M3</maven-enforcer-plugin.version>
     <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
     <maven-help-plugin.version>3.2.0</maven-help-plugin.version>
-    <maven-hpi-plugin.version>3.18</maven-hpi-plugin.version>
+    <maven-hpi-plugin.version>3.20</maven-hpi-plugin.version>
     <maven-install-plugin.version>3.0.0-M1</maven-install-plugin.version>
     <maven-javadoc-plugin.version>3.3.1</maven-javadoc-plugin.version>
     <maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
