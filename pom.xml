@@ -917,7 +917,7 @@
     <!-- Use only if strictly necessary. It may cause problems in your IDE. -->
     <java.level.test>${java.level}</java.level.test>
 
-    <spotbugs-maven-plugin.version>4.4.2.2</spotbugs-maven-plugin.version>
+    <spotbugs-maven-plugin.version>4.5.0.0</spotbugs-maven-plugin.version>
     <spotbugs-annotations.version>4.5.0</spotbugs-annotations.version>
     <!-- Whether the build should fail if SpotBugs finds any error. -->
     <!-- It is strongly encouraged to leave it as true. Use false with care only in transient situations. -->
