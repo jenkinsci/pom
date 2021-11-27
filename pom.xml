@@ -669,7 +669,12 @@
                 <requireJavaVersion>
                   <version>[1.${java.level}.0,]</version>
                 </requireJavaVersion>
-                <requireUpperBoundDeps />
+                <requireUpperBoundDeps>
+                  <excludes>
+                    <exclude>javax.servlet:javax.servlet-api</exclude>
+                    <exclude>javax.servlet:servlet-api</exclude>
+                  </excludes>
+                </requireUpperBoundDeps>
                 <enforceBytecodeVersion>
                   <maxJdkVersion>1.${java.level}</maxJdkVersion>
                   <ignoredScopes>
