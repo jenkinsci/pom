@@ -669,6 +669,14 @@
                 <requireJavaVersion>
                   <version>[1.${java.level}.0,]</version>
                 </requireJavaVersion>
+                <bannedDependencies>
+                  <excludes>
+                    <exclude>javax.servlet:servlet-api</exclude>
+                  </excludes>
+                  <includes>
+                    <include>javax.servlet:servlet-api:[0]</include>
+                  </includes>
+                </bannedDependencies>
                 <requireUpperBoundDeps>
                   <excludes>
                     <exclude>com.google.code.findbugs:jsr305</exclude>
