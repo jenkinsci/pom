@@ -956,7 +956,7 @@
     <animal-sniffer-plugin.version>1.20</animal-sniffer-plugin.version>
     <apt-maven-plugin.version>1.0-alpha-5</apt-maven-plugin.version>
     <axistools-maven-plugin.version>1.4</axistools-maven-plugin.version>
-    <buildnumber-maven-plugin.version>1.4</buildnumber-maven-plugin.version>
+    <buildnumber-maven-plugin.version>3.0.0</buildnumber-maven-plugin.version>
     <build-helper-maven-plugin.version>3.2.0</build-helper-maven-plugin.version>
     <cargo-maven2-plugin.version>1.8.5</cargo-maven2-plugin.version>
     <cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
