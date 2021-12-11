@@ -672,7 +672,7 @@
                 <bannedDependencies>
                   <excludes>
                     <exclude>javax.servlet:servlet-api</exclude>
-                    <exclude>org.apache.logging.log4j:*:(,2.14.1]</exclude> <!-- CVE-2021-44228 -->
+                    <exclude>org.apache.logging.log4j:*:(,2.15.0-rc1]</exclude> <!-- CVE-2021-44228 -->
                   </excludes>
                   <includes>
                     <include>javax.servlet:servlet-api:[0]</include>
