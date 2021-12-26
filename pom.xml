@@ -13,16 +13,6 @@
   <url>https://github.com/jenkinsci/pom</url>
   <inceptionYear>2004</inceptionYear>
 
-  <issueManagement>
-    <system>JIRA</system>
-    <url>http://issues.jenkins-ci.org</url>
-  </issueManagement>
-
-  <ciManagement>
-    <system>Jenkins</system>
-    <url>https://ci.jenkins.io</url>
-  </ciManagement>
-
   <mailingLists>
     <mailingList>
       <name>Jenkins advisories list</name>
@@ -66,35 +56,19 @@
   <scm>
     <connection>scm:git:git://github.com/jenkinsci/pom.git</connection>
     <developerConnection>scm:git:git@github.com:jenkinsci/pom.git</developerConnection>
-    <url>https://github.com/jenkinsci/pom</url>
     <tag>HEAD</tag>
+    <url>https://github.com/jenkinsci/pom</url>
   </scm>
 
-  <repositories>
-    <repository>
-      <id>repo.jenkins-ci.org</id>
-      <url>https://repo.jenkins-ci.org/public/</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
+  <issueManagement>
+    <system>JIRA</system>
+    <url>http://issues.jenkins-ci.org</url>
+  </issueManagement>
 
-  <pluginRepositories>
-    <pluginRepository>
-      <id>repo.jenkins-ci.org</id>
-      <url>https://repo.jenkins-ci.org/public/</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </pluginRepository>
-  </pluginRepositories>
+  <ciManagement>
+    <system>Jenkins</system>
+    <url>https://ci.jenkins.io</url>
+  </ciManagement>
 
   <distributionManagement>
     <repository>
@@ -107,6 +81,96 @@
       <url>https://repo.jenkins-ci.org/snapshots/</url>
     </snapshotRepository>
   </distributionManagement>
+
+  <properties>
+    <!-- By default only check remote repositories once per week -->
+    <maven.repository.update.freqency>interval:10080</maven.repository.update.freqency>
+
+    <!-- Starting from Jenkins 2.54 Jenkins supports Java 8 and since 2.164 it also supports java 11 -->
+    <java.level>8</java.level>
+    <!-- Change this property if you need your tests to be compiled with a different Java level than the plugin. -->
+    <!-- Use only if strictly necessary. It may cause problems in your IDE. -->
+    <java.level.test>${java.level}</java.level.test>
+
+    <spotbugs-maven-plugin.version>4.5.0.0</spotbugs-maven-plugin.version>
+    <spotbugs-annotations.version>4.5.2</spotbugs-annotations.version>
+    <!-- Whether the build should fail if SpotBugs finds any error. -->
+    <!-- It is strongly encouraged to leave it as true. Use false with care only in transient situations. -->
+    <spotbugs.failOnError>true</spotbugs.failOnError>
+    <!-- Defines a SpotBugs threshold. Use "Low" to discover low-priority bugs.
+         Hint: SpotBugs considers some real NPE risks in Jenkins as low-priority issues, it is recommended to enable it in plugins.
+      -->
+    <spotbugs.threshold>Medium</spotbugs.threshold>
+    <!-- Defines a SpotBugs effort. Use "Max" to maximize the scan depth -->
+    <spotbugs.effort>default</spotbugs.effort>
+    <!-- Defines an optional SpotBugs excludes file.
+         Generally it is recommended to use @SuppressFBWarnings annotation unless you want to ignore an entire class of issues -->
+    <spotbugs.excludeFilterFile />
+
+    <!-- Generate metadata for reflection on method parameters -->
+    <maven.compiler.parameters>true</maven.compiler.parameters>
+
+    <incrementals.url>https://repo.jenkins-ci.org/incrementals/</incrementals.url>
+    <scmTag>HEAD</scmTag>
+
+    <!-- Define all plugin versions as properties so individual hierarchies can easily override -->
+    <animal-sniffer-plugin.version>1.20</animal-sniffer-plugin.version>
+    <apt-maven-plugin.version>1.0-alpha-5</apt-maven-plugin.version>
+    <axistools-maven-plugin.version>1.4</axistools-maven-plugin.version>
+    <buildnumber-maven-plugin.version>3.0.0</buildnumber-maven-plugin.version>
+    <build-helper-maven-plugin.version>3.2.0</build-helper-maven-plugin.version>
+    <cargo-maven2-plugin.version>1.8.5</cargo-maven2-plugin.version>
+    <cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
+    <exec-maven-plugin.version>3.0.0</exec-maven-plugin.version>
+    <gmaven-plugin.version>1.5-jenkins-3</gmaven-plugin.version>
+    <gwt-maven-plugin.version>2.9.0</gwt-maven-plugin.version>
+    <javancss-maven-plugin.version>2.1</javancss-maven-plugin.version>
+    <jdepend-maven-plugin.version>2.0</jdepend-maven-plugin.version>
+    <kohsuke-gmaven-plugin.version>1.0-rc-5-patch-2</kohsuke-gmaven-plugin.version>
+    <lifecycle-mapping.version>1.0.0</lifecycle-mapping.version>
+    <maven-antrun-extended-plugin.version>1.43</maven-antrun-extended-plugin.version>
+    <maven-antrun-plugin.version>1.3</maven-antrun-plugin.version>
+    <maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
+    <maven-changelog-plugin.version>2.3</maven-changelog-plugin.version>
+    <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
+    <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
+    <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+    <maven-dependency-plugin.version>3.2.0</maven-dependency-plugin.version>
+    <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
+    <maven-doap-plugin.version>1.2</maven-doap-plugin.version>
+    <maven-eclipse-plugin.version>2.10</maven-eclipse-plugin.version>
+    <maven-enforcer-plugin.version>3.0.0</maven-enforcer-plugin.version>
+    <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
+    <maven-help-plugin.version>3.2.0</maven-help-plugin.version>
+    <maven-hpi-plugin.version>3.22</maven-hpi-plugin.version>
+    <maven-install-plugin.version>3.0.0-M1</maven-install-plugin.version>
+    <maven-javadoc-plugin.version>3.3.1</maven-javadoc-plugin.version>
+    <maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
+    <maven-jetty-plugin.version>6.1.26</maven-jetty-plugin.version>
+    <maven-jxr-plugin.version>3.1.1</maven-jxr-plugin.version>
+    <localizer-maven-plugin.version>1.31</localizer-maven-plugin.version>
+    <maven-pmd-plugin.version>3.15.0</maven-pmd-plugin.version>
+    <maven-project-info-reports-plugin.version>3.1.2</maven-project-info-reports-plugin.version>
+    <maven-reactor-plugin.version>1.1</maven-reactor-plugin.version>
+    <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
+    <maven-remote-resources-plugin.version>1.7.0</maven-remote-resources-plugin.version>
+    <maven-resources-plugin.version>3.2.0</maven-resources-plugin.version>
+    <maven-site-plugin.version>3.9.1</maven-site-plugin.version>
+    <maven-sorcerer-plugin.version>0.8</maven-sorcerer-plugin.version>
+    <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
+    <maven-stapler-plugin.version>1.17</maven-stapler-plugin.version>
+    <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+    <maven-surefire-report-plugin.version>2.22.2</maven-surefire-report-plugin.version>
+    <maven-war-plugin.version>3.3.2</maven-war-plugin.version>
+    <openjpa-maven-plugin.version>1.2</openjpa-maven-plugin.version>
+    <taglist-maven-plugin.version>2.4</taglist-maven-plugin.version>
+    <versions-maven-plugin.version>2.8.1</versions-maven-plugin.version>
+    <xml-maven-plugin.version>1.0.2</xml-maven-plugin.version>
+    <maven-license-plugin.version>1.10</maven-license-plugin.version>
+    <incrementals-plugin.version>1.2</incrementals-plugin.version>
+    <incrementals-enforce-minimum.version>1.0-beta-4</incrementals-enforce-minimum.version>
+    <argLine />
+  </properties>
 
   <dependencyManagement>
     <dependencies>
@@ -156,6 +220,32 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+
+  <repositories>
+    <repository>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>repo.jenkins-ci.org</id>
+      <url>https://repo.jenkins-ci.org/public/</url>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>repo.jenkins-ci.org</id>
+      <url>https://repo.jenkins-ci.org/public/</url>
+    </pluginRepository>
+  </pluginRepositories>
 
   <build>
     <defaultGoal>install</defaultGoal>
@@ -307,10 +397,10 @@
           <executions>
             <execution>
               <id>add-source</id>
-              <phase>generate-sources</phase>
               <goals>
                 <goal>add-source</goal>
               </goals>
+              <phase>generate-sources</phase>
               <configuration>
                 <sources>
                   <source>${project.build.directory}/generated-sources/localizer</source>
@@ -647,14 +737,21 @@
 
       <plugin>
         <artifactId>maven-enforcer-plugin</artifactId>
+        <dependencies>
+          <dependency>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>extra-enforcer-rules</artifactId>
+            <version>1.5.1</version>
+          </dependency>
+        </dependencies>
         <executions>
           <execution>
             <id>display-info</id>
-            <phase>validate</phase>
             <goals>
               <goal>display-info</goal>
               <goal>enforce</goal>
             </goals>
+            <phase>validate</phase>
             <configuration>
               <rules>
                 <requireMavenVersion>
@@ -672,7 +769,8 @@
                 <bannedDependencies>
                   <excludes>
                     <exclude>javax.servlet:servlet-api</exclude>
-                    <exclude>org.apache.logging.log4j:*:(,2.15.0-rc1]</exclude> <!-- CVE-2021-44228 -->
+                    <!-- CVE-2021-44228 -->
+                    <exclude>org.apache.logging.log4j:*:(,2.15.0-rc1]</exclude>
                   </excludes>
                   <includes>
                     <include>javax.servlet:servlet-api:[0]</include>
@@ -719,33 +817,26 @@
             </configuration>
           </execution>
         </executions>
-        <dependencies>
-          <dependency>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>extra-enforcer-rules</artifactId>
-            <version>1.5.1</version>
-          </dependency>
-        </dependencies>
       </plugin>
 
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>animal-sniffer-maven-plugin</artifactId>
         <version>${animal-sniffer-plugin.version}</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>check</goal>
-            </goals>
-            <id>check</id>
-          </execution>
-        </executions>
         <configuration>
           <signature>
             <groupId>org.codehaus.mojo.signature</groupId>
             <artifactId>java1${java.level}</artifactId>
           </signature>
         </configuration>
+        <executions>
+          <execution>
+            <id>check</id>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
 
       <plugin>
@@ -770,24 +861,25 @@
         <maven.repository.update.freqency>always</maven.repository.update.freqency>
       </properties>
     </profile>
-    <profile> <!-- see JEP-305 -->
+    <profile>
+      <!-- see JEP-305 -->
       <id>consume-incrementals</id>
       <repositories>
         <repository>
-          <id>incrementals</id>
-          <url>${incrementals.url}</url>
           <snapshots>
             <enabled>false</enabled>
           </snapshots>
+          <id>incrementals</id>
+          <url>${incrementals.url}</url>
         </repository>
       </repositories>
       <pluginRepositories>
         <pluginRepository>
-          <id>incrementals</id>
-          <url>${incrementals.url}</url>
           <snapshots>
             <enabled>false</enabled>
           </snapshots>
+          <id>incrementals</id>
+          <url>${incrementals.url}</url>
         </pluginRepository>
       </pluginRepositories>
     </profile>
@@ -807,10 +899,10 @@
             <executions>
               <execution>
                 <id>flatten</id>
-                <phase>process-resources</phase>
                 <goals>
                   <goal>flatten</goal>
                 </goals>
+                <phase>process-resources</phase>
                 <configuration>
                   <flattenMode>oss</flattenMode>
                 </configuration>
@@ -819,6 +911,13 @@
           </plugin>
           <plugin>
             <artifactId>maven-enforcer-plugin</artifactId>
+            <dependencies>
+              <dependency>
+                <groupId>io.jenkins.tools.incrementals</groupId>
+                <artifactId>incrementals-enforcer-rules</artifactId>
+                <version>${incrementals-plugin.version}</version>
+              </dependency>
+            </dependencies>
             <executions>
               <execution>
                 <id>display-info</id>
@@ -831,13 +930,6 @@
                 </configuration>
               </execution>
             </executions>
-            <dependencies>
-              <dependency>
-                <groupId>io.jenkins.tools.incrementals</groupId>
-                <artifactId>incrementals-enforcer-rules</artifactId>
-                <version>${incrementals-plugin.version}</version>
-              </dependency>
-            </dependencies>
           </plugin>
           <plugin>
             <artifactId>maven-release-plugin</artifactId>
@@ -889,7 +981,8 @@
         </plugins>
       </build>
     </profile>
-    <profile> <!-- JEP-229 -->
+    <profile>
+      <!-- JEP-229 -->
       <id>block-MRP</id>
       <activation>
         <property>
@@ -921,94 +1014,4 @@
       </properties>
     </profile>
   </profiles>
-
-  <properties>
-    <!-- By default only check remote repositories once per week -->
-    <maven.repository.update.freqency>interval:10080</maven.repository.update.freqency>
-
-    <!-- Starting from Jenkins 2.54 Jenkins supports Java 8 and since 2.164 it also supports java 11 -->
-    <java.level>8</java.level>
-    <!-- Change this property if you need your tests to be compiled with a different Java level than the plugin. -->
-    <!-- Use only if strictly necessary. It may cause problems in your IDE. -->
-    <java.level.test>${java.level}</java.level.test>
-
-    <spotbugs-maven-plugin.version>4.5.0.0</spotbugs-maven-plugin.version>
-    <spotbugs-annotations.version>4.5.2</spotbugs-annotations.version>
-    <!-- Whether the build should fail if SpotBugs finds any error. -->
-    <!-- It is strongly encouraged to leave it as true. Use false with care only in transient situations. -->
-    <spotbugs.failOnError>true</spotbugs.failOnError>
-    <!-- Defines a SpotBugs threshold. Use "Low" to discover low-priority bugs.
-         Hint: SpotBugs considers some real NPE risks in Jenkins as low-priority issues, it is recommended to enable it in plugins.
-      -->
-    <spotbugs.threshold>Medium</spotbugs.threshold>
-    <!-- Defines a SpotBugs effort. Use "Max" to maximize the scan depth -->
-    <spotbugs.effort>default</spotbugs.effort>
-    <!-- Defines an optional SpotBugs excludes file.
-         Generally it is recommended to use @SuppressFBWarnings annotation unless you want to ignore an entire class of issues -->
-    <spotbugs.excludeFilterFile />
-
-    <!-- Generate metadata for reflection on method parameters -->
-    <maven.compiler.parameters>true</maven.compiler.parameters>
-
-    <incrementals.url>https://repo.jenkins-ci.org/incrementals/</incrementals.url>
-    <scmTag>HEAD</scmTag>
-    
-    <!-- Define all plugin versions as properties so individual hierarchies can easily override -->
-    <animal-sniffer-plugin.version>1.20</animal-sniffer-plugin.version>
-    <apt-maven-plugin.version>1.0-alpha-5</apt-maven-plugin.version>
-    <axistools-maven-plugin.version>1.4</axistools-maven-plugin.version>
-    <buildnumber-maven-plugin.version>3.0.0</buildnumber-maven-plugin.version>
-    <build-helper-maven-plugin.version>3.2.0</build-helper-maven-plugin.version>
-    <cargo-maven2-plugin.version>1.8.5</cargo-maven2-plugin.version>
-    <cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
-    <exec-maven-plugin.version>3.0.0</exec-maven-plugin.version>
-    <gmaven-plugin.version>1.5-jenkins-3</gmaven-plugin.version>
-    <gwt-maven-plugin.version>2.9.0</gwt-maven-plugin.version>
-    <javancss-maven-plugin.version>2.1</javancss-maven-plugin.version>
-    <jdepend-maven-plugin.version>2.0</jdepend-maven-plugin.version>
-    <kohsuke-gmaven-plugin.version>1.0-rc-5-patch-2</kohsuke-gmaven-plugin.version>
-    <lifecycle-mapping.version>1.0.0</lifecycle-mapping.version>
-    <maven-antrun-extended-plugin.version>1.43</maven-antrun-extended-plugin.version>
-    <maven-antrun-plugin.version>1.3</maven-antrun-plugin.version>
-    <maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
-    <maven-changelog-plugin.version>2.3</maven-changelog-plugin.version>
-    <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
-    <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
-    <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
-    <maven-dependency-plugin.version>3.2.0</maven-dependency-plugin.version>
-    <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
-    <maven-doap-plugin.version>1.2</maven-doap-plugin.version>
-    <maven-eclipse-plugin.version>2.10</maven-eclipse-plugin.version>
-    <maven-enforcer-plugin.version>3.0.0</maven-enforcer-plugin.version>
-    <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
-    <maven-help-plugin.version>3.2.0</maven-help-plugin.version>
-    <maven-hpi-plugin.version>3.22</maven-hpi-plugin.version>
-    <maven-install-plugin.version>3.0.0-M1</maven-install-plugin.version>
-    <maven-javadoc-plugin.version>3.3.1</maven-javadoc-plugin.version>
-    <maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
-    <maven-jetty-plugin.version>6.1.26</maven-jetty-plugin.version>
-    <maven-jxr-plugin.version>3.1.1</maven-jxr-plugin.version>
-    <localizer-maven-plugin.version>1.31</localizer-maven-plugin.version>
-    <maven-pmd-plugin.version>3.15.0</maven-pmd-plugin.version>
-    <maven-project-info-reports-plugin.version>3.1.2</maven-project-info-reports-plugin.version>
-    <maven-reactor-plugin.version>1.1</maven-reactor-plugin.version>
-    <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
-    <maven-remote-resources-plugin.version>1.7.0</maven-remote-resources-plugin.version>
-    <maven-resources-plugin.version>3.2.0</maven-resources-plugin.version>
-    <maven-site-plugin.version>3.9.1</maven-site-plugin.version>
-    <maven-sorcerer-plugin.version>0.8</maven-sorcerer-plugin.version>
-    <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
-    <maven-stapler-plugin.version>1.17</maven-stapler-plugin.version>
-    <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
-    <maven-surefire-report-plugin.version>2.22.2</maven-surefire-report-plugin.version>
-    <maven-war-plugin.version>3.3.2</maven-war-plugin.version>
-    <openjpa-maven-plugin.version>1.2</openjpa-maven-plugin.version>
-    <taglist-maven-plugin.version>2.4</taglist-maven-plugin.version>
-    <versions-maven-plugin.version>2.8.1</versions-maven-plugin.version>
-    <xml-maven-plugin.version>1.0.2</xml-maven-plugin.version>
-    <maven-license-plugin.version>1.10</maven-license-plugin.version>
-    <incrementals-plugin.version>1.2</incrementals-plugin.version>
-    <incrementals-enforce-minimum.version>1.0-beta-4</incrementals-enforce-minimum.version>
-    <argLine />
-  </properties>
 </project>
