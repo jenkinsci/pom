@@ -88,9 +88,6 @@
 
     <!-- Starting from Jenkins 2.54 Jenkins supports Java 8 and since 2.164 it also supports java 11 -->
     <java.level>8</java.level>
-    <!-- Change this property if you need your tests to be compiled with a different Java level than the plugin. -->
-    <!-- Use only if strictly necessary. It may cause problems in your IDE. -->
-    <java.level.test>${java.level}</java.level.test>
 
     <spotbugs-maven-plugin.version>4.5.3.0</spotbugs-maven-plugin.version>
     <spotbugs-annotations.version>4.5.3</spotbugs-annotations.version>
@@ -844,8 +841,8 @@
         <configuration>
           <source>1.${java.level}</source>
           <target>1.${java.level}</target>
-          <testSource>1.${java.level.test}</testSource>
-          <testTarget>1.${java.level.test}</testTarget>
+          <testSource>1.${java.level}</testSource>
+          <testTarget>1.${java.level}</testTarget>
         </configuration>
       </plugin>
       <plugin>
@@ -855,6 +852,23 @@
   </build>
 
   <profiles>
+    <profile>
+      <id>jdk-above-9</id>
+      <activation>
+        <jdk>[1.9,)</jdk>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+              <release>${java.level}</release>
+              <testRelease>${java.level}</testRelease>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
     <profile>
       <id>always-check-remote-repositories</id>
       <properties>
