@@ -864,6 +864,11 @@
             <configuration>
               <release>${java.level}</release>
               <testRelease>${java.level}</testRelease>
+              <!--
+                Work around MCOMPILER-346.
+                TODO When MCOMPILER-346 is resolved, this should be deleted.
+              -->
+              <forceJavacCompilerUse>true</forceJavacCompilerUse>
             </configuration>
           </plugin>
         </plugins>
