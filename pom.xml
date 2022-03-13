@@ -166,7 +166,6 @@
     <maven-license-plugin.version>1.10</maven-license-plugin.version>
     <incrementals-plugin.version>1.3</incrementals-plugin.version>
     <incrementals-enforce-minimum.version>1.0-beta-4</incrementals-enforce-minimum.version>
-    <argLine />
   </properties>
 
   <dependencyManagement>
@@ -354,10 +353,6 @@
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>${maven-surefire-plugin.version}</version>
-          <configuration>
-            <!-- SUREFIRE-1588 workaround; too late for systemProperties: -->
-            <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true ${argLine}</argLine>
-          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-surefire-report-plugin</artifactId>
