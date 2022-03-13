@@ -87,7 +87,7 @@
     <maven.repository.update.freqency>interval:10080</maven.repository.update.freqency>
 
     <!-- Starting from Jenkins 2.54 Jenkins supports Java 8 and since 2.164 it also supports java 11 -->
-    <java.level>8</java.level>
+    <java.level>11</java.level>
 
     <spotbugs-maven-plugin.version>4.5.3.0</spotbugs-maven-plugin.version>
     <spotbugs-annotations.version>4.6.0</spotbugs-annotations.version>
@@ -111,7 +111,6 @@
     <scmTag>HEAD</scmTag>
 
     <!-- Define all plugin versions as properties so individual hierarchies can easily override -->
-    <animal-sniffer-plugin.version>1.21</animal-sniffer-plugin.version>
     <apt-maven-plugin.version>1.0-alpha-5</apt-maven-plugin.version>
     <axistools-maven-plugin.version>1.4</axistools-maven-plugin.version>
     <buildnumber-maven-plugin.version>3.0.0</buildnumber-maven-plugin.version>
@@ -179,35 +178,6 @@
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
         <version>4.13.2</version>
-      </dependency>
-      <dependency>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>animal-sniffer-annotations</artifactId>
-        <version>${animal-sniffer-plugin.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.codehaus.mojo.signature</groupId>
-        <artifactId>java15</artifactId>
-        <version>1.0</version>
-        <type>signature</type>
-      </dependency>
-      <dependency>
-        <groupId>org.codehaus.mojo.signature</groupId>
-        <artifactId>java16</artifactId>
-        <version>1.1</version>
-        <type>signature</type>
-      </dependency>
-      <dependency>
-        <groupId>org.codehaus.mojo.signature</groupId>
-        <artifactId>java17</artifactId>
-        <version>1.0</version>
-        <type>signature</type>
-      </dependency>
-      <dependency>
-        <groupId>org.codehaus.mojo.signature</groupId>
-        <artifactId>java18</artifactId>
-        <version>1.0</version>
-        <type>signature</type>
       </dependency>
       <dependency>
         <groupId>org.jenkins-ci</groupId>
@@ -756,7 +726,7 @@
                 </requirePluginVersions>
                 -->
                 <requireJavaVersion>
-                  <version>[1.${java.level}.0,]</version>
+                  <version>[${java.level}.0,]</version>
                 </requireJavaVersion>
                 <bannedDependencies>
                   <excludes>
@@ -776,7 +746,7 @@
                   </excludes>
                 </requireUpperBoundDeps>
                 <enforceBytecodeVersion>
-                  <maxJdkVersion>1.${java.level}</maxJdkVersion>
+                  <maxJdkVersion>${java.level}</maxJdkVersion>
                   <ignoredScopes>
                     <ignoredScope>test</ignoredScope>
                   </ignoredScopes>
@@ -812,32 +782,9 @@
       </plugin>
 
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>animal-sniffer-maven-plugin</artifactId>
-        <version>${animal-sniffer-plugin.version}</version>
-        <configuration>
-          <signature>
-            <groupId>org.codehaus.mojo.signature</groupId>
-            <artifactId>java1${java.level}</artifactId>
-          </signature>
-        </configuration>
-        <executions>
-          <execution>
-            <id>check</id>
-            <goals>
-              <goal>check</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
-      <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <source>1.${java.level}</source>
-          <target>1.${java.level}</target>
-          <testSource>1.${java.level}</testSource>
-          <testTarget>1.${java.level}</testTarget>
+          <release>${java.level}</release>
         </configuration>
       </plugin>
       <plugin>
@@ -1023,7 +970,6 @@
         <spotbugs.skip>true</spotbugs.skip>
         <enforcer.skip>true</enforcer.skip>
         <access-modifier-checker.skip>true</access-modifier-checker.skip>
-        <animal.sniffer.skip>true</animal.sniffer.skip>
         <invoker.skip>true</invoker.skip>
         <spotless.check.skip>true</spotless.check.skip>
         <checkstyle.skip>true</checkstyle.skip>
