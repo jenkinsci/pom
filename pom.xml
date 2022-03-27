@@ -54,7 +54,7 @@
   </mailingLists>
 
   <scm>
-    <connection>scm:git:git://github.com/jenkinsci/pom.git</connection>
+    <connection>scm:git:https://github.com/jenkinsci/pom.git</connection>
     <developerConnection>scm:git:git@github.com:jenkinsci/pom.git</developerConnection>
     <tag>HEAD</tag>
     <url>https://github.com/jenkinsci/pom</url>
