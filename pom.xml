@@ -86,6 +86,13 @@
     <!-- By default only check remote repositories once per week -->
     <maven.repository.update.freqency>interval:10080</maven.repository.update.freqency>
 
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.testSource>1.8</maven.compiler.testSource>
+    <maven.compiler.testTarget>1.8</maven.compiler.testTarget>
+    <!-- Generate metadata for reflection on method parameters -->
+    <maven.compiler.parameters>true</maven.compiler.parameters>
+
     <spotbugs-maven-plugin.version>4.6.0.0</spotbugs-maven-plugin.version>
     <spotbugs-annotations.version>4.6.0</spotbugs-annotations.version>
     <!-- Whether the build should fail if SpotBugs finds any error. -->
@@ -100,9 +107,6 @@
     <!-- Defines an optional SpotBugs excludes file.
          Generally it is recommended to use @SuppressFBWarnings annotation unless you want to ignore an entire class of issues -->
     <spotbugs.excludeFilterFile />
-
-    <!-- Generate metadata for reflection on method parameters -->
-    <maven.compiler.parameters>true</maven.compiler.parameters>
 
     <incrementals.url>https://repo.jenkins-ci.org/incrementals/</incrementals.url>
     <scmTag>HEAD</scmTag>
@@ -827,16 +831,6 @@
           </execution>
         </executions>
       </plugin>
-
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-          <testSource>1.8</testSource>
-          <testTarget>1.8</testTarget>
-        </configuration>
-      </plugin>
       <plugin>
         <artifactId>maven-eclipse-plugin</artifactId>
       </plugin>
@@ -849,22 +843,13 @@
       <activation>
         <jdk>[1.9,)</jdk>
       </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <configuration>
-              <release>8</release>
-              <testRelease>8</testRelease>
-              <!--
-                Work around MCOMPILER-346.
-                TODO When MCOMPILER-346 is resolved, this should be deleted.
-              -->
-              <forceJavacCompilerUse>true</forceJavacCompilerUse>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
+      <properties>
+        <maven.compiler.release>8</maven.compiler.release>
+        <maven.compiler.testRelease>8</maven.compiler.testRelease>
+        <animal.sniffer.skip>true</animal.sniffer.skip>
+        <!-- Work around openjdk/jdk11u-dev#919. TODO When we upgrade to OpenJDK 11.0.16, this should be deleted. -->
+        <maven.compiler.forceJavacCompilerUse>true</maven.compiler.forceJavacCompilerUse>
+      </properties>
     </profile>
     <profile>
       <id>always-check-remote-repositories</id>
