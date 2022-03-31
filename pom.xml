@@ -86,9 +86,6 @@
     <!-- By default only check remote repositories once per week -->
     <maven.repository.update.freqency>interval:10080</maven.repository.update.freqency>
 
-    <!-- Starting from Jenkins 2.54 Jenkins supports Java 8 and since 2.164 it also supports java 11 -->
-    <java.level>8</java.level>
-
     <spotbugs-maven-plugin.version>4.6.0.0</spotbugs-maven-plugin.version>
     <spotbugs-annotations.version>4.6.0</spotbugs-annotations.version>
     <!-- Whether the build should fail if SpotBugs finds any error. -->
@@ -307,7 +304,7 @@
           <artifactId>maven-javadoc-plugin</artifactId>
           <version>${maven-javadoc-plugin.version}</version>
           <configuration>
-            <source>${java.level}</source>
+            <source>8</source>
             <locale>en_US</locale>
           </configuration>
         </plugin>
@@ -756,7 +753,7 @@
                 </requirePluginVersions>
                 -->
                 <requireJavaVersion>
-                  <version>[1.${java.level}.0,]</version>
+                  <version>[1.8.0,]</version>
                 </requireJavaVersion>
                 <bannedDependencies>
                   <excludes>
@@ -776,7 +773,7 @@
                   </excludes>
                 </requireUpperBoundDeps>
                 <enforceBytecodeVersion>
-                  <maxJdkVersion>1.${java.level}</maxJdkVersion>
+                  <maxJdkVersion>1.8</maxJdkVersion>
                   <ignoredScopes>
                     <ignoredScope>test</ignoredScope>
                   </ignoredScopes>
@@ -803,7 +800,7 @@
                           </execution>
                       </executions>
                   </plugin>
-                  (or just override java.level) -->
+                  -->
                 </enforceBytecodeVersion>
               </rules>
             </configuration>
@@ -818,7 +815,7 @@
         <configuration>
           <signature>
             <groupId>org.codehaus.mojo.signature</groupId>
-            <artifactId>java1${java.level}</artifactId>
+            <artifactId>java18</artifactId>
           </signature>
         </configuration>
         <executions>
@@ -834,10 +831,10 @@
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <source>1.${java.level}</source>
-          <target>1.${java.level}</target>
-          <testSource>1.${java.level}</testSource>
-          <testTarget>1.${java.level}</testTarget>
+          <source>1.8</source>
+          <target>1.8</target>
+          <testSource>1.8</testSource>
+          <testTarget>1.8</testTarget>
         </configuration>
       </plugin>
       <plugin>
@@ -857,8 +854,8 @@
           <plugin>
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
-              <release>${java.level}</release>
-              <testRelease>${java.level}</testRelease>
+              <release>8</release>
+              <testRelease>8</testRelease>
               <!--
                 Work around MCOMPILER-346.
                 TODO When MCOMPILER-346 is resolved, this should be deleted.
