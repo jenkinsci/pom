@@ -5,7 +5,7 @@
 
   <groupId>org.jenkins-ci</groupId>
   <artifactId>jenkins</artifactId>
-  <version>1.73-SNAPSHOT</version>
+  <version>1.74-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Jenkins Parent POM</name>
@@ -86,8 +86,8 @@
     <!-- By default only check remote repositories once per week -->
     <maven.repository.update.freqency>interval:10080</maven.repository.update.freqency>
 
-    <maven.compiler.release>11</maven.compiler.source>
-    <maven.compiler.testRelease>11</maven.compiler.target>
+    <maven.compiler.release>11</maven.compiler.release>
+    <maven.compiler.testRelease>11</maven.compiler.testRelease>
     <!-- Work around openjdk/jdk11u-dev#919. TODO When we upgrade to OpenJDK 11.0.16, this should be deleted. -->
     <maven.compiler.forceJavacCompilerUse>true</maven.compiler.forceJavacCompilerUse>
     <!-- Generate metadata for reflection on method parameters -->
@@ -130,7 +130,7 @@
     <maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
     <maven-changelog-plugin.version>2.3</maven-changelog-plugin.version>
     <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
-    <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
+    <maven-clean-plugin.version>3.2.0</maven-clean-plugin.version>
     <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
     <maven-dependency-plugin.version>3.3.0</maven-dependency-plugin.version>
     <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
@@ -139,7 +139,7 @@
     <maven-enforcer-plugin.version>3.0.0</maven-enforcer-plugin.version>
     <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
     <maven-help-plugin.version>3.2.0</maven-help-plugin.version>
-    <maven-hpi-plugin.version>3.26</maven-hpi-plugin.version>
+    <maven-hpi-plugin.version>3.27</maven-hpi-plugin.version>
     <maven-install-plugin.version>3.0.0-M1</maven-install-plugin.version>
     <maven-javadoc-plugin.version>3.3.2</maven-javadoc-plugin.version>
     <maven-jar-plugin.version>3.2.2</maven-jar-plugin.version>
@@ -683,7 +683,7 @@
             <plugin>
               <groupId>com.h3xstream.findsecbugs</groupId>
               <artifactId>findsecbugs-plugin</artifactId>
-              <version>1.11.0</version>
+              <version>1.12.0</version>
             </plugin>
           </plugins>
         </configuration>
@@ -727,7 +727,7 @@
                 </requirePluginVersions>
                 -->
                 <requireJavaVersion>
-                  <version>[11.0,]</version>
+                  <version>[11,]</version>
                 </requireJavaVersion>
                 <bannedDependencies>
                   <excludes>
@@ -781,7 +781,6 @@
           </execution>
         </executions>
       </plugin>
-
       <plugin>
         <artifactId>maven-eclipse-plugin</artifactId>
       </plugin>
