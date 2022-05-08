@@ -122,6 +122,7 @@
     <exec-maven-plugin.version>3.0.0</exec-maven-plugin.version>
     <gmaven-plugin.version>1.5-jenkins-3</gmaven-plugin.version>
     <gwt-maven-plugin.version>2.9.0</gwt-maven-plugin.version>
+    <hpi-plugin.version>3.27</hpi-plugin.version>
     <javancss-maven-plugin.version>2.1</javancss-maven-plugin.version>
     <jdepend-maven-plugin.version>2.0</jdepend-maven-plugin.version>
     <kohsuke-gmaven-plugin.version>1.0-rc-5-patch-2</kohsuke-gmaven-plugin.version>
@@ -140,7 +141,6 @@
     <maven-enforcer-plugin.version>3.0.0</maven-enforcer-plugin.version>
     <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
     <maven-help-plugin.version>3.2.0</maven-help-plugin.version>
-    <maven-hpi-plugin.version>3.27</maven-hpi-plugin.version>
     <maven-install-plugin.version>3.0.0-M1</maven-install-plugin.version>
     <maven-javadoc-plugin.version>3.4.0</maven-javadoc-plugin.version>
     <maven-jar-plugin.version>3.2.2</maven-jar-plugin.version>
