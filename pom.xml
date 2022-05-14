@@ -5,7 +5,7 @@
 
   <groupId>org.jenkins-ci</groupId>
   <artifactId>jenkins</artifactId>
-  <version>1.75-SNAPSHOT</version>
+  <version>${revision}${changelist}</version>
   <packaging>pom</packaging>
 
   <name>Jenkins Parent POM</name>
@@ -54,10 +54,10 @@
   </mailingLists>
 
   <scm>
-    <connection>scm:git:https://github.com/jenkinsci/pom.git</connection>
-    <developerConnection>scm:git:git@github.com:jenkinsci/pom.git</developerConnection>
-    <tag>HEAD</tag>
-    <url>https://github.com/jenkinsci/pom</url>
+    <connection>scm:git:https://github.com/${gitHubRepo}.git</connection>
+    <developerConnection>scm:git:git@github.com:${gitHubRepo}.git</developerConnection>
+    <tag>${scmTag}</tag>
+    <url>https://github.com/${gitHubRepo}</url>
   </scm>
 
   <issueManagement>
@@ -83,6 +83,9 @@
   </distributionManagement>
 
   <properties>
+    <revision>1.74</revision>
+    <changelist>-SNAPSHOT</changelist>
+    <gitHubRepo>jenkinsci/pom</gitHubRepo>
     <!-- By default only check remote repositories once per week -->
     <maven.repository.update.freqency>interval:10080</maven.repository.update.freqency>
 
