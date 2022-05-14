@@ -5,7 +5,7 @@
 
   <groupId>org.jenkins-ci</groupId>
   <artifactId>jenkins</artifactId>
-  <version>1.74-SNAPSHOT</version>
+  <version>1.75-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Jenkins Parent POM</name>
@@ -94,7 +94,7 @@
     <maven.compiler.parameters>true</maven.compiler.parameters>
 
     <spotbugs-maven-plugin.version>4.6.0.0</spotbugs-maven-plugin.version>
-    <spotbugs-annotations.version>4.6.0</spotbugs-annotations.version>
+    <spotbugs-annotations.version>4.7.0</spotbugs-annotations.version>
     <!-- Whether the build should fail if SpotBugs finds any error. -->
     <!-- It is strongly encouraged to leave it as true. Use false with care only in transient situations. -->
     <spotbugs.failOnError>true</spotbugs.failOnError>
@@ -107,6 +107,10 @@
     <!-- Defines an optional SpotBugs excludes file.
          Generally it is recommended to use @SuppressFBWarnings annotation unless you want to ignore an entire class of issues -->
     <spotbugs.excludeFilterFile />
+
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <project.build.outputEncoding>UTF-8</project.build.outputEncoding>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <incrementals.url>https://repo.jenkins-ci.org/incrementals/</incrementals.url>
     <scmTag>HEAD</scmTag>
@@ -121,6 +125,7 @@
     <exec-maven-plugin.version>3.0.0</exec-maven-plugin.version>
     <gmaven-plugin.version>1.5-jenkins-3</gmaven-plugin.version>
     <gwt-maven-plugin.version>2.9.0</gwt-maven-plugin.version>
+    <hpi-plugin.version>3.27</hpi-plugin.version>
     <javancss-maven-plugin.version>2.1</javancss-maven-plugin.version>
     <jdepend-maven-plugin.version>2.0</jdepend-maven-plugin.version>
     <kohsuke-gmaven-plugin.version>1.0-rc-5-patch-2</kohsuke-gmaven-plugin.version>
@@ -139,25 +144,24 @@
     <maven-enforcer-plugin.version>3.0.0</maven-enforcer-plugin.version>
     <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
     <maven-help-plugin.version>3.2.0</maven-help-plugin.version>
-    <maven-hpi-plugin.version>3.27</maven-hpi-plugin.version>
     <maven-install-plugin.version>3.0.0-M1</maven-install-plugin.version>
-    <maven-javadoc-plugin.version>3.3.2</maven-javadoc-plugin.version>
+    <maven-javadoc-plugin.version>3.4.0</maven-javadoc-plugin.version>
     <maven-jar-plugin.version>3.2.2</maven-jar-plugin.version>
     <maven-jetty-plugin.version>6.1.26</maven-jetty-plugin.version>
     <maven-jxr-plugin.version>3.2.0</maven-jxr-plugin.version>
     <localizer-maven-plugin.version>1.31</localizer-maven-plugin.version>
     <maven-pmd-plugin.version>3.16.0</maven-pmd-plugin.version>
-    <maven-project-info-reports-plugin.version>3.2.2</maven-project-info-reports-plugin.version>
+    <maven-project-info-reports-plugin.version>3.3.0</maven-project-info-reports-plugin.version>
     <maven-reactor-plugin.version>1.1</maven-reactor-plugin.version>
     <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
     <maven-remote-resources-plugin.version>1.7.0</maven-remote-resources-plugin.version>
     <maven-resources-plugin.version>3.2.0</maven-resources-plugin.version>
-    <maven-site-plugin.version>3.11.0</maven-site-plugin.version>
+    <maven-site-plugin.version>3.12.0</maven-site-plugin.version>
     <maven-sorcerer-plugin.version>0.8</maven-sorcerer-plugin.version>
     <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
     <maven-stapler-plugin.version>1.17</maven-stapler-plugin.version>
-    <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
-    <maven-surefire-report-plugin.version>2.22.2</maven-surefire-report-plugin.version>
+    <maven-surefire-plugin.version>3.0.0-M6</maven-surefire-plugin.version>
+    <maven-surefire-report-plugin.version>3.0.0-M6</maven-surefire-report-plugin.version>
     <maven-war-plugin.version>3.3.2</maven-war-plugin.version>
     <openjpa-maven-plugin.version>1.2</openjpa-maven-plugin.version>
     <taglist-maven-plugin.version>3.0.0</taglist-maven-plugin.version>
