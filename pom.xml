@@ -470,7 +470,7 @@
         <plugin>
           <groupId>org.jenkins-ci.tools</groupId>
           <artifactId>maven-hpi-plugin</artifactId>
-          <version>${maven-hpi-plugin.version}</version>
+          <version>${hpi-plugin.version}</version>
         </plugin>
         <plugin>
           <groupId>org.jvnet.localizer</groupId>
