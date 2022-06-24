@@ -282,7 +282,6 @@
           <artifactId>maven-javadoc-plugin</artifactId>
           <version>${maven-javadoc-plugin.version}</version>
           <configuration>
-            <source>8</source>
             <locale>en_US</locale>
           </configuration>
         </plugin>
