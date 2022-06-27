@@ -282,6 +282,7 @@
           <artifactId>maven-javadoc-plugin</artifactId>
           <version>${maven-javadoc-plugin.version}</version>
           <configuration>
+            <doclint>all,-missing</doclint>
             <locale>en_US</locale>
           </configuration>
         </plugin>
