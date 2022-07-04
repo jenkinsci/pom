@@ -793,6 +793,17 @@
 
   <profiles>
     <profile>
+      <id>all-tests</id>
+      <activation>
+        <property>
+          <name>!test</name>
+        </property>
+      </activation>
+      <properties>
+        <maven.test.redirectTestOutputToFile>true</maven.test.redirectTestOutputToFile>
+      </properties>
+    </profile>
+    <profile>
       <id>always-check-remote-repositories</id>
       <properties>
         <maven.repository.update.freqency>always</maven.repository.update.freqency>
