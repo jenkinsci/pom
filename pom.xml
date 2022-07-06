@@ -804,6 +804,17 @@
       </properties>
     </profile>
     <profile>
+      <id>specific-test</id>
+      <activation>
+        <property>
+          <name>test</name>
+        </property>
+      </activation>
+      <properties>
+        <surefire.failIfNoSpecifiedTests>false</surefire.failIfNoSpecifiedTests>
+      </properties>
+    </profile>
+    <profile>
       <id>always-check-remote-repositories</id>
       <properties>
         <maven.repository.update.freqency>always</maven.repository.update.freqency>
