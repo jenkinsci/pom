@@ -122,7 +122,7 @@
     <build-helper-maven-plugin.version>3.3.0</build-helper-maven-plugin.version>
     <cargo-maven2-plugin.version>1.8.5</cargo-maven2-plugin.version>
     <cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
-    <exec-maven-plugin.version>3.0.0</exec-maven-plugin.version>
+    <exec-maven-plugin.version>3.1.0</exec-maven-plugin.version>
     <gmaven-plugin.version>1.5-jenkins-3</gmaven-plugin.version>
     <gwt-maven-plugin.version>2.10.0</gwt-maven-plugin.version>
     <hpi-plugin.version>3.28</hpi-plugin.version>
