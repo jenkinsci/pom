@@ -971,6 +971,7 @@
         <invoker.skip>true</invoker.skip>
         <spotless.check.skip>true</spotless.check.skip>
         <checkstyle.skip>true</checkstyle.skip>
+        <yarn.lint.skip>true</yarn.lint.skip>
       </properties>
     </profile>
   </profiles>
