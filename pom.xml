@@ -153,7 +153,7 @@
     <maven-project-info-reports-plugin.version>3.4.0</maven-project-info-reports-plugin.version>
     <maven-reactor-plugin.version>1.1</maven-reactor-plugin.version>
     <maven-release-plugin.version>3.0.0-M6</maven-release-plugin.version>
-    <maven-remote-resources-plugin.version>1.7.0</maven-remote-resources-plugin.version>
+    <maven-remote-resources-plugin.version>3.0.0</maven-remote-resources-plugin.version>
     <maven-resources-plugin.version>3.2.0</maven-resources-plugin.version>
     <maven-site-plugin.version>3.12.0</maven-site-plugin.version>
     <maven-sorcerer-plugin.version>0.8</maven-sorcerer-plugin.version>
