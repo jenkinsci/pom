@@ -125,7 +125,7 @@
     <exec-maven-plugin.version>3.1.0</exec-maven-plugin.version>
     <gmaven-plugin.version>1.5-jenkins-3</gmaven-plugin.version>
     <gwt-maven-plugin.version>2.10.0</gwt-maven-plugin.version>
-    <hpi-plugin.version>3.29</hpi-plugin.version>
+    <hpi-plugin.version>3.30</hpi-plugin.version>
     <javancss-maven-plugin.version>2.1</javancss-maven-plugin.version>
     <jdepend-maven-plugin.version>2.0</jdepend-maven-plugin.version>
     <kohsuke-gmaven-plugin.version>1.0-rc-5-patch-2</kohsuke-gmaven-plugin.version>
