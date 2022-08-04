@@ -730,7 +730,7 @@
                 </requirePluginVersions>
                 -->
                 <requireJavaVersion>
-                  <version>[{javaTarget},]</version>
+                  <version>[${javaTarget},]</version>
                 </requireJavaVersion>
                 <bannedDependencies>
                   <excludes>
