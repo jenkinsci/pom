@@ -86,8 +86,9 @@
     <!-- By default only check remote repositories once per week -->
     <maven.repository.update.freqency>interval:10080</maven.repository.update.freqency>
 
-    <maven.compiler.release>11</maven.compiler.release>
-    <maven.compiler.testRelease>11</maven.compiler.testRelease>
+    <javaTarget>11</javaTarget>
+    <maven.compiler.release>${javaTarget}</maven.compiler.release>
+    <maven.compiler.testRelease>${javaTarget}</maven.compiler.testRelease>
     <!-- Work around openjdk/jdk11u-dev#919. TODO When we upgrade to OpenJDK 11.0.16, this should be deleted. -->
     <maven.compiler.forceJavacCompilerUse>true</maven.compiler.forceJavacCompilerUse>
     <!-- Generate metadata for reflection on method parameters -->
@@ -729,7 +730,7 @@
                 </requirePluginVersions>
                 -->
                 <requireJavaVersion>
-                  <version>[11,]</version>
+                  <version>[{javaTarget},]</version>
                 </requireJavaVersion>
                 <bannedDependencies>
                   <excludes>
@@ -749,7 +750,7 @@
                   </excludes>
                 </requireUpperBoundDeps>
                 <enforceBytecodeVersion>
-                  <maxJdkVersion>11</maxJdkVersion>
+                  <maxJdkVersion>${javaTarget}</maxJdkVersion>
                   <ignoredScopes>
                     <ignoredScope>test</ignoredScope>
                   </ignoredScopes>
