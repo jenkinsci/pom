@@ -24,32 +24,18 @@
       <subscribe>jenkinsci-dev+subscribe@googlegroups.com</subscribe>
       <unsubscribe>jenkinsci-dev+unsubscribe@googlegroups.com</unsubscribe>
       <post>jenkinsci-dev@googlegroups.com</post>
-      <archive>http://jenkins.361315.n4.nabble.com/Jenkins-dev-f387835.html</archive>
-      <otherArchives>
-        <otherArchive>http://hudson.361315.n4.nabble.com/Hudson-dev-f387835.html</otherArchive>
-      </otherArchives>
-    </mailingList>
-    <mailingList>
-      <name>Jenkins issues list</name>
-      <subscribe>jenkinsci-issues+subscribe@googlegroups.com</subscribe>
-      <unsubscribe>jenkinsci-issues+unsubscribe@googlegroups.com</unsubscribe>
     </mailingList>
     <mailingList>
       <name>Jenkins user discussion list</name>
       <subscribe>jenkinsci-users+subscribe@googlegroups.com</subscribe>
       <unsubscribe>jenkinsci-users+unsubscribe@googlegroups.com</unsubscribe>
       <post>jenkinsci-users@googlegroups.com</post>
-      <archive>http://jenkins.361315.n4.nabble.com/Jenkins-users-f361316.html</archive>
-      <otherArchives>
-        <otherArchive>http://hudson.361315.n4.nabble.com/Hudson-users-f361316.html</otherArchive>
-      </otherArchives>
     </mailingList>
     <mailingList>
       <name>Jenkins Japanese user discussion list</name>
       <subscribe>jenkinsci-ja+subscribe@googlegroups.com</subscribe>
       <unsubscribe>jenkinsci-ja+unsubscribe@googlegroups.com</unsubscribe>
       <post>jenkinsci-ja@googlegroups.com</post>
-      <archive>http://jenkinsci.361315.n4.nabble.com/Jenkins-ja-f361157.html</archive>
     </mailingList>
   </mailingLists>
 
@@ -62,7 +48,7 @@
 
   <issueManagement>
     <system>JIRA</system>
-    <url>http://issues.jenkins-ci.org</url>
+    <url>https://issues.jenkins.io</url>
   </issueManagement>
 
   <ciManagement>
