@@ -18,24 +18,28 @@
       <name>Jenkins advisories list</name>
       <subscribe>jenkinsci-advisories+subscribe@googlegroups.com</subscribe>
       <unsubscribe>jenkinsci-advisories+unsubscribe@googlegroups.com</unsubscribe>
+      <archive>https://groups.google.com/g/jenkinsci-advisories</archive>
     </mailingList>
     <mailingList>
       <name>Jenkins developer discussion list</name>
       <subscribe>jenkinsci-dev+subscribe@googlegroups.com</subscribe>
       <unsubscribe>jenkinsci-dev+unsubscribe@googlegroups.com</unsubscribe>
       <post>jenkinsci-dev@googlegroups.com</post>
+      <archive>https://groups.google.com/g/jenkinsci-dev</archive>
     </mailingList>
     <mailingList>
       <name>Jenkins user discussion list</name>
       <subscribe>jenkinsci-users+subscribe@googlegroups.com</subscribe>
       <unsubscribe>jenkinsci-users+unsubscribe@googlegroups.com</unsubscribe>
       <post>jenkinsci-users@googlegroups.com</post>
+      <archive>https://groups.google.com/g/jenkinsci-users</archive>
     </mailingList>
     <mailingList>
       <name>Jenkins Japanese user discussion list</name>
       <subscribe>jenkinsci-ja+subscribe@googlegroups.com</subscribe>
       <unsubscribe>jenkinsci-ja+unsubscribe@googlegroups.com</unsubscribe>
       <post>jenkinsci-ja@googlegroups.com</post>
+      <archive>https://groups.google.com/g/jenkinsci-ja</archive>
     </mailingList>
   </mailingLists>
 
