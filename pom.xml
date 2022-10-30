@@ -608,11 +608,11 @@
                 </pluginExecution>
                 <pluginExecution>
                   <pluginExecutionFilter>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>antlr-maven-plugin</artifactId>
-                    <versionRange>[2.1,)</versionRange>
+                    <groupId>org.antlr</groupId>
+                    <artifactId>antlr4-maven-plugin</artifactId>
+                    <versionRange>[4.11,)</versionRange>
                     <goals>
-                      <goal>generate</goal>
+                      <goal>antlr4</goal>
                     </goals>
                   </pluginExecutionFilter>
                   <action>
