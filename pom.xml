@@ -85,18 +85,6 @@
 
     <spotbugs-maven-plugin.version>4.7.2.1</spotbugs-maven-plugin.version>
     <spotbugs-annotations.version>4.7.3</spotbugs-annotations.version>
-    <!-- Whether the build should fail if SpotBugs finds any error. -->
-    <!-- It is strongly encouraged to leave it as true. Use false with care only in transient situations. -->
-    <spotbugs.failOnError>true</spotbugs.failOnError>
-    <!-- Defines a SpotBugs threshold. Use "Low" to discover low-priority bugs.
-         Hint: SpotBugs considers some real NPE risks in Jenkins as low-priority issues, it is recommended to enable it in plugins.
-      -->
-    <spotbugs.threshold>Medium</spotbugs.threshold>
-    <!-- Defines a SpotBugs effort. Use "Max" to maximize the scan depth -->
-    <spotbugs.effort>default</spotbugs.effort>
-    <!-- Defines an optional SpotBugs excludes file.
-         Generally it is recommended to use @SuppressFBWarnings annotation unless you want to ignore an entire class of issues -->
-    <spotbugs.excludeFilterFile />
 
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <project.build.outputEncoding>UTF-8</project.build.outputEncoding>
@@ -680,13 +668,8 @@
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-maven-plugin</artifactId>
         <configuration>
-          <failOnError>${spotbugs.failOnError}</failOnError>
           <xmlOutput>true</xmlOutput>
           <spotbugsXmlOutput>false</spotbugsXmlOutput>
-          <effort>${spotbugs.effort}</effort>
-          <threshold>${spotbugs.threshold}</threshold>
-          <!-- Empty by default, child POMs are expected to override if needed -->
-          <excludeFilterFile>${spotbugs.excludeFilterFile}</excludeFilterFile>
           <plugins>
             <plugin>
               <groupId>com.h3xstream.findsecbugs</groupId>
