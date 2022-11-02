@@ -1,26 +1,24 @@
-#!/usr/bin/env groovy
+properties([
+  buildDiscarder(logRotator(numToKeepStr: '10')),
+  disableConcurrentBuilds(abortPrevious: true)
+])
 
-/* Only keep the 10 most recent builds. */
-properties([[$class: 'BuildDiscarderProperty',
-                strategy: [$class: 'LogRotator', numToKeepStr: '10']]])
+node('maven-11') {
+  stage('Checkout') {
+    infra.checkoutSCM()
+  }
 
-
-node('java') {
-    timestamps {
-        stage('Checkout') {
-            checkout scm
-        }
-
-        stage('Build') {
-            withEnv([
-                "JAVA_HOME=${tool 'jdk11'}",
-                "PATH+MVN=${tool 'mvn'}/bin",
-                'PATH+JDK=$JAVA_HOME/bin',
-            ]) {
-                timeout(30) {
-                    sh 'mvn clean install versions:display-plugin-updates'
-                }
-            }
-        }
+  stage('Build') {
+    timeout(time: 30, unit: 'MINUTES') {
+      def mavenOptions = [
+        '-Dset.changelist',
+        'clean',
+        'install',
+      ]
+      infra.runMaven(mavenOptions, 11)
+      infra.prepareToPublishIncrementals()
     }
+  }
 }
+
+infra.maybePublishIncrementals()
