@@ -85,6 +85,14 @@
 
     <spotbugs-maven-plugin.version>4.7.2.1</spotbugs-maven-plugin.version>
     <spotbugs-annotations.version>4.7.3</spotbugs-annotations.version>
+
+    <!--
+      The MS_EXPOSE_REP, EI_EXPOSE_REP, EI_EXPOSE_REP2, EI_EXPOSE_STATIC_REP2, MS_EXPOSE_BUF,
+      EI_EXPOSE_BUF, EI_EXPOSE_STATIC_BUF2, and EI_EXPOSE_BUF2 bug patterns are noisy and create
+      little value; therefore, we suppress them globally.
+    -->
+    <spotbugs.omitVisitors>FindReturnRef</spotbugs.omitVisitors>
+
     <!-- Whether the build should fail if SpotBugs finds any error. -->
     <!-- It is strongly encouraged to leave it as true. Use false with care only in transient situations. -->
     <spotbugs.failOnError>true</spotbugs.failOnError>
