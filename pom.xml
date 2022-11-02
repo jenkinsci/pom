@@ -86,6 +86,13 @@
     <spotbugs-maven-plugin.version>4.7.2.1</spotbugs-maven-plugin.version>
     <spotbugs-annotations.version>4.7.3</spotbugs-annotations.version>
 
+    <!--
+      The MS_EXPOSE_REP, EI_EXPOSE_REP, EI_EXPOSE_REP2, EI_EXPOSE_STATIC_REP2, MS_EXPOSE_BUF,
+      EI_EXPOSE_BUF, EI_EXPOSE_STATIC_BUF2, and EI_EXPOSE_BUF2 bug patterns are noisy and create
+      little value; therefore, we suppress them globally.
+    -->
+    <spotbugs.omitVisitors>FindReturnRef</spotbugs.omitVisitors>
+
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <project.build.outputEncoding>UTF-8</project.build.outputEncoding>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -723,6 +730,7 @@
                 <bannedDependencies>
                   <excludes>
                     <exclude>javax.servlet:servlet-api</exclude>
+                    <exclude>log4j:log4j</exclude>
                     <!-- CVE-2021-44228 -->
                     <exclude>org.apache.logging.log4j:*:(,2.15.0-rc1]</exclude>
                   </excludes>
