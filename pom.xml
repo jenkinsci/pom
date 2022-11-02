@@ -735,7 +735,7 @@
                 </requirePluginVersions>
                 -->
                 <requireJavaVersion>
-                  <version>[11,]</version>
+                  <version>[${maven.compiler.release},]</version>
                 </requireJavaVersion>
                 <bannedDependencies>
                   <excludes>
@@ -755,7 +755,7 @@
                   </excludes>
                 </requireUpperBoundDeps>
                 <enforceBytecodeVersion>
-                  <maxJdkVersion>11</maxJdkVersion>
+                  <maxJdkVersion>${maven.compiler.release}</maxJdkVersion>
                   <ignoredScopes>
                     <ignoredScope>test</ignoredScope>
                   </ignoredScopes>
