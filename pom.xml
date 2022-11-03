@@ -227,6 +227,29 @@
     <pluginManagement>
       <plugins>
         <plugin>
+          <groupId>com.cloudbees</groupId>
+          <artifactId>maven-license-plugin</artifactId>
+          <version>${maven-license-plugin.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>com.github.spotbugs</groupId>
+          <artifactId>spotbugs-maven-plugin</artifactId>
+          <version>${spotbugs-maven-plugin.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>io.jenkins.tools.incrementals</groupId>
+          <artifactId>incrementals-maven-plugin</artifactId>
+          <version>${incrementals-plugin.version}</version>
+          <configuration>
+            <includes>
+              <include>org.jenkins-ci.*</include>
+              <include>io.jenkins.*</include>
+            </includes>
+            <generateBackupPoms>false</generateBackupPoms>
+            <updateNonincremental>false</updateNonincremental>
+          </configuration>
+        </plugin>
+        <plugin>
           <artifactId>maven-antrun-plugin</artifactId>
           <version>${maven-antrun-plugin.version}</version>
         </plugin>
@@ -346,6 +369,11 @@
           <version>${maven-war-plugin.version}</version>
         </plugin>
         <plugin>
+          <groupId>org.codehaus.cargo</groupId>
+          <artifactId>cargo-maven2-plugin</artifactId>
+          <version>${cargo-maven2-plugin.version}</version>
+        </plugin>
+        <plugin>
           <groupId>org.codehaus.gmaven</groupId>
           <artifactId>gmaven-plugin</artifactId>
           <version>${gmaven-plugin.version}</version>
@@ -359,11 +387,6 @@
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>axistools-maven-plugin</artifactId>
           <version>${axistools-maven-plugin.version}</version>
-        </plugin>
-        <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>buildnumber-maven-plugin</artifactId>
-          <version>${buildnumber-maven-plugin.version}</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -385,9 +408,9 @@
           </executions>
         </plugin>
         <plugin>
-          <groupId>org.codehaus.cargo</groupId>
-          <artifactId>cargo-maven2-plugin</artifactId>
-          <version>${cargo-maven2-plugin.version}</version>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>buildnumber-maven-plugin</artifactId>
+          <version>${buildnumber-maven-plugin.version}</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -398,11 +421,6 @@
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>exec-maven-plugin</artifactId>
           <version>${exec-maven-plugin.version}</version>
-        </plugin>
-        <plugin>
-          <groupId>com.github.spotbugs</groupId>
-          <artifactId>spotbugs-maven-plugin</artifactId>
-          <version>${spotbugs-maven-plugin.version}</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -438,31 +456,6 @@
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>xml-maven-plugin</artifactId>
           <version>${xml-maven-plugin.version}</version>
-        </plugin>
-        <plugin>
-          <groupId>org.kohsuke.gmaven</groupId>
-          <artifactId>gmaven-plugin</artifactId>
-          <version>${kohsuke-gmaven-plugin.version}</version>
-        </plugin>
-        <plugin>
-          <groupId>org.kohsuke.stapler</groupId>
-          <artifactId>maven-stapler-plugin</artifactId>
-          <version>${maven-stapler-plugin.version}</version>
-        </plugin>
-        <plugin>
-          <groupId>org.jenkins-ci.tools</groupId>
-          <artifactId>maven-hpi-plugin</artifactId>
-          <version>${hpi-plugin.version}</version>
-        </plugin>
-        <plugin>
-          <groupId>org.jvnet.localizer</groupId>
-          <artifactId>localizer-maven-plugin</artifactId>
-          <version>${localizer-maven-plugin.version}</version>
-        </plugin>
-        <plugin>
-          <groupId>org.jvnet.sorcerer</groupId>
-          <artifactId>maven-sorcerer-plugin</artifactId>
-          <version>${maven-sorcerer-plugin.version}</version>
         </plugin>
         <plugin>
           <groupId>org.eclipse.m2e</groupId>
@@ -649,22 +642,29 @@
           </configuration>
         </plugin>
         <plugin>
-          <groupId>com.cloudbees</groupId>
-          <artifactId>maven-license-plugin</artifactId>
-          <version>${maven-license-plugin.version}</version>
+          <groupId>org.jenkins-ci.tools</groupId>
+          <artifactId>maven-hpi-plugin</artifactId>
+          <version>${hpi-plugin.version}</version>
         </plugin>
         <plugin>
-          <groupId>io.jenkins.tools.incrementals</groupId>
-          <artifactId>incrementals-maven-plugin</artifactId>
-          <version>${incrementals-plugin.version}</version>
-          <configuration>
-            <includes>
-              <include>org.jenkins-ci.*</include>
-              <include>io.jenkins.*</include>
-            </includes>
-            <generateBackupPoms>false</generateBackupPoms>
-            <updateNonincremental>false</updateNonincremental>
-          </configuration>
+          <groupId>org.jvnet.localizer</groupId>
+          <artifactId>localizer-maven-plugin</artifactId>
+          <version>${localizer-maven-plugin.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.jvnet.sorcerer</groupId>
+          <artifactId>maven-sorcerer-plugin</artifactId>
+          <version>${maven-sorcerer-plugin.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.kohsuke.gmaven</groupId>
+          <artifactId>gmaven-plugin</artifactId>
+          <version>${kohsuke-gmaven-plugin.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.kohsuke.stapler</groupId>
+          <artifactId>maven-stapler-plugin</artifactId>
+          <version>${maven-stapler-plugin.version}</version>
         </plugin>
       </plugins>
     </pluginManagement>
