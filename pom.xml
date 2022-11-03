@@ -675,6 +675,11 @@
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-maven-plugin</artifactId>
         <configuration>
+          <!--
+            Do not define "excludeFilterFile" here, as it will force consumers to provide a file.
+            Instead, we configure this below in a profile conditionally activated based on the
+            presence of this file.
+          -->
           <xmlOutput>true</xmlOutput>
           <spotbugsXmlOutput>false</spotbugsXmlOutput>
           <plugins>
@@ -812,6 +817,30 @@
                 <goals>
                   <goal>jar</goal>
                 </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>spotbugs-exclusion-file</id>
+      <activation>
+        <file>
+          <exists>${maven.multiModuleProjectDirectory}/src/spotbugs/excludesFilter.xml</exists>
+        </file>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.github.spotbugs</groupId>
+            <artifactId>spotbugs-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>spotbugs</id>
+                <configuration>
+                  <excludeFilterFile>${maven.multiModuleProjectDirectory}/src/spotbugs/excludesFilter.xml</excludeFilterFile>
+                </configuration>
               </execution>
             </executions>
           </plugin>
