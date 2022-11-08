@@ -83,7 +83,7 @@
     <!-- Generate metadata for reflection on method parameters -->
     <maven.compiler.parameters>true</maven.compiler.parameters>
 
-    <spotbugs-maven-plugin.version>4.7.2.2</spotbugs-maven-plugin.version>
+    <spotbugs-maven-plugin.version>4.7.3.0</spotbugs-maven-plugin.version>
     <spotbugs-annotations.version>4.7.3</spotbugs-annotations.version>
 
     <!--
