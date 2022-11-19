@@ -794,7 +794,7 @@
       <id>spotbugs-exclusion-file</id>
       <activation>
         <file>
-          <exists>${maven.multiModuleProjectDirectory}/src/spotbugs/excludesFilter.xml</exists>
+          <exists>${basedir}/src/spotbugs/excludesFilter.xml</exists>
         </file>
       </activation>
       <build>
@@ -806,7 +806,7 @@
               <execution>
                 <id>spotbugs</id>
                 <configuration>
-                  <excludeFilterFile>${maven.multiModuleProjectDirectory}/src/spotbugs/excludesFilter.xml</excludeFilterFile>
+                  <excludeFilterFile>${project.basedir}/src/spotbugs/excludesFilter.xml</excludeFilterFile>
                 </configuration>
               </execution>
             </executions>
