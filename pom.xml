@@ -103,7 +103,7 @@
     <incrementals.url>https://repo.jenkins-ci.org/incrementals/</incrementals.url>
     <scmTag>HEAD</scmTag>
 
-    <mockito.version>4.9.0</mockito.version>
+    <mockito.version>4.10.0</mockito.version>
 
     <!-- Define all plugin versions as properties so individual hierarchies can easily override -->
     <apt-maven-plugin.version>1.0-alpha-5</apt-maven-plugin.version>
@@ -114,7 +114,7 @@
     <cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
     <exec-maven-plugin.version>3.1.0</exec-maven-plugin.version>
     <gwt-maven-plugin.version>2.10.0</gwt-maven-plugin.version>
-    <hpi-plugin.version>3.35</hpi-plugin.version>
+    <hpi-plugin.version>3.38</hpi-plugin.version>
     <javancss-maven-plugin.version>2.1</javancss-maven-plugin.version>
     <jdepend-maven-plugin.version>2.0</jdepend-maven-plugin.version>
     <lifecycle-mapping.version>1.0.0</lifecycle-mapping.version>
@@ -124,7 +124,7 @@
     <maven-checkstyle-plugin.version>3.2.0</maven-checkstyle-plugin.version>
     <maven-clean-plugin.version>3.2.0</maven-clean-plugin.version>
     <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
-    <maven-dependency-plugin.version>3.3.0</maven-dependency-plugin.version>
+    <maven-dependency-plugin.version>3.4.0</maven-dependency-plugin.version>
     <maven-deploy-plugin.version>3.0.0</maven-deploy-plugin.version>
     <maven-doap-plugin.version>1.2</maven-doap-plugin.version>
     <maven-eclipse-plugin.version>2.10</maven-eclipse-plugin.version>
@@ -144,13 +144,13 @@
     <maven-resources-plugin.version>3.3.0</maven-resources-plugin.version>
     <maven-site-plugin.version>3.12.1</maven-site-plugin.version>
     <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
-    <maven-stapler-plugin.version>1.20</maven-stapler-plugin.version>
+    <maven-stapler-plugin.version>1.21</maven-stapler-plugin.version>
     <maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
     <maven-surefire-report-plugin.version>3.0.0-M7</maven-surefire-report-plugin.version>
     <maven-war-plugin.version>3.3.2</maven-war-plugin.version>
     <openjpa-maven-plugin.version>1.2</openjpa-maven-plugin.version>
     <taglist-maven-plugin.version>3.0.0</taglist-maven-plugin.version>
-    <versions-maven-plugin.version>2.13.0</versions-maven-plugin.version>
+    <versions-maven-plugin.version>2.14.2</versions-maven-plugin.version>
     <xml-maven-plugin.version>1.0.2</xml-maven-plugin.version>
     <maven-license-plugin.version>1.15</maven-license-plugin.version>
     <incrementals-plugin.version>1.4</incrementals-plugin.version>
@@ -797,7 +797,7 @@
       <id>spotbugs-exclusion-file</id>
       <activation>
         <file>
-          <exists>${maven.multiModuleProjectDirectory}/src/spotbugs/excludesFilter.xml</exists>
+          <exists>${basedir}/src/spotbugs/excludesFilter.xml</exists>
         </file>
       </activation>
       <build>
@@ -809,7 +809,7 @@
               <execution>
                 <id>spotbugs</id>
                 <configuration>
-                  <excludeFilterFile>${maven.multiModuleProjectDirectory}/src/spotbugs/excludesFilter.xml</excludeFilterFile>
+                  <excludeFilterFile>${project.basedir}/src/spotbugs/excludesFilter.xml</excludeFilterFile>
                 </configuration>
               </execution>
             </executions>
