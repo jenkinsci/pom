@@ -34,13 +34,6 @@
       <post>jenkinsci-users@googlegroups.com</post>
       <archive>https://groups.google.com/g/jenkinsci-users</archive>
     </mailingList>
-    <mailingList>
-      <name>Jenkins Japanese user discussion list</name>
-      <subscribe>jenkinsci-ja+subscribe@googlegroups.com</subscribe>
-      <unsubscribe>jenkinsci-ja+unsubscribe@googlegroups.com</unsubscribe>
-      <post>jenkinsci-ja@googlegroups.com</post>
-      <archive>https://groups.google.com/g/jenkinsci-ja</archive>
-    </mailingList>
   </mailingLists>
 
   <scm>
