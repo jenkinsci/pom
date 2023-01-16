@@ -91,7 +91,7 @@
     <incrementals.url>https://repo.jenkins-ci.org/incrementals/</incrementals.url>
     <scmTag>HEAD</scmTag>
 
-    <mockito.version>4.11.0</mockito.version>
+    <mockito.version>5.0.0</mockito.version>
 
     <!-- Define all plugin versions as properties so individual hierarchies can easily override -->
     <apt-maven-plugin.version>1.0-alpha-5</apt-maven-plugin.version>
