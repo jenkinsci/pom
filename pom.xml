@@ -131,9 +131,8 @@
     <maven-resources-plugin.version>3.3.0</maven-resources-plugin.version>
     <maven-site-plugin.version>3.12.1</maven-site-plugin.version>
     <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
-    <maven-stapler-plugin.version>1.22</maven-stapler-plugin.version>
+    <stapler-plugin.version>1.22</stapler-plugin.version>
     <maven-surefire-plugin.version>3.0.0-M8</maven-surefire-plugin.version>
-    <maven-surefire-report-plugin.version>3.0.0-M8</maven-surefire-report-plugin.version>
     <maven-war-plugin.version>3.3.2</maven-war-plugin.version>
     <openjpa-maven-plugin.version>1.2</openjpa-maven-plugin.version>
     <taglist-maven-plugin.version>3.0.0</taglist-maven-plugin.version>
@@ -349,7 +348,7 @@
         </plugin>
         <plugin>
           <artifactId>maven-surefire-report-plugin</artifactId>
-          <version>${maven-surefire-report-plugin.version}</version>
+          <version>${maven-surefire-plugin.version}</version>
         </plugin>
         <plugin>
           <artifactId>maven-war-plugin</artifactId>
@@ -620,7 +619,7 @@
         <plugin>
           <groupId>org.kohsuke.stapler</groupId>
           <artifactId>maven-stapler-plugin</artifactId>
-          <version>${maven-stapler-plugin.version}</version>
+          <version>${stapler-plugin.version}</version>
         </plugin>
       </plugins>
     </pluginManagement>
