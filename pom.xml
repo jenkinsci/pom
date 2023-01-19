@@ -66,9 +66,6 @@
   </distributionManagement>
 
   <properties>
-    <!-- By default only check remote repositories once per week -->
-    <maven.repository.update.freqency>interval:10080</maven.repository.update.freqency>
-
     <maven.compiler.release>11</maven.compiler.release>
     <maven.compiler.testRelease>11</maven.compiler.testRelease>
     <!-- Generate metadata for reflection on method parameters -->
