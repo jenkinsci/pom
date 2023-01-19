@@ -284,9 +284,6 @@
         <plugin>
           <artifactId>maven-release-plugin</artifactId>
           <version>${maven-release-plugin.version}</version>
-          <configuration>
-            <releaseProfiles>!consume-incrementals,jenkins-release</releaseProfiles>
-          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-remote-resources-plugin</artifactId>
@@ -645,6 +642,12 @@
       </plugin>
       <plugin>
         <artifactId>maven-eclipse-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-release-plugin</artifactId>
+        <configuration>
+          <releaseProfiles>jenkins-release,!consume-incrementals</releaseProfiles>
+        </configuration>
       </plugin>
     </plugins>
   </build>
