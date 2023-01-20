@@ -606,11 +606,6 @@
                   <ignoredScopes>
                     <ignoredScope>test</ignoredScope>
                   </ignoredScopes>
-                  <excludes>
-                    <!--  findbugs dep managed to provided and optional so is not shipped and missing annotations ok -->
-                    <exclude>com.github.spotbugs:spotbugs-annotations</exclude>
-                    <exclude>com.google.code.findbugs:annotations</exclude>
-                  </excludes>
                   <!-- To add exclusions in a child POM, use:
                   <plugin>
                       <artifactId>maven-enforcer-plugin</artifactId>
