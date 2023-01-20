@@ -584,7 +584,7 @@
                 </requirePluginVersions>
                 -->
                 <requireJavaVersion>
-                  <version>[${maven.compiler.release},]</version>
+                  <version>[${maven.compiler.release},)</version>
                 </requireJavaVersion>
                 <bannedDependencies>
                   <excludes>
