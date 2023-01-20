@@ -593,9 +593,6 @@
                     <!-- CVE-2021-44228 -->
                     <exclude>org.apache.logging.log4j:*:(,2.15.0-rc1]</exclude>
                   </excludes>
-                  <includes>
-                    <include>javax.servlet:servlet-api:[0]</include>
-                  </includes>
                 </bannedDependencies>
                 <requireUpperBoundDeps>
                   <excludes>
