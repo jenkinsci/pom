@@ -118,7 +118,7 @@
     <mockito.version>5.2.0</mockito.version>
     <spotbugs-annotations.version>4.7.3</spotbugs-annotations.version>
     <spotbugs-maven-plugin.version>4.7.3.2</spotbugs-maven-plugin.version>
-    <stapler-plugin.version>1.22</stapler-plugin.version>
+    <stapler-plugin.version>1.23</stapler-plugin.version>
   </properties>
 
   <dependencyManagement>
