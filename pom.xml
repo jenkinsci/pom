@@ -962,7 +962,6 @@
         <enforcer.skip>true</enforcer.skip>
         <access-modifier-checker.skip>true</access-modifier-checker.skip>
         <invoker.skip>true</invoker.skip>
-        <spotless.check.skip>true</spotless.check.skip>
         <checkstyle.skip>true</checkstyle.skip>
         <yarn.lint.skip>true</yarn.lint.skip>
       </properties>
