@@ -13,7 +13,7 @@ node('java') {
 
         stage('Build') {
             withEnv([
-                "JAVA_HOME=${tool 'jdk11'}",
+                "JAVA_HOME=${tool 'jdk17'}",
                 "PATH+MVN=${tool 'mvn'}/bin",
                 'PATH+JDK=$JAVA_HOME/bin',
             ]) {
