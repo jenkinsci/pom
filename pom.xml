@@ -694,8 +694,6 @@
                 <requireUpperBoundDeps>
                   <excludes>
                     <exclude>com.google.code.findbugs:jsr305</exclude>
-                    <exclude>javax.servlet:javax.servlet-api</exclude>
-                    <exclude>javax.servlet:servlet-api</exclude>
                   </excludes>
                 </requireUpperBoundDeps>
                 <enforceBytecodeVersion>
