@@ -67,7 +67,7 @@
 
   <properties>
     <maven.compiler.release>11</maven.compiler.release>
-    <maven.compiler.testRelease>11</maven.compiler.testRelease>
+    <maven.compiler.testRelease>${maven.compiler.release}</maven.compiler.testRelease>
     <!-- Generate metadata for reflection on method parameters -->
     <maven.compiler.parameters>true</maven.compiler.parameters>
 
