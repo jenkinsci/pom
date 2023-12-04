@@ -124,7 +124,7 @@
     <mockito.version>5.8.0</mockito.version>
     <spotbugs-annotations.version>4.8.2</spotbugs-annotations.version>
     <spotbugs-maven-plugin.version>4.7.3.6</spotbugs-maven-plugin.version>
-    <spotless-maven-plugin.version>2.40.0</spotless-maven-plugin.version>
+    <spotless-maven-plugin.version>2.41.1</spotless-maven-plugin.version>
     <stapler-maven-plugin.version>175.vff879c6738b_6</stapler-maven-plugin.version>
   </properties>
 
