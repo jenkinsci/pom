@@ -5,7 +5,7 @@
 
   <groupId>org.jenkins-ci</groupId>
   <artifactId>jenkins</artifactId>
-  <version>1.132</version>
+  <version>1.133-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Jenkins Parent POM</name>
@@ -39,7 +39,7 @@
   <scm>
     <connection>scm:git:https://github.com/jenkinsci/pom.git</connection>
     <developerConnection>scm:git:git@github.com:jenkinsci/pom.git</developerConnection>
-    <tag>jenkins-1.132</tag>
+    <tag>HEAD</tag>
     <url>https://github.com/jenkinsci/pom</url>
   </scm>
 
