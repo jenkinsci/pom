@@ -119,7 +119,7 @@
     <hpi-plugin.version>3.66</hpi-plugin.version>
     <incrementals-enforce-minimum.version>1.0-beta-4</incrementals-enforce-minimum.version>
     <incrementals-plugin.version>1.8</incrementals-plugin.version>
-    <jellydoc-maven-plugin.version>195.v4662dd79fdb_d</jellydoc-maven-plugin.version>
+    <jellydoc-maven-plugin.version>226.v2eddb_617a_307</jellydoc-maven-plugin.version>
     <junit.version>5.13.4</junit.version>
     <license-maven-plugin.version>165.v7e11f4e4a_325</license-maven-plugin.version>
     <lifecycle-mapping.version>1.0.0</lifecycle-mapping.version>
