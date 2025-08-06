@@ -150,7 +150,7 @@
     <spotbugs-annotations.version>4.9.3</spotbugs-annotations.version>
     <spotbugs-maven-plugin.version>4.9.3.2</spotbugs-maven-plugin.version>
     <spotless-maven-plugin.version>2.46.1</spotless-maven-plugin.version>
-    <stapler-maven-plugin.version>233.v9579d1a_8ea_28</stapler-maven-plugin.version>
+    <stapler-maven-plugin.version>264.vb_f59b_4f9c62d</stapler-maven-plugin.version>
   </properties>
 
   <dependencyManagement>
