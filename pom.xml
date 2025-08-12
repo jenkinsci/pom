@@ -460,7 +460,7 @@
                 </pluginExecution>
                 <pluginExecution>
                   <pluginExecutionFilter>
-                    <groupId>com.infradna.tool</groupId>
+                    <groupId>io.jenkins.tools</groupId>
                     <artifactId>bridge-method-injector</artifactId>
                     <versionRange>[1.4,)</versionRange>
                     <goals>
