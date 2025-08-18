@@ -1,3 +1,4 @@
+---
 version: 2
 updates:
 - package-ecosystem: maven
@@ -5,3 +6,7 @@ updates:
   schedule:
     interval: weekly
   open-pull-requests-limit: 10
+  ignore:
+    # see https://github.com/apache/maven-surefire/issues/2601
+    - dependency-name: "org.apache.maven.plugins:maven-failsafe-plugin"
+    - dependency-name: "org.apache.maven.plugins:maven-surefire-plugin"
