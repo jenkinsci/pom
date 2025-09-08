@@ -121,7 +121,7 @@
     <hamcrest.version>3.0</hamcrest.version>
     <hpi-plugin.version>3.1746.v2e9fe7dc4d95</hpi-plugin.version>
     <incrementals-enforce-minimum.version>1.0-beta-4</incrementals-enforce-minimum.version>
-    <incrementals-plugin.version>1.10</incrementals-plugin.version>
+    <incrementals-plugin.version>1.11</incrementals-plugin.version>
     <jellydoc-maven-plugin.version>226.v2eddb_617a_307</jellydoc-maven-plugin.version>
     <junit.version>5.13.4</junit.version>
     <license-maven-plugin.version>184.v19c87b_6b_a_9a_c</license-maven-plugin.version>
