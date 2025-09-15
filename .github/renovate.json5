@@ -6,11 +6,6 @@
     "schedule:daily"
   ],
   "automerge": true,
-  "ignoreDeps": [
-    // see https://github.com/apache/maven-surefire/issues/2601
-    "org.apache.maven.plugins:maven-surefire-plugin",
-    "org.apache.maven.plugins:maven-surefire-report-plugin"
-  ],
   "labels": [
     "dependencies"
   ],
