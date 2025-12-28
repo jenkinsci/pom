@@ -1,14 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended",
-    ":semanticCommitsDisabled",
+    "github>jenkinsci/renovate-config",
     "schedule:daily"
   ],
   "automerge": true,
-  "labels": [
-    "dependencies"
-  ],
   "customManagers": [
     {
       "customType": "regex",
@@ -21,6 +17,5 @@
       "depNameTemplate": "com.palantir.javaformat:palantir-java-format",
       "datasourceTemplate": "maven"
     }
-  ],
-  "rebaseWhen": "conflicted"
+  ]
 }
