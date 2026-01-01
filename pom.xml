@@ -61,7 +61,7 @@
   </distributionManagement>
 
   <properties>
-    <revision>1</revision>
+    <revision>2</revision>
     <changelist>999999-SNAPSHOT</changelist>
     <gitHubRepo>jenkinsci/pom</gitHubRepo>
     <maven.compiler.release>21</maven.compiler.release>
