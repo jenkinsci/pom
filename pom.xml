@@ -5,7 +5,7 @@
 
   <groupId>org.jenkins-ci</groupId>
   <artifactId>jenkins</artifactId>
-  <version>${revision}${changelist}</version>
+  <version>${revision}.${changelist}</version>
   <packaging>pom</packaging>
 
   <name>Jenkins Parent POM</name>
@@ -61,11 +61,10 @@
   </distributionManagement>
 
   <properties>
-    <maven.compiler.release>21</maven.compiler.release>
-    <revision>1.143</revision>
-    <changelist>-SNAPSHOT</changelist>
+    <revision>1</revision>
+    <changelist>999999-SNAPSHOT</changelist>
     <gitHubRepo>jenkinsci/pom</gitHubRepo>
-    <maven.compiler.release>17</maven.compiler.release>
+    <maven.compiler.release>21</maven.compiler.release>
     <maven.compiler.testRelease>${maven.compiler.release}</maven.compiler.testRelease>
     <!-- Generate metadata for reflection on method parameters -->
     <maven.compiler.parameters>true</maven.compiler.parameters>
