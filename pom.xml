@@ -10,7 +10,7 @@
 
   <name>Jenkins Parent POM</name>
   <description>Standard Parent POM for non-plugin Jenkins components: core, libraries, etc.</description>
-  <url>https://github.com/jenkinsci/pom</url>
+  <url>https://github.com/${gitHubRepo}</url>
   <inceptionYear>2004</inceptionYear>
 
   <mailingLists>
@@ -37,10 +37,10 @@
   </mailingLists>
 
   <scm>
-    <connection>scm:git:https://github.com/jenkinsci/pom.git</connection>
-    <developerConnection>scm:git:git@github.com:jenkinsci/pom.git</developerConnection>
+    <connection>scm:git:https://github.com/${gitHubRepo}.git</connection>
+    <developerConnection>scm:git:git@github.com:${gitHubRepo}.git</developerConnection>
     <tag>${scmTag}</tag>
-    <url>https://github.com/jenkinsci/pom</url>
+    <url>https://github.com/${gitHubRepo}</url>
   </scm>
 
   <issueManagement>
@@ -68,7 +68,8 @@
   <properties>
     <revision>1</revision>
     <changelist>999999-SNAPSHOT</changelist>
-    <maven.compiler.release>17</maven.compiler.release>
+    <gitHubRepo>jenkinsci/pom</gitHubRepo>
+    <maven.compiler.release>21</maven.compiler.release>
     <maven.compiler.testRelease>${maven.compiler.release}</maven.compiler.testRelease>
     <!-- Generate metadata for reflection on method parameters -->
     <maven.compiler.parameters>true</maven.compiler.parameters>
@@ -937,7 +938,7 @@
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>flatten-maven-plugin</artifactId>
-            <version>1.7.3</version>
+            <version>${flatten-maven-plugin.version}</version>
             <configuration>
               <updatePomFile>true</updatePomFile>
             </configuration>
