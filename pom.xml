@@ -123,7 +123,7 @@
     <incrementals-plugin.version>1.13</incrementals-plugin.version>
     <jellydoc-maven-plugin.version>226.v2eddb_617a_307</jellydoc-maven-plugin.version>
     <junit.version>6.0.2</junit.version>
-    <license-maven-plugin.version>184.v19c87b_6b_a_9a_c</license-maven-plugin.version>
+    <license-maven-plugin.version>203.vffb_768f15d51</license-maven-plugin.version>
     <lifecycle-mapping.version>1.0.0</lifecycle-mapping.version>
     <localizer-maven-plugin.version>1.31</localizer-maven-plugin.version>
     <maven-antrun-plugin.version>3.2.0</maven-antrun-plugin.version>
