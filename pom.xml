@@ -118,7 +118,7 @@
     <exec-maven-plugin.version>3.6.3</exec-maven-plugin.version>
     <hamcrest.version>3.0</hamcrest.version>
     <hpi-plugin.version>3.1814.v77d15159f9b_d</hpi-plugin.version>
-    <flatten-maven-plugin.version>1.7.3</flatten-maven-plugin.version>
+    <flatten-maven-plugin.version>1.8.0</flatten-maven-plugin.version>
     <incrementals-enforce-minimum.version>1.0-beta-4</incrementals-enforce-minimum.version>
     <incrementals-plugin.version>1.13</incrementals-plugin.version>
     <jellydoc-maven-plugin.version>260.v559a_7cf363d2</jellydoc-maven-plugin.version>
