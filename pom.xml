@@ -1173,21 +1173,21 @@
     <profile>
       <id>annotation-processors</id>
       <activation>
+        <!-- -proc:full does not exist before JDK 21, where javac rejects it as an invalid flag.
+             Modules can lower maven.compiler.release, so this cannot be assumed unconditionally. -->
         <jdk>[21,)</jdk>
       </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <configuration>
-              <compilerArgs>
-                <arg>-proc:full</arg>
-              </compilerArgs>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
+      <properties>
+        <!--
+          JDK 21 deprecated running annotation processors discovered on the class path, so opt back
+          in to keep discovering them to maintain compatibility.
+          It is recommended that modules set the annotationProcessorPaths instead of relying on this if they need
+          annotation processors on the class path.
+
+          See: https://maven.apache.org/plugins/maven-compiler-plugin-4.x/examples/annotation-processor.html#not-recommended-using-the-proc-configuration
+        -->
+        <maven.compiler.proc>full</maven.compiler.proc>
+      </properties>
     </profile>
     <profile>
       <!--  a profile that disables as much testing as possible whilst still producing the artifacts -->
