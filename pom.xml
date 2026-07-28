@@ -192,6 +192,11 @@
         <version>${hamcrest.version}</version>
       </dependency>
       <dependency>
+        <groupId>org.openjdk.jmh</groupId>
+        <artifactId>jmh-generator-annprocess</artifactId>
+        <version>1.37</version>
+      </dependency>
+      <dependency>
         <groupId>org.jenkins-ci</groupId>
         <artifactId>test-annotations</artifactId>
         <version>127.v2f87da_3ce079</version>
