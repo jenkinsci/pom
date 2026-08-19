@@ -114,7 +114,11 @@
     <scmTag>HEAD</scmTag>
 
     <build-helper-maven-plugin.version>3.6.1</build-helper-maven-plugin.version>
-    <buildnumber-maven-plugin.version>3.3.0</buildnumber-maven-plugin.version>
+    <!-- ensure that 
+      https://github.com/mojohaus/buildnumber-maven-plugin/issues/229
+      is **actually** fixed not just closed before updating
+    -->
+    <buildnumber-maven-plugin.version>3.2.0</buildnumber-maven-plugin.version>
     <exec-maven-plugin.version>3.6.3</exec-maven-plugin.version>
     <hamcrest.version>3.0</hamcrest.version>
     <hpi-plugin.version>3.1838.va_13472137a_6a_</hpi-plugin.version>

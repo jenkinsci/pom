@@ -17,5 +17,6 @@
       "depNameTemplate": "com.palantir.javaformat:palantir-java-format",
       "datasourceTemplate": "maven"
     }
-  ]
+  ], 
+  "ignoreDeps": ["org.codehaus.mojo:buildnumber-maven-plugin"]
 }
