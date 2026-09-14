@@ -113,7 +113,7 @@
 
     <scmTag>HEAD</scmTag>
 
-    <build-helper-maven-plugin.version>3.6.1</build-helper-maven-plugin.version>
+    <build-helper-maven-plugin.version>3.6.2</build-helper-maven-plugin.version>
     <!-- ensure that 
       https://github.com/mojohaus/buildnumber-maven-plugin/issues/229
       is **actually** fixed not just closed before updating
