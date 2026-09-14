@@ -686,12 +686,14 @@
               <expandEmptyElements>false</expandEmptyElements>
               <sortDependencies>scope,groupId,artifactId</sortDependencies>
               <sortDependencyExclusions>groupId,artifactId</sortDependencyExclusions>
+              <sortDependencyManagement>none</sortDependencyManagement>
               <spaceBeforeCloseEmptyElement>true</spaceBeforeCloseEmptyElement>
             </sortPom>
           </pom>
         </configuration>
         <executions>
           <execution>
+            <id>spotless</id>
             <goals>
               <goal>check</goal>
             </goals>
